@@ -1,4 +1,4 @@
-<header id="main-header">
+<header id="main-header" style="background-image:url(/site_assets/img/Canvas.jpg)">
     <div id="header-top">
       <div class="header-top-content container">
         <!-- Language Switcher -->
@@ -25,10 +25,10 @@
     <div class="main-header-cont container">
       <!-- Top Logo -->
       <div class="logo-main-box col-xs-6 col-sm-4 col-md-3">
-      <a href="{{ URL::to('/') }}">@if(getcong('site_logo')) <img src="{{ URL::asset('upload/'.getcong('site_logo')) }}" alt="{{getcong('site_name')}}" width="175"> @else <span>{{getcong('site_name')}}</span> @endif</a>
-        {{-- <a href="/">
-          <img src="/img/3.jpg" class="img-responsive img-circle" alt="User Image">
-        </a>          --}}
+      <a href="{{ URL::to('/') }}">@if(getcong('site_logo'))
+                <img src="{{ URL::asset('upload/'.getcong('site_logo')) }}"
+                alt="{{getcong('site_name')}}" class="img-responsive img-circle" width="100">
+                @else <span>{{getcong('site_name')}}</span> @endif</a>
       </div>
       <!-- End of Top Logo -->
       <!-- Main Menu -->

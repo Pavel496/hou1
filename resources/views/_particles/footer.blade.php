@@ -35,7 +35,7 @@
   </section> --}}
   <!--End of Top Footer-->
 
-  <footer id="main-footer">
+  <footer id="main-footer" style="background-image:url(/site_assets/img/Canvasb.jpg)">
     <div class="inner-container container">
       <div id="go-up" class="fa fa-angle-double-up"></div>
       <div class="top-section clearfix">
