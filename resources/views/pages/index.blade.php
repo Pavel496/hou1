@@ -2,7 +2,7 @@
 @section("content")
 
 @if(getcong('home_properties_layout')=='slider')
-
+@include("_particles.zastavka")
 @include("_particles.slidersearch")
 
 @else
@@ -10,8 +10,8 @@
 @include("_particles.mapsearch")
 
 @endif
- 
-  
+
+
 <!-- Recent Properties -->
   <section class="property-listing boxed-view clearfix">
     <h2 class="hsq-heading type-1">Recent Properties</h2>
@@ -49,9 +49,9 @@
         </div>
       </div>
       @endforeach
-    
+
     </div>
-    
+
   </section>
   <!-- End of Recent Properties -->
 
@@ -63,7 +63,7 @@
       @foreach($featured_properties as $i => $property)
       <div class="property-box col-xs-12 col-sm-6 col-md-4">
         <div class="inner-box">
-          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">             
+          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
             <img src="{{ URL::asset('upload/properties/'.$property->featured_image.'-s.jpg') }}" alt="Image of Property">
             <span class="price">{{getcong('currency_sign').' '.$property->price}}</span>
           </a>
@@ -92,16 +92,16 @@
         </div>
       </div>
       @endforeach
-    
+
     </div>
-    
+
   </section>
   <!-- End of Featured Properties -->
  @endif
 
   <!--Our Partners-->
-      @include("_particles.partners")
-    
+      {{-- @include("_particles.partners") --}}
+
   <!--End of Our Partners-->
 
 @endsection

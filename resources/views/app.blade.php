@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>@yield('head_title', getcong('site_name'))</title>
   <meta name="description" content="@yield('head_description', getcong('site_description'))">
     <meta property="keywords" content="@yield('head_keywords', getcong('site_keywords'))" />
-    
+
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="@yield('head_title',  getcong('site_name'))"/>
     <meta property="og:description" content="@yield('head_description', getcong('site_description'))"/>
-    
+
     <meta property="og:image" content="@yield('head_image', url('/upload/logo.png'))" />
     <meta property="og:url" content="@yield('head_url', url('/'))" />
 
@@ -22,25 +22,26 @@
     <link href="{{ URL::asset('site_assets/css/style.css') }}" rel="stylesheet" />
     <link id="main-style-file-css" rel="stylesheet" href="{{ URL::asset('site_assets/css/style_new.css') }}"/>
     <link href="{{ URL::asset('site_assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-    
+    <link href="{{ URL::asset('site_assets/css/zastavka.css') }}" rel="stylesheet" />
+
     @if(request()->segment('1')=='login' or request()->segment('1')=='register')
-      
+
       <script src='https://www.google.com/recaptcha/api.js'></script>
-    
+
     @endif
 
 
 </head>
 <body class="home-page-2 property-listing-page row-listing submit-property property-details not-found @if(request()->segment('1')=='user') agent-details-page @endif @if(request()->segment('1')=='agents') agents-page @endif">
-	  
+
 	  @include("_particles.header")
 
-     
+
 	  @yield("content")
-	  
-	   
+
+
 	  @include("_particles.footer")
-	  
+
 
 
     <!-- JS Include Section -->
@@ -56,7 +57,7 @@
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/richmarker-compiled.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/markerclusterer_packed.js') }}"></script>
    <!-- END OF Map Js -->
-   
+
    @if(classActivePathPublic('') AND getcong('home_properties_layout')=='map')
       @include("_particles.footer_map")
    @endif
@@ -64,21 +65,21 @@
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/template.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/bootstrap-tagsinput.js') }}"></script>
   <!-- End of JS Include Section -->
-  
-  @if(request()->segment('1')=='submit-property' or request()->segment('1')=='update-property') 
+
+  @if(request()->segment('1')=='submit-property' or request()->segment('1')=='update-property')
   <script type="text/javascript">
     function initialize() {
 
-       
+
       @if(isset($property->id) AND isset($property->map_latitude) AND isset($property->map_longitude))
         var myLatLng = new google.maps.LatLng({{ $property->map_latitude }}, {{ $property->map_longitude }});
-      
+
       @else
-      
+
         var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
-      
+
       @endif
-       
+
       var mapOptions = {
         zoom: 12,
         center: myLatLng,
@@ -122,17 +123,17 @@
 
 
     google.maps.event.addDomListener(window, 'load', initialize);
-  
+
   </script>
   @endif
 
   @if(Request::is('properties/*') AND isset($property->id) AND isset($property->map_latitude) AND isset($property->map_longitude))
   <script type="text/javascript">
     function initialize() {
-      
+
       @if(isset($property->id) AND isset($property->map_latitude) AND isset($property->map_longitude))
         var myLatLng = new google.maps.LatLng({{ $property->map_latitude }}, {{ $property->map_longitude }});
-       
+
       @endif
 
       var mapOptions = {
@@ -168,12 +169,12 @@
 <script type="text/javascript">
 var abc = 0;
 //function increment() {
-    
+
 //};
 $(document).ready(function() {
     $('#add_more').click(function() {//When Add More Files button Clicked these function Willbe Called (new file field is added dynamically)
         $(this).before($("<div/>", {id: 'filediv'}).fadeIn('slow').append(
-                $("<input/>", {name: 'gallery_file[]', type: 'file', id: 'file'}),        
+                $("<input/>", {name: 'gallery_file[]', type: 'file', id: 'file'}),
                 $("")
                 ));
     });
@@ -195,7 +196,7 @@ $('body').on('change', '#file', function(){
                 }));
             }
         });
-        
+
     function imageIsLoaded(e) {
         $('#previewimg' + abc).attr('src', e.target.result);
     };
@@ -209,7 +210,7 @@ $('body').on('change', '#file', function(){
         }
     });
 });
-  
+
 
 @if(request()->segment('1')!='update-property' AND request()->segment('1')!='submit-property')
 
@@ -256,5 +257,5 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
 @endif
 
 </body>
- 
+
 </html>

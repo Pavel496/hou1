@@ -17,7 +17,7 @@
          <li><a href="{{ URL::to('login') }}">Login</a></li>
          <li><a href="{{ URL::to('register') }}">Register</a></li>
          @endif
-          
+
         </ul>
         <!-- End of Login Links -->
       </div>
@@ -26,7 +26,9 @@
       <!-- Top Logo -->
       <div class="logo-main-box col-xs-6 col-sm-4 col-md-3">
       <a href="{{ URL::to('/') }}">@if(getcong('site_logo')) <img src="{{ URL::asset('upload/'.getcong('site_logo')) }}" alt="{{getcong('site_name')}}" width="175"> @else <span>{{getcong('site_name')}}</span> @endif</a>
-         
+        {{-- <a href="/">
+          <img src="/img/3.jpg" class="img-responsive img-circle" alt="User Image">
+        </a>          --}}
       </div>
       <!-- End of Top Logo -->
       <!-- Main Menu -->
@@ -35,9 +37,9 @@
                 <nav id="main-menu" class="hidden-xs hidden-sm">
                     <ul class="main-menu list-inline">
                         <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Home</a>
-                             
+
                         </li><!-- Menu items ( You can change the link and its text ) -->
-                        
+
                         <li><a href="{{ URL::to('properties/') }}" class="{{classActivePathPublic('properties')}}">All Properties</a></li>
                         <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li>
                         <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Sale</a></li>

@@ -1,6 +1,6 @@
 <!-- Main Slider -->
-  <section id="main-slider">
-    
+  {{-- <section id="main-slider">
+
     @foreach(\App\Slider::orderBy('slider_title')->get() as $slide)
     <div class="items">
       <div class="img-container" data-bg-img="{{ URL::asset('upload/slides/'.$slide->image_name.'.jpg') }}"></div>
@@ -8,13 +8,13 @@
       <div class="slide-caption">
         <div class="inner-container clearfix">
           <div class="first-sec">{{ $slide->slider_text1 }}</div>
-          <div class="sec-sec">{{ $slide->slider_text2 }}</div> 
+          <div class="sec-sec">{{ $slide->slider_text2 }}</div>
         </div>
       </div>
     </div>
     @endforeach
-   
-  </section>
+
+  </section> --}}
   <!-- End of Main Slider -->
   <!-- Property Search Box -->
     <section id="property-search-container" class="container" style="margin-bottom: 0px;">
@@ -39,14 +39,14 @@
                       @endforeach
                     </select>
                 </div>
-                 
-              
+
+
                 <div class="col-xs-6 col-sm-3 search-field">
                     <button class="btn" type="submit" name="submit">Search</button>
                 </div>
             </div>
-            {!! Form::close() !!} 
-             
+            {!! Form::close() !!}
+
         </div>
     </section>
     <!-- End of Property Search Box -->
