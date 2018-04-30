@@ -14,15 +14,17 @@
     <meta property="og:url" content="@yield('head_url', url('/'))" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no">
-  <link href="https://fonts.googleapis.com/css?family=Scada:400,700|Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Scada:400,700|Open+Sans:400,300,700" rel="stylesheet" type="text/css">
 
   <!-- Fav and touch icons -->
-  <link href="{{ URL::asset('upload/'.getcong('site_favicon')) }}" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{ URL::asset('upload/'.getcong('site_favicon')) }}" rel="shortcut icon" type="image/x-icon" />
 
     <link href="{{ URL::asset('site_assets/css/style.css') }}" rel="stylesheet" />
     <link id="main-style-file-css" rel="stylesheet" href="{{ URL::asset('site_assets/css/style_new.css') }}"/>
     <link href="{{ URL::asset('site_assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('site_assets/css/zastavka.css') }}" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css">
 
     @if(request()->segment('1')=='login' or request()->segment('1')=='register')
 
@@ -56,6 +58,9 @@
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/infobox_packed.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/richmarker-compiled.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/markerclusterer_packed.js') }}"></script>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
    <!-- END OF Map Js -->
 
    @if(classActivePathPublic('') AND getcong('home_properties_layout')=='map')
@@ -255,6 +260,18 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
 @endif
+
+<script type="text/javascript">
+
+  var slider = new Slider('#ex1', {});
+
+  // var slider = new Slider("#ex2");
+  slider.on("slide", function(sliderValue) {
+    document.getElementById("ex1SliderVal0").textContent = sliderValue[0];
+  	document.getElementById("ex1SliderVal1").textContent = sliderValue[1];
+  });
+
+</script>
 
 </body>
 

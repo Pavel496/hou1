@@ -23,6 +23,15 @@
                 </select>
               </div>
 
+              {{-- <div id="example-2" class='slider-example'>
+            		<h3>Example 2:</h3> --}}
+            		<p>Задать min и max</p>
+            		<div class="well">
+            			<span id="ex1SliderVal0">10</span><input id="ex1" type="text" class="span2" name="price"
+                        value="" data-slider-min="0" data-slider-max="99" data-slider-step="5"
+                        data-slider-value="[10,90]"/><span id="ex1SliderVal1">90</span>
+            		</div>
+              {{-- </div> --}}
               <div class="search-field">
                 <button class="btn" type="submit" name="submit">Найти</button>
               </div>
