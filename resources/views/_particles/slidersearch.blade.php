@@ -22,18 +22,18 @@
             {!! Form::open(array('url' => array('searchproperties'),'class'=>'','name'=>'search_form','id'=>'search_form','role'=>'form')) !!}
             <div class="main-search-sec">
                 <div class="col-xs-6 col-sm-3 search-field">
-                    <input type="text" placeholder="Title, Address..." name="keyword" id="keyword" style="margin-bottom: 0px;border:1px solid #d4d4d4;border-bottom-color: #50AEE6;">
+                    <input type="text" placeholder="Заголовок, адрес ..." name="keyword" id="keyword" style="margin-bottom: 0px;border:1px solid #d4d4d4;border-bottom-color: #50AEE6;">
                 </div>
                 <div class="col-xs-6 col-sm-3 search-field">
                     <select id="proeprty-status" name="purpose">
-                       <option value="">Property Purpose</option>
-                       <option value="Sale">For Sale</option>
-                       <option value="Rent">For Rent</option>
+                       <option value="">Назначение объекта</option>
+                       <option value="Sale">Продажа</option>
+                       <option value="Rent">Аренда</option>
                     </select>
                 </div>
                 <div class="col-xs-6 col-sm-3 search-field">
                     <select id="proeprty-type" name="type">
-                      <option value="">Property Type</option>
+                      <option value="">Тип объекта</option>
                       @foreach(\App\Types::orderBy('types')->get() as $type)
                             <option value="{{$type->id}}">{{$type->types}}</option>
                       @endforeach
@@ -42,7 +42,7 @@
 
 
                 <div class="col-xs-6 col-sm-3 search-field">
-                    <button class="btn" type="submit" name="submit">Search</button>
+                    <button class="btn" type="submit" name="submit">Найти</button>
                 </div>
             </div>
             {!! Form::close() !!}

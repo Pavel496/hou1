@@ -11,11 +11,11 @@
         <!-- Login Links -->
         <ul id="login-boxes" class="list-inline">
          @if(Auth::check())
-         <li><a href="{{ URL::to('dashboard') }}">Dashboard</a></li>
-          <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+         <li><a href="{{ URL::to('dashboard') }}">Админка</a></li>
+          <li><a href="{{ URL::to('logout') }}">Выйти</a></li>
          @else
-         <li><a href="{{ URL::to('login') }}">Login</a></li>
-         <li><a href="{{ URL::to('register') }}">Register</a></li>
+         <li><a href="{{ URL::to('login') }}">Войти</a></li>
+         <li><a href="{{ URL::to('register') }}">Регистрация</a></li>
          @endif
 
         </ul>
@@ -36,24 +36,26 @@
                 <!-- Main Menu -->
                 <nav id="main-menu" class="hidden-xs hidden-sm">
                     <ul class="main-menu list-inline">
-                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Home</a>
+                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Гостинная</a>
 
                         </li><!-- Menu items ( You can change the link and its text ) -->
 
-                        <li><a href="{{ URL::to('properties/') }}" class="{{classActivePathPublic('properties')}}">All Properties</a></li>
-                        <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li>
-                        <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Sale</a></li>
-                        <li><a href="{{ URL::to('rent/') }}" class="{{classActivePathPublic('rent')}}">Rent</a></li>
-                        <li><a href="{{ URL::to('agents/') }}" class="{{classActivePathPublic('agents')}}">Agents</a>
-                          <li><a href="{{ URL::to('testimonials/') }}" class="{{classActivePathPublic('testimonials')}}">Testimonials</a></li>
-                        <li><a href="{{ URL::to('about-us/') }}" class="{{classActivePathPublic('about-us')}}">About</a></li>
-                        <li><a href="{{ URL::to('contact-us/') }}" class="{{classActivePathPublic('contact-us')}}">Contact</a></li>
+                        {{-- <li><a href="{{ URL::to('properties/') }}" class="{{classActivePathPublic('properties')}}">All Properties</a></li>
+                        <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li> --}}
+                        <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
+                        <li><a href="{{ URL::to('rent/') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
+                        <li><a href="{{ URL::to('agents/') }}" class="{{classActivePathPublic('agents')}}">Агенты</a>
+                        {{-- <li><a href="{{ URL::to('testimonials/') }}" class="{{classActivePathPublic('testimonials')}}">Testimonials</a></li> --}}
+                        <li><a href="{{ URL::to('advices/') }}" class="{{classActivePathPublic('advices')}}">Советы эксперта</a>
+                        <li><a href="{{ URL::to('about-us/') }}" class="{{classActivePathPublic('about-us')}}">О нас</a></li>
+                        <li><a href="{{ URL::to('design/') }}" class="{{classActivePathPublic('design')}}">Строительство и дизайн</a>
+                        <li><a href="{{ URL::to('contact-us/') }}" class="{{classActivePathPublic('contact-us')}}">Контакты</a></li>
                     </ul>
                 </nav>
                 <!-- END of Main Menu -->
 
         <div id="main-menu-handle" class="hidden-md hidden-lg"><i class="fa fa-bars"></i></div><!-- Mobile Menu handle -->
-            <a id="submit-property-link" class="btn" href="{{ URL::to('submit-property') }}"><span>Submit Your Property</span></a>
+            <a id="submit-property-link" class="btn" href="{{ URL::to('submit-property') }}"><span>Предложите объект</span></a>
             </div>
       <!-- End of Main Menu -->
     </div>

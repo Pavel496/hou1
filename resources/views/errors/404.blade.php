@@ -1,7 +1,7 @@
 @extends("app")
 
 @section('head_title', 'Page not found! | '.getcong('site_name') )
- 
+
 @section('head_url', Request::url())
 
 @section("content")
@@ -9,11 +9,11 @@
 <!--Breadcrumb Section-->
   <section class="breadcrumb-box" data-parallax="scroll" data-image-src="{{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }}">
     <div class="inner-container container">
-      <h1>Page Not Found</h1>
+      <h1>Страница Не Найдена</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Home</a></li>
-          <li>Page Not Found</li>
+          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li>Страница Не Найдена</li>
         </ul>
       </div>
     </div>
@@ -22,11 +22,11 @@
 <!-- begin:content -->
     <section class="main-container container">
         <div class="not-found-container">
-            <h2 class="hsq-heading type-1">Page Not Found</h2>
-            <div class="subtitle">It looks like that page no longer exists.</div>             
+            <h2 class="hsq-heading type-1">Страница не найдена</h2>
+            <div class="subtitle">Похоже, что такой страницы просто не существует.</div>
         </div>
 
     </section>
     <!-- end:content -->
-      
+
 @endsection

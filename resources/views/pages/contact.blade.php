@@ -12,7 +12,7 @@
       <h1>{{getcong('contact_us_title')}}</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Home</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
           <li>{{getcong('contact_us_title')}}</li>
         </ul>
       </div>
@@ -21,7 +21,7 @@
   <!--Breadcrumb Section-->
 <!-- begin:content -->
     <section class="main-container container">
-     <div class="descriptive-section">       
+     <div class="descriptive-section">
      </div>
     <div class="contact-info clearfix">
       <div class="contact-info-box col-md-6 col-lg-4">
@@ -51,13 +51,13 @@
                 {{ Session::get('flash_message_contact') }}
             </div>
         @endif
-                       
+
 
     {!! Form::open(array('url' => 'contact-us','class'=>'','id'=>'contactform','role'=>'form')) !!}
     <div class="contact-form">
       <div class="row">
         <div class="col-sm-6 field-box">
-          <input type="text" name="name" placeholder="Name *" value="{{ old('name') }}">
+          <input type="text" name="name" placeholder="Имя *" value="{{ old('name') }}">
           @if ($errors->has('name'))
                     <span style="color:#fb0303">
                         {{ $errors->first('name') }}
@@ -75,14 +75,14 @@
       </div>
       <div class="row">
         <div class="col-sm-6 field-box">
-          <input type="text" name="phone" placeholder="Phone" value="{{ old('phone') }}">
+          <input type="text" name="phone" placeholder="Телефон" value="{{ old('phone') }}">
         </div>
         <div class="col-sm-6 field-box">
-          <input type="url" name="website" placeholder="Website" value="{{ old('website') }}">
+          <input type="url" name="website" placeholder="Сайт" value="{{ old('website') }}">
         </div>
       </div>
       <div class="row message">
-        <textarea id="message" name="your_message" placeholder="Your Message *">{{ old('your_message') }}</textarea>
+        <textarea id="message" name="your_message" placeholder="Ваше сообщение *">{{ old('your_message') }}</textarea>
         @if ($errors->has('your_message'))
                     <span style="color:#fb0303">
                         {{ $errors->first('your_message') }}
@@ -90,11 +90,11 @@
           @endif
       </div>
       <div class="row button-box">
-        <button class="btn" type="Submit">Submit</button>
+        <button class="btn" type="Submit">Отправить</button>
       </div>
     </div>
     {!! Form::close() !!}
   </section>
     <!-- end:content -->
- 
+
 @endsection

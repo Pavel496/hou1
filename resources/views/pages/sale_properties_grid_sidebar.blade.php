@@ -1,19 +1,19 @@
 @extends("app")
 
-@section('head_title', 'Properties For Sale | '.getcong('site_name') )
+@section('head_title', 'Обекты Для Продажи | '.getcong('site_name') )
 @section('head_url', Request::url())
 
 @section("content")
 
-   
+
     <!--Breadcrumb Section-->
   <section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')) {{ URL::asset('upload/'.getcong('title_bg')) }} @else {{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }} @endif">
     <div class="inner-container container">
-      <h1>Properties For Sale</h1>
+      <h1>Обекты Для Продажи</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Home</a></li>
-          <li><a href="#">Properties For Sale</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li><a href="#">Обекты для продажи</a></li>
         </ul>
       </div>
     </div>
@@ -29,7 +29,7 @@
           <div class="property-box col-xs-12 col-sm-6 wow fadeInUp">
             <div class="inner-box">
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
-            @if($property->featured_property==1)<span class="tag-label hot-offer">Featured</span>@endif 
+            @if($property->featured_property==1)<span class="tag-label hot-offer">Избранное</span>@endif
             <img src="{{ URL::asset('upload/properties/'.$property->featured_image.'-s.jpg') }}" alt="Image of Property">
             <span class="price">{{getcong('currency_sign').' '.$property->price}}</span>
           </a>
@@ -54,22 +54,22 @@
               </div>
             </div>
           </div>
-          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">More</a>
+          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">Подробнее</a>
         </div>
           </div>
           @endforeach
         </div>
         <!-- Pagination -->
-        @include('_particles.pagination', ['paginator' => $properties]) 
+        @include('_particles.pagination', ['paginator' => $properties])
         <!-- End of Pagination -->
       </section>
       <!-- End of Properties -->
     </div>
     <aside class="col-sm-4">
-     @include("_particles.sidebar") 
+     @include("_particles.sidebar")
     </aside>
   </section>
 
- 
- 
+
+
 @endsection
