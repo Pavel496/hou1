@@ -189,7 +189,7 @@ class PropertiesController extends Controller
 	    $inputs = $request->all();
 
 			$price = explode(",", $inputs['price']);
-			dd($price[0], $price[1]);
+			// dd($price[0], $price[1]);
 
  	 		$purpose=$inputs['purpose'];
       $type=$inputs['type'];
