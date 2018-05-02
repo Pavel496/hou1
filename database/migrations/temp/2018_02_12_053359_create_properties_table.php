@@ -17,17 +17,11 @@ class CreatePropertiesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->length(11);
             $table->integer('featured_property')->length(1)->default(0);
-            $table->string('property_name');
+            $table->string('property_name'); 
             $table->string('property_slug')->nullable();
             $table->string('property_type');
-            $table->string('property_purpose');
-
-            $table->string('direction')->nullable();
-            $table->string('range')->nullable();
-            $table->string('readiness')->nullable();
-            $table->string('currency')->nullable();
-
-            $table->string('price');
+            $table->string('property_purpose'); 
+            $table->string('price'); 
             $table->text('address');
             $table->string('map_latitude')->nullable();
             $table->string('map_longitude')->nullable();
@@ -37,10 +31,10 @@ class CreatePropertiesTable extends Migration
             $table->string('land_area')->nullable();
             $table->string('build_area')->nullable();
             $table->longtext('description');
-            $table->text('property_features')->nullable();
+            $table->text('property_features')->nullable();            
             $table->string('featured_image');
             $table->string('floor_plan')->nullable();
-            $table->text('video_code')->nullable();
+            $table->text('video_code')->nullable();             
             $table->integer('status')->length(1)->default(0);
             $table->timestamps();
         });

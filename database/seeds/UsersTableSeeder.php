@@ -18,81 +18,214 @@ class UsersTableSeeder extends Seeder
         // Create admin account
         DB::table('users')->insert([
             'usertype' => 'Admin',
-            'name' => 'Divine Home',            
+            'name' => 'Country House Realty',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
             'image_icon' => null,
             'remember_token' => str_random(10),
+            'status' => '1',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
-        
-        
-        
+
+        \DB::table('Readinesses')->truncate();
+
+        \DB::table('Readinesses')->insert(array (
+            0 =>
+            array (
+                'id' => 1,
+                'name' => 'под ключ',
+                'slug' => 'pod_kljuch',
+            ),
+            1 =>
+            array (
+                'id' => 2,
+                'name' => 'под отделку',
+                'slug' => 'pod_otdelku',
+            ),
+            2 =>
+            array (
+                'id' => 3,
+                'name' => 'с мебелью',
+                'slug' => 's_mebelju',
+            ),
+            3 =>
+            array (
+                'id' => 4,
+                'name' => 'без мебели',
+                'slug' => 'bez_mebeli',
+            ),
+        ));
+
+
+        \DB::table('Directions')->truncate();
+
+        \DB::table('Directions')->insert(array (
+            0 =>
+            array (
+                'id' => 1,
+                'name' => 'Рублево-Успенское шоссе',
+                'slug' => 'rublevo-uspenskoe-shosse',
+            ),
+            1 =>
+            array (
+                'id' => 2,
+                'name' => 'Новорижское шоссе',
+                'slug' => 'novorizhskoe-shosse',
+            ),
+            2 =>
+            array (
+                'id' => 3,
+                'name' => 'Минское шоссе',
+                'slug' => 'minskoe-shosse',
+            ),
+            3 =>
+            array (
+                'id' => 4,
+                'name' => 'Киевское шоссе',
+                'slug' => 'kievskoe-shosse',
+            ),
+            4 =>
+            array (
+                'id' => 5,
+                'name' => 'Алтуфьевское шоссе',
+                'slug' => 'altufevskoe-shosse',
+            ),
+            5 =>
+            array (
+                'id' => 6,
+                'name' => 'Боровское шоссе',
+                'slug' => 'borovskoe-shosse',
+            ),
+            6 =>
+            array (
+                'id' => 7,
+                'name' => 'Волоколамское шоссе',
+                'slug' => 'volokolamskoe-shosse',
+            ),
+            7 =>
+            array (
+                'id' => 8,
+                'name' => 'Дмитровское шоссе',
+                'slug' => 'dmitrovskoe-shosse',
+            ),
+            8 =>
+            array (
+                'id' => 9,
+                'name' => 'Ильинское шоссе',
+                'slug' => 'ilinskoe-shosse',
+            ),
+            9 =>
+            array (
+                'id' => 10,
+                'name' => 'Калужское шоссе',
+                'slug' => 'kaluzhskoe-shosse',
+            ),
+            10 =>
+            array (
+                'id' => 11,
+                'name' => 'Ленинградское шоссе',
+                'slug' => 'leningradskoe-shosse',
+            ),
+            11 =>
+            array (
+                'id' => 12,
+                'name' => 'Осташковское шоссе',
+                'slug' => 'ostashkovskoe-shosse',
+            ),
+            12 =>
+            array (
+                'id' => 13,
+                'name' => 'Пятницкое шоссе',
+                'slug' => 'pyatnitskoe-shosse',
+            ),
+            13 =>
+            array (
+                'id' => 14,
+                'name' => 'Симферопольское шоссе',
+                'slug' => 'simferopolskoe-shosse',
+            ),
+            14 =>
+            array (
+                'id' => 15,
+                'name' => 'Сколковское шоссе',
+                'slug' => 'skolkovskoe-shosse',
+            ),
+            15 =>
+            array (
+                'id' => 16,
+                'name' => 'Можайское шоссе',
+                'slug' => 'mozhayskoe-shosse',
+            ),
+            16 =>
+            array (
+                'id' => 17,
+                'name' => 'Москва',
+                'slug' => 'moskva',
+            ),
+        ));
+
         DB::table('settings')->insert([
-            'site_name' => 'Divine Home - Real Estate Pro',
-            'site_email' => 'scriptscode7@gmail.com',
+            'site_name' => 'Country House Realty',
+            'site_email' => 'admin@gmail.com',
             'site_logo' => 'logo.png',
             'site_favicon' => 'favicon.png',
-            'google_map_key' => 'xxxx',
-            'site_description' => 'Divine Home - Real Estate Pro provide you with a quick and easy way to create a real estates site portal.',
-            'site_copyright' => 'Copyright © 2018 Divine Home - Real Estate Pro. All rights reserved.',
-            'footer_widget1_title' => 'About Us',
-            'footer_widget1' => 'Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio id, ornare tortor',
+            'google_map_key' => 'AIzaSyC3m_TyDp94bKpyOxWzojZgcUXYj8DdbBc',
+            'site_description' => 'Country House Realty Агенство недвижимости',
+            'site_copyright' => 'Copyright © 2018 Country House Realty. All rights reserved.',
+            'footer_widget1_title' => 'О нас',
+            'footer_widget1' => 'Наше агентство недвижимости предоставляет услуги по покупке, продаже, сдаче в аренду недвижимости в Москве и ближнем Подмосковье, в том числе осуществляет юридическое сопровождение сделок. Мы разрабатываем дизайн интерьеров, производим благоустройство территорий, осуществляем строительство и ремонт любой сложности.',
             'footer_widget2_title' => 'Follow Us',
             'footer_widget2' => '<img src=\"http://scriptscode7.com/follow.jpg\" width=\"325\"/>',
-            'footer_widget3_title' => 'Get In Touch',
+            'footer_widget3_title' => 'Оставайтесь на связи',
             'footer_widget3' => '<ul class=\"contact-info\">
             <li><i class=\"fa fa-map-marker\"></i>Real estate script.
 9.5 Main Street, CA,USA</li><li class=\"phone\"><i class=\"fa fa-phone\"></i>+62-3456-78910</li>   <li><i class=\"fa fa-envelope\"></i>info@domain.com</li></ul>',
             'all_properties_layout' => 'grid',
-            'map_latitude' => '37.090240',
-            'map_longitude' => '-95.712891',
+            'map_latitude' => '55.80538201277453',
+            'map_longitude' => '37.514888346679754',
             'home_properties_layout' => 'slider',
             'featured_properties_layout' => 'rows',
             'sale_properties_layout' => 'grid_side',
             'rent_properties_layout' => 'rows',
-            'contact_lat' => '38.493744',
-            'contact_long' => '-122.456286',
-            'contact_us_title' => 'Contact Us',
+            'contact_lat' => '55.80538201277453',
+            'contact_long' => '37.514888346679754',
+            'contact_us_title' => 'Контакты',
             'contact_us_email' => 'info@example.com',
             'contact_us_phone' => '+62-3456-78910',
             'contact_us_address' => 'Real estate script. 9.5 Main Street, CA,USA',
-            'about_us_title' => 'About Us',
+            'about_us_title' => 'О нас',
+            'about_us_description' => '<p>Наше агентство недвижимости предоставляет услуги по покупке, продаже,</p><p>сдаче в аренду недвижимости в Москве и ближнем Подмосковье, в том числе</p><p>осуществляет юридическое сопровождение сделок. Мы разрабатываем дизайн интерьеров,</p><p>производим благоустройство территорий, осуществляем строительство и ремонт любой сложности.</p><p>Более 15-ти лет на рынке, нас рекомендуют друзьям.</p><p>Основными клиентами являются физические лица, но также оказываем услуги и юридическим лицам.</p><p>Наше кредо - грамотная работа и&nbsp; конфиденциальность, гибкость&nbsp; к внешним условиям и их изменению.</p><p>Будем рады сотрудничеству!</p>',
             'currency_sign' => '$',
             'stripe_currency' => 'USD',
             'featured_property_price' => '10'
         ]);
- 
+
         //Types set
 
         DB::table('property_types')->insert([
-            'types' => 'Apartment',
+            'types' => 'Дом',
+            'slug' => 'house'
+        ]);
+
+        DB::table('property_types')->insert([
+            'types' => 'Таунхаус',
+            'slug' => 'townhouse'
+        ]);
+
+        DB::table('property_types')->insert([
+            'types' => 'Квартира',
             'slug' => 'apartment'
         ]);
 
         DB::table('property_types')->insert([
-            'types' => 'Commercial',
-            'slug' => 'commercial'
-        ]);
-
-        DB::table('property_types')->insert([
-            'types' => 'House Villa',
-            'slug' => 'house-villa'
-        ]);
-
-        DB::table('property_types')->insert([
-            'types' => 'Individual House',
-            'slug' => 'individual-house'
-        ]);
-
-        DB::table('property_types')->insert([
-            'types' => 'Land',
+            'types' => 'Участок',
             'slug' => 'land'
         ]);
 
+
         //Types set
-        
+
         DB::table('slider')->insert([
             'slider_title' => 'Slider 1',
             'slider_text1' => 'Vacation Rental',

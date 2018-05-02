@@ -67,9 +67,9 @@
                  <div class="field-row">
                      <select id="p-direction" name="direction">
                        <option value="">Направление</option>
-                      {{-- @foreach($directions as $direct)
+                      @foreach($directions as $direct)
                          <option value="{{$direct->id}}" @if(old('direction')==$direct->id) selected @endif>{{$direct->name}}</option>
-                     @endforeach --}}
+                     @endforeach
                      </select>
                      @if ($errors->has('direction'))
                      <span style="color:#fb0303">
@@ -128,9 +128,9 @@
                   <div class="col-xs-6">
                     <select id="p-readiness" name="readiness">
                       <option value="">Готовность объекта</option>
-                        {{-- @foreach($readinesses as $readi)
+                        @foreach($readinesses as $readi)
                           <option value="{{$readi->id}}" @if(old('readiness')==$readi->id) selected @endif>{{$readi->name}}</option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                     @if ($errors->has('readiness'))
                       <span style="color:#fb0303">

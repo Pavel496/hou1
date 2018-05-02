@@ -8,6 +8,8 @@ use App\Properties;
 use App\PropertyGallery;
 use App\Enquire;
 use App\Types;
+use App\Direction;
+use App\Readiness;
 
 use Illuminate\Http\Request;
 
@@ -237,8 +239,10 @@ class PropertiesController extends Controller
          }
 
         $types = Types::orderBy('types')->get();
+        $directions = Direction::orderBy('name')->get();
+        $readinesses = Readiness::orderBy('name')->get();
 
-        return view('pages.add_property',compact('types'));
+        return view('pages.add_property',compact('types', 'directions', 'readinesses'));
     }
 
     public function addnew(Request $request)
@@ -374,7 +378,7 @@ class PropertiesController extends Controller
         //News Gallery image
         $property_gallery_files = $request->file('gallery_file');
 
-        $file_count = count($property_gallery_files);
+        // $file_count = count($property_gallery_files);
 
         if($request->hasFile('gallery_file'))
         {
@@ -440,19 +444,19 @@ class PropertiesController extends Controller
 
             //Email Notification
 
-            $user = User::findOrFail($user_id);
-            $user_full_name=$user->first_name.' '.$user->last_name;
-
-            $data_email = array(
-                'name' => $user_full_name
-                 );
-
-
-            \Mail::send('emails.property_add', $data_email, function($message) use ($inputs){
-                $message->to(getcong('site_email'), getcong('site_name'))
-                ->from(getcong('site_email'), getcong('site_name'))
-                ->subject(getcong('site_name').' Property Added');
-            });
+            // $user = User::findOrFail($user_id);
+            // $user_full_name=$user->first_name.' '.$user->last_name;
+            //
+            // $data_email = array(
+            //     'name' => $user_full_name
+            //      );
+            //
+            //
+            // \Mail::send('emails.property_add', $data_email, function($message) use ($inputs){
+            //     $message->to(getcong('site_email'), getcong('site_name'))
+            //     ->from(getcong('site_email'), getcong('site_name'))
+            //     ->subject(getcong('site_name').' Property Added');
+            // });
 
             \Session::flash('flash_message', 'Property Added');
 

@@ -22,8 +22,8 @@
 <!-- begin:content -->
     <section class="main-container container">
         <div class="not-found-container">
-            <h2 class="hsq-heading type-1">Страница не найдена</h2>
-            <div class="subtitle">Похоже, что такой страницы просто не существует.</div>
+            <h2 class="hsq-heading type-1">Страница находится в разработке</h2>
+            <div class="subtitle">Похоже, что страница пока недоступна, но скоро заработает.</div>
         </div>
 
     </section>

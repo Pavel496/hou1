@@ -11,32 +11,32 @@
 			</button>
 		</div>
 		<div class="hidden-xs">
-            
+
 			<ul class="nav navbar-nav navbar-right">
-			 	 
+
 				<li>
 					<div class="btn-group navbar-btn">
 						<a href="{{ URL::to('/') }}" class="btn btn-success" target="_blank"><i class="md md-visibility"></i> View site</a>
-						 
+
 					</div>
 				</li>
 				<li>
 					<a href="#" class="user" id="showUserPush">
-						 
+
 						 @if(Auth::user()->image_icon)
-                                 
+
 									<img src="{{ URL::asset('upload/members/'.Auth::user()->image_icon.'-s.jpg') }}" width="40" alt="person" class="img-circle">
-							
+
 							@else
-								
-							<img src="{{ URL::asset('admin_assets/images/guy.jpg') }}" alt="person" class="img-circle" width="40"/>
-							
+
+							<img src="{{ URL::asset('admin_assets/images/3.jpg') }}" alt="person" class="img-circle" width="40"/>
+
 							@endif
-						
+
 					</a>
 				</li>
-				
-				
+
+
 			</ul>
 		</div>
 	</div>
