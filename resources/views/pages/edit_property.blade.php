@@ -70,9 +70,9 @@
                  <div class="field-row">
                      <select id="p-direction" name="direction">
                        <option value="">Направление</option>
-                      {{-- @foreach($directions as $direct)
+                      @foreach($directions as $direct)
                          <option value="{{$direct->id}}" @if($property->direction==$direct->id) selected @endif>{{$direct->name}}</option>
-                     @endforeach --}}
+                     @endforeach
                      </select>
                      @if ($errors->has('direction'))
                      <span style="color:#fb0303">
@@ -132,9 +132,9 @@
                   <div class="col-xs-6">
                     <select id="p-readiness" name="readiness">
                       <option value="">Готовность объекта</option>
-                        {{-- @foreach($readinesses as $readi)
+                        @foreach($readinesses as $readi)
                           <option value="{{$readi->id}}" @if($property->readiness==$readi->id) selected @endif>{{$readi->name}}</option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                     @if ($errors->has('readiness'))
                       <span style="color:#fb0303">
@@ -162,9 +162,9 @@
                   <div class="col-xs-6">
                     <select id="p-currency" name="currency">
                       <option value="">Валюта</option>
-                      <option value="rubl" @if($property->currency=='rubl') selected @endif>Рубли</option>
-                      <option value="doll" @if($property->currency=='doll') selected @endif>Доллары</option>
-                      <option value="euro" @if($property->currency=='euro') selected @endif>Евро</option>
+                      <option value="₽" @if($property->currency=='₽') selected @endif>Рубли</option>
+                      <option value="$" @if($property->currency=='$') selected @endif>Доллары</option>
+                      <option value="€" @if($property->currency=='€') selected @endif>Евро</option>
                     </select>
                     @if ($errors->has('currency'))
                     <span style="color:#fb0303">

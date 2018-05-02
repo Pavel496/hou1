@@ -9,10 +9,20 @@ class Properties extends Model
     protected $table = 'properties';
 
     protected $fillable = ['user_id','property_name','property_type','property_purpose','sale_price','rent_price','address','map_latitude','map_longitude','bathrooms','bedrooms','area','description','featured_image'];
- 
-	public function scopeSearchByKeyword($query, $keyword,$purpose,$type)
-    { 
-			 
+
+    public function direction_to()
+        {
+            return $this->belongsTo(Direction::class, 'direction', 'id');
+        }
+
+    public function readiness_of()
+        {
+            return $this->belongsTo(Readiness::class, 'readiness', 'id');
+        }
+
+  public function scopeSearchByKeyword($query, $keyword,$purpose,$type)
+    {
+
             if($keyword!='' and $purpose!='' and $type!='')
             {
                 $query->where(function ($query) use ($keyword,$purpose,$type) {
@@ -20,39 +30,39 @@ class Properties extends Model
                     ->where("property_purpose", "$purpose")
                     ->where("property_type", "$type")
                     ->orWhere("address", 'like', '%' .$keyword. '%')
-                    ->orWhere("property_name", 'like', '%' .$keyword. '%');                      
+                    ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
-            elseif ($purpose!='' and $type!='') 
+            elseif ($purpose!='' and $type!='')
             {
                         $query->where(function ($query) use ($keyword,$purpose,$type) {
                         $query->where("status", "1")
                             ->where("property_purpose", "$purpose")
-                            ->where("property_type", "$type");                      
+                            ->where("property_type", "$type");
                         });
             }
-            elseif ($purpose!='') 
+            elseif ($purpose!='')
             {
                         $query->where(function ($query) use ($keyword,$purpose,$type) {
-                        $query->where("status", "1")->where("property_purpose", "$purpose");                      
+                        $query->where("status", "1")->where("property_purpose", "$purpose");
                         });
             }
-            elseif ($type!='') 
+            elseif ($type!='')
             {
                         $query->where(function ($query) use ($keyword,$purpose,$type) {
-                        $query->where("status", "1")->where("property_type", "$type");                      
+                        $query->where("status", "1")->where("property_type", "$type");
                         });
-            }                                   
+            }
             else
             {
                 $query->where(function ($query) use ($keyword,$purpose,$type) {
                 $query->where("status", "1")
                     ->where("address", 'like', '%' .$keyword. '%')
-                    ->orWhere("property_name", 'like', '%' .$keyword. '%');                      
+                    ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
- 
+
         return $query;
-    }		 
-    
+    }
+
 }

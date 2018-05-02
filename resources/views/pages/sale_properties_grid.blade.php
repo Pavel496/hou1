@@ -28,13 +28,13 @@
         <div class="inner-box">
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
             @if($property->featured_property==1)<span class="tag-label hot-offer">Featured</span>@endif
-            <span class="my1-label featured">{{ $property->property_purpose }}</span>
-            <span class="my2-label open-house">{{ $property->currency }}</span>
+            <span class="my1-label featured">{{ $property->direction_to->name }}</span>
+            <span class="my2-label open-house">{{ $property->readiness_of->name }}</span>
             <span class="my3-label foreclosure">{{ $property->property_purpose }}</span>
 
             <img src="{{ URL::asset('upload/properties/'.$property->featured_image.'-s.jpg') }}" alt="Image of Property">
-            <span class="price">{{$property->price}}</span>
-            {{-- <span class="price">{{getcong('currency_sign').' '.$property->price}}</span> --}}
+            {{-- <span class="price">{{$property->price}}</span> --}}
+            <span class="price">{{$property->currency.' '.$property->price}}</span>
           </a>
           <div class="bottom-sec">
             <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="title">{{ str_limit($property->property_name,35) }}</a>

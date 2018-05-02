@@ -354,7 +354,9 @@ class PropertiesController extends Controller
         $property->property_slug = $property_slug;
         $property->property_type = $inputs['property_type'];
         $property->property_purpose = $inputs['property_purpose'];
+        $property->direction = $inputs['direction'];
         $property->range = $inputs['range'];
+        $property->readiness = $inputs['readiness'];
         $property->currency = $inputs['currency'];
         $property->price = $inputs['price'];
         $property->address = addslashes($inputs['address']);

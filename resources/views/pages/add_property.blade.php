@@ -158,9 +158,9 @@
                   <div class="col-xs-6">
                     <select id="p-currency" name="currency">
                       <option value="">Валюта</option>
-                      <option value="rubl" @if(old('currency')=='rubl') selected @endif>Рубли</option>
-                      <option value="doll" @if(old('currency')=='doll') selected @endif>Доллары</option>
-                      <option value="euro" @if(old('currency')=='euro') selected @endif>Евро</option>
+                      <option value="₽" @if(old('currency')=='₽') selected @endif>Рубли</option>
+                      <option value="$" @if(old('currency')=='$') selected @endif>Доллары</option>
+                      <option value="€" @if(old('currency')=='€') selected @endif>Евро</option>
                     </select>
                     @if ($errors->has('currency'))
                     <span style="color:#fb0303">
