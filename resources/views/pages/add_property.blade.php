@@ -142,10 +142,6 @@
 
 
 
-
-
-
-
                 <div class="field-row clearfix">
                   <div class="col-xs-6">
                     <div class="input-group l-icon">
@@ -240,12 +236,12 @@
 
                 <div class="box-content">
                   <div class="field-row">
-                     <input type="text" name="property_features" value="двор, бассейн, балкон, сад, беседка {{ old('property_features') }}" data-role="tagsinput">
+                     <input type="text" name="property_features" value="бассейн, сад, беседка {{ old('property_features') }}" data-role="tagsinput">
                   </div>
                 </div>
             </div>
             <div class="information-box">
-              <h3>Featured Image</h3>
+              <h3>Главное изображение</h3>
                 <div class="box-content">
 
                     <input type="file" name="featured_image" id="featured_image" style="color: green;padding: 5px;border: 1px dashed #123456;background-color: #f9ffe5;"/><br/>
@@ -256,22 +252,25 @@
                  @endif
                 </div>
             </div>
-            <div class="information-box">
+
+            {{-- <div class="information-box">
               <h3>Floor Plan</h3>
                 <div class="box-content">
 
                     <input type="file" name="floor_plan" id="floor_plan" style="color: green;padding: 5px;border: 1px dashed #123456;background-color: #f9ffe5;" />
 
                 </div>
-            </div>
+            </div> --}}
+
           </div>
           <div class="col-md-6 r-sec">
           <div class="information-box">
-            <h3>Location</h3>
+
+            <h3>Адрес</h3>
 
             <div class="box-content">
               <div class="field-row">
-                <input type="text" placeholder="Address" name="address" id="p-address" value="{{ old('address') }}" onkeydown="if (event.keyCode == 13) return false;">
+                <input type="text" placeholder="Адрес" name="address" id="p-address" value="{{ old('address') }}" onkeydown="if (event.keyCode == 13) return false;">
                 @if ($errors->has('address'))
                     <span style="color:#fb0303">
                         {{ $errors->first('address') }}
@@ -293,11 +292,11 @@
             </div>
           </div>
           <div class="information-box">
-            <h3>Video Presentation </h3>
+            <h3>Видео презентация </h3>
 
             <div class="box-content">
               <div class="field-row">
-                <textarea id="p-video" name="video_code" placeholder="Paste the embed code here">{{ old('video_code') }}</textarea>
+                <textarea id="p-video" name="video_code" placeholder="Вставьте код">{{ old('video_code') }}</textarea>
               </div>
             </div>
           </div>
@@ -307,19 +306,19 @@
 
           <link rel="stylesheet" href="{{ URL::asset('site_assets/css/gallery_style.css') }}">
           <div class="information-box">
-            <h3>Gallery</h3>
+            <h3>Галерея</h3>
              <div id="formdiv">
                  <div id="filediv"></div>
                  <div style="margin-top:5px;">
                 <input name="gallery_file[]" type="file" id="file"/>
-                <input type="button" id="add_more" class="upload" value="Add More Images"/>
+                <input type="button" id="add_more" class="upload" value="Больше изображений"/>
                 </div>
 
             </div>
           </div>
         </div>
       <div class="row b-sec" align="center">
-          <button type="submit" class="btn btn-lg submit">Save Changes</button>
+          <button type="submit" class="btn btn-lg submit">Сохранить</button>
         </div>
 
       {!! Form::close() !!}

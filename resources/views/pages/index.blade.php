@@ -45,6 +45,23 @@
                 bath
               </div>
             </div>
+
+            <div class="extra-info clearfix">
+              <div class="area col-xs-4">
+                <div class="value">{{$property->land_area}}</div>
+                m2
+              </div>
+              <div class="bedroom col-xs-4">
+                <div class="value">{{$property->bedrooms}}</div>
+                bed
+              </div>
+              <div class="bathroom col-xs-4">
+                <div class="value">{{$property->bathrooms}}</div>
+                bath
+              </div>
+            </div>
+
+
           </div>
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">Подробнее</a>
         </div>

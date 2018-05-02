@@ -65,6 +65,24 @@
                     </span>
                  @endif
                  </div>
+
+
+                 <div class="field-row">
+                     <select id="p-direction" name="direction">
+                       <option value="">Направление</option>
+                      {{-- @foreach($directions as $direct)
+                         <option value="{{$direct->id}}" @if($property->direction==$direct->id) selected @endif>{{$direct->name}}</option>
+                     @endforeach --}}
+                     </select>
+                     @if ($errors->has('direction'))
+                     <span style="color:#fb0303">
+                         {{ $errors->first('direction') }}
+                     </span>
+                  @endif
+                  </div>
+
+
+
                 <div class="field-row clearfix">
                   <div class="col-xs-6">
                     <select id="p-status" name="property_purpose">
@@ -78,6 +96,7 @@
                     </span>
                  @endif
                   </div>
+
                   <div class="col-xs-6">
                     <select id="p-type" name="property_type">
                       <option value="">Тип объекта</option>
@@ -93,6 +112,40 @@
                  @endif
                   </div>
                 </div>
+
+
+                <div class="field-row clearfix">
+
+                  <div class="col-xs-6">
+                    <div class="input-group r-icon">
+                      <input type="text" name="range" class="form-control number-field" id="p-range"
+                           placeholder="Удаленность от МКАД" value="{{ $property->range }}">
+                      <span class="input-group-addon">км</span>
+                    </div>
+                    @if ($errors->has('range'))
+                      <span style="color:#fb0303">
+                          {{ $errors->first('range') }}
+                      </span>
+                   @endif
+                  </div>
+
+                  <div class="col-xs-6">
+                    <select id="p-readiness" name="readiness">
+                      <option value="">Готовность объекта</option>
+                        {{-- @foreach($readinesses as $readi)
+                          <option value="{{$readi->id}}" @if($property->readiness==$readi->id) selected @endif>{{$readi->name}}</option>
+                        @endforeach --}}
+                    </select>
+                    @if ($errors->has('readiness'))
+                      <span style="color:#fb0303">
+                          {{ $errors->first('readiness') }}
+                      </span>
+                    @endif
+                  </div>
+                </div>
+
+
+
                 <div class="field-row clearfix">
                   <div class="col-xs-6">
                     <div class="input-group l-icon">
@@ -122,7 +175,7 @@
                 </div>
 
                 <div class="well">
-
+                    <p>Спальни, ванные, гаражи</p>
                     <select id="p-bedroom" name="bedrooms">
                       <option value="">Спальни</option>
                       <option value="1" @if($property->bedrooms=='1') selected @endif>1</option>
@@ -192,7 +245,7 @@
                 </div>
             </div>
             <div class="information-box">
-              <h3>Featured Image</h3>
+              <h3>Главное изображение</h3>
                 <div class="box-content">
 
                     <input type="file" name="featured_image" id="featured_image" style="color: green;padding: 5px;border: 1px dashed #123456;background-color: #f9ffe5;"/><br/>
@@ -211,7 +264,8 @@
                     </div>
                 </div>
             </div>
-            <div class="information-box">
+
+            {{-- <div class="information-box">
               <h3>Floor Plan</h3>
                 <div class="box-content">
 
@@ -226,15 +280,16 @@
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
+
           </div>
           <div class="col-md-6 r-sec">
           <div class="information-box">
-            <h3>Location</h3>
+            <h3>Адрес</h3>
 
             <div class="box-content">
               <div class="field-row">
-                <input type="text" placeholder="Address" name="address" id="p-address" value="{{$property->address}}" onkeydown="if (event.keyCode == 13) return false;">
+                <input type="text" placeholder="Адрес" name="address" id="p-address" value="{{$property->address}}" onkeydown="if (event.keyCode == 13) return false;">
                 @if ($errors->has('address'))
                     <span style="color:#fb0303">
                         {{ $errors->first('address') }}
@@ -256,11 +311,11 @@
             </div>
           </div>
           <div class="information-box">
-            <h3>Video Presentation </h3>
+            <h3>Видео презентация </h3>
 
             <div class="box-content">
               <div class="field-row">
-                <textarea id="p-video" name="video_code" placeholder="Paste the embed code here">{{ stripslashes($property->video_code) }}</textarea>
+                <textarea id="p-video" name="video_code" placeholder="Вставьте код">{{ stripslashes($property->video_code) }}</textarea>
               </div>
             </div>
           </div>
@@ -270,7 +325,7 @@
 
           <link rel="stylesheet" href="{{ URL::asset('site_assets/css/gallery_style.css') }}">
           <div class="information-box">
-            <h3>Gallery</h3>
+            <h3>Галерея</h3>
 
                 <div class="media">
                             <div class="med_list media-left">
@@ -295,14 +350,14 @@
 
                      <div style="margin-top:5px;">
                         <input name="gallery_file[]" type="file" id="file"/>
-                        <input type="button" id="add_more" class="upload" value="Add More Images"/>
+                        <input type="button" id="add_more" class="upload" value="Больше изображений"/>
                     </div>
 
                 </div>
           </div>
         </div>
       <div class="row b-sec" align="center">
-          <button type="submit" class="btn btn-lg submit">Save Changes</button>
+          <button type="submit" class="btn btn-lg submit">Сохранить изменения</button>
         </div>
 
       {!! Form::close() !!}
