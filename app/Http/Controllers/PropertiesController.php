@@ -354,6 +354,8 @@ class PropertiesController extends Controller
         $property->property_slug = $property_slug;
         $property->property_type = $inputs['property_type'];
         $property->property_purpose = $inputs['property_purpose'];
+        $property->range = $inputs['range'];
+        $property->currency = $inputs['currency'];
         $property->price = $inputs['price'];
         $property->address = addslashes($inputs['address']);
         $property->map_latitude = $inputs['map_latitude'];
@@ -494,10 +496,12 @@ class PropertiesController extends Controller
          }
 
           $types = Types::orderBy('types')->get();
+          $directions = Direction::orderBy('name')->get();
+          $readinesses = Readiness::orderBy('name')->get();
 
           $property_gallery_images = PropertyGallery::where('property_id',$property->id)->orderBy('image_name')->get();
 
-          return view('pages.edit_property',compact('property','types','property_gallery_images'));
+          return view('pages.edit_property',compact('property','types', 'directions', 'readinesses', 'property_gallery_images'));
 
     }
 

@@ -5,7 +5,7 @@
 
 @section("content")
 
-   
+
     <!--Breadcrumb Section-->
   <section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')) {{ URL::asset('upload/'.getcong('title_bg')) }} @else {{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }} @endif">
     <div class="inner-container container">
@@ -25,7 +25,7 @@
       <!-- Properties -->
       <section class="property-listing row-view clearfix" style="margin-top: 0px;padding: 0px;">
         <div class="inner-container clearfix">
-          @foreach($properties as $i => $property)  
+          @foreach($properties as $i => $property)
           <div class="property-box wow fadeInUp">
             <div class="inner-box clearfix">
               <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container col-xs-5 col-sm-12 col-md-5">
@@ -42,16 +42,16 @@
                 </div>
                 <div class="extra-info clearfix">
                   <div class="area col-xs-4">
-                    <div class="value">{{$property->land_area}}</div>
-                    m2
+                    <div class="value">{{$property->range}}</div>
+                    км
                   </div>
                   <div class="bedroom col-xs-4">
-                    <div class="value">{{$property->bedrooms}}</div>
-                    bed
+                    <div class="value">{{$property->land_area}}</div>
+                    сот
                   </div>
                   <div class="bathroom col-xs-4">
-                    <div class="value">{{$property->bathrooms}}</div>
-                    bath
+                    <div class="value">{{$property->build_area}}</div>
+                    м2
                   </div>
                 </div>
               </div>
@@ -67,12 +67,12 @@
       <!-- End of Properties -->
     </div>
     <aside class="col-sm-4">
-        
+
       @include("_particles.sidebar")
 
     </aside>
   </section>
 
- 
- 
+
+
 @endsection

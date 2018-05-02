@@ -41,16 +41,16 @@
             </div>
             <div class="extra-info clearfix">
               <div class="area col-xs-4">
-                <div class="value">{{$property->land_area}}</div>
-                m2
+                <div class="value">{{$property->range}}</div>
+                км
               </div>
               <div class="bedroom col-xs-4">
-                <div class="value">{{$property->bedrooms}}</div>
-                bed
+                <div class="value">{{$property->land_area}}</div>
+                соток
               </div>
               <div class="bathroom col-xs-4">
-                <div class="value">{{$property->bathrooms}}</div>
-                bath
+                <div class="value">{{$property->build_area}}</div>
+                м2
               </div>
             </div>
           </div>
