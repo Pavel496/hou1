@@ -101,12 +101,6 @@
           @endif
           </div>
 
-          @if($property->map_latitude!=null AND $property->map_longitude!=null)
-          <!-- Property Map -->
-          <div class="property-details-map-container">
-            <div id="property-details-map"></div>
-          </div>
-          @endif
         </div>
         <div class="col-md-8 right-sec">
           <div class="information-box">
@@ -155,6 +149,13 @@
               </ul>
             </div>
           </div>
+
+          @if($property->map_latitude!=null AND $property->map_longitude!=null)
+          <!-- Property Map -->
+          <div class="property-details-map-container">
+            <div id="property-details-map"></div>
+          </div>
+          @endif
 
           {{-- @if($property->floor_plan!=null)
           <div class="information-box">
