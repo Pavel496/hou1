@@ -21,7 +21,7 @@
 <!--Breadcrumb Section-->
 
 @include("_particles.slidersearch")
-
+<br><br>
   <!-- Recent Properties -->
   <section class="property-listing boxed-view clearfix">
      <div class="inner-container container">

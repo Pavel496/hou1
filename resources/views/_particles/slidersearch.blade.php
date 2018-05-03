@@ -16,6 +16,7 @@
 
   </section> --}}
   <!-- End of Main Slider -->
+  <br>
   <!-- Property Search Box -->
     <section id="property-search-container" class="container" style="margin-bottom: 0px;">
         <div class="property-search-form horizontal">
@@ -39,11 +40,38 @@
                       @endforeach
                     </select>
                 </div>
-
-
-                <div class="col-xs-6 col-sm-3 search-field">
+                <div class="col-xs-6 col-sm-2 search-field">
                     <button class="btn" type="submit" name="submit">Найти</button>
                 </div>
+                <div class="col-xs-3 col-sm-1 search-field">
+                    <a href="/" class="btn" role="button">Сброс</a>
+                </div>
+
+            		<div class="col-xs-6 col-sm-3 search-field">
+                  <p>Задать min и max</p>
+            			<span id="ex1SliderVal0">10</span><input id="ex1" type="text" class="span2" name="price"
+                        value="" data-slider-min="0" data-slider-max="99" data-slider-step="5"
+                        data-slider-value="[10,90]"/><span id="ex1SliderVal1">90</span>
+            		</div>
+                <div class="col-xs-6 col-sm-3 search-field">
+                  <p>Задать min и max</p>
+                  <span id="ex2SliderVal0">10</span><input id="ex2" type="text" class="span2" name="price"
+                        value="" data-slider-min="0" data-slider-max="99" data-slider-step="5"
+                        data-slider-value="[10,90]"/><span id="ex2SliderVal1">90</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 search-field">
+                  <p>Задать min и max</p>
+                  <span id="ex3SliderVal0">10</span><input id="ex3" type="text" class="span2" name="price"
+                        value="" data-slider-min="0" data-slider-max="99" data-slider-step="5"
+                        data-slider-value="[10,90]"/><span id="ex3SliderVal1">90</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 search-field">
+                  <p>Задать min и max</p>
+                  <span id="ex4SliderVal0">10</span><input id="ex4" type="text" class="span2" name="price"
+                        value="" data-slider-min="0" data-slider-max="99" data-slider-step="5"
+                        data-slider-value="[10,90]"/><span id="ex4SliderVal1">90</span>
+                </div>
+
             </div>
             {!! Form::close() !!}
 
