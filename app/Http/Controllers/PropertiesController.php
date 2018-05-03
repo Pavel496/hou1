@@ -64,7 +64,7 @@ class PropertiesController extends Controller
 
     public function saleproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Sale'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
+    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
 
         if(getcong('sale_properties_layout')=='rows')
         {
@@ -84,7 +84,7 @@ class PropertiesController extends Controller
 
     public function rentproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Rent'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
+    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
 
         if(getcong('rent_properties_layout')=='rows')
         {
@@ -257,6 +257,11 @@ class PropertiesController extends Controller
                 'property_name' => 'required',
                 'property_purpose' => 'required',
                 'property_type' => 'required',
+
+                'direction' => 'required',
+                'range' => 'required',
+                'readiness' => 'required',
+
                 'price' => 'required',
                 'address' => 'required',
                 'description' => 'required',
@@ -269,6 +274,11 @@ class PropertiesController extends Controller
                 'property_name' => 'required',
                 'property_purpose' => 'required',
                 'property_type' => 'required',
+
+                'direction' => 'required',
+                'range' => 'required',
+                'readiness' => 'required',
+
                 'price' => 'required',
                 'address' => 'required',
                 'description' => 'required',

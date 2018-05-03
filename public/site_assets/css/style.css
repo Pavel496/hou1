@@ -11462,6 +11462,23 @@ img.mfp-img {
           background-color: #679026; }
         .property-listing .property-box .img-container .my3-label.foreclosure {
           background-color: #d49917; }
+        .property-listing .property-box .img-container .my4-label {
+          position: absolute;
+          right: 0;
+          bottom: 35%;
+          display: inline-block;
+          padding: 0 20px;
+          line-height: 30px;
+          z-index: 1;
+          color: #FFFFFF; }
+        .property-listing .property-box .img-container .my4-label.featured {
+          background-color: #446bbb; }
+        .property-listing .property-box .img-container .my4-label.hot-offer {
+          background-color: #d44225; }
+        .property-listing .property-box .img-container .my4-label.open-house {
+          background-color: #679026; }
+        .property-listing .property-box .img-container .my4-label.foreclosure {
+          background-color: #d49917; }
     .property-listing .property-box .bottom-sec {
       padding: 30px 30px 40px;
       position: relative;

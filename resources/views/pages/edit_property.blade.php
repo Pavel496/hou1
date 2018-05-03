@@ -35,7 +35,7 @@
 <!-- begin:content -->
     <section class="main-container container">
     <div class="descriptive-section">
-      <h2 class="hsq-heading type-1">Обновить объект</h2>
+      <h2 class="hsq-heading type-1">Редактирование объекта</h2>
 
          @if(Session::has('flash_message'))
                   <div class="alert alert-success">
@@ -87,8 +87,8 @@
                   <div class="col-xs-6">
                     <select id="p-status" name="property_purpose">
                       <option value="">Назначение объекта</option>
-                      <option value="Sale" @if($property->property_purpose=='Sale') selected @endif>Продажа</option>
-                      <option value="Rent" @if($property->property_purpose=='Rent') selected @endif>Аренда</option>
+                      <option value="Продажа" @if($property->property_purpose=='Продажа') selected @endif>Продажа</option>
+                      <option value="Аренда" @if($property->property_purpose=='Аренда') selected @endif>Аренда</option>
                     </select>
                     @if ($errors->has('property_purpose'))
                     <span style="color:#fb0303">

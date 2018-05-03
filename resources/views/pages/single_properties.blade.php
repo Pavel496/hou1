@@ -9,7 +9,7 @@
 
 @if(Session::has('flash_message_agent'))
 <script type="text/javascript">
-   
+
   alert('{{ Session::get('flash_message_agent') }}');
 
 </script>
@@ -27,10 +27,10 @@
 
       @foreach($property_gallery_images as $key=>$gallery_img)
       <div class="items">
-        <div class="img-container" data-bg-img="{{ URL::asset('upload/gallery/'.$gallery_img->image_name) }}"></div> 
+        <div class="img-container" data-bg-img="{{ URL::asset('upload/gallery/'.$gallery_img->image_name) }}"></div>
       </div>
       @endforeach
-   
+
     </div>
     <!-- End of Main Slider -->
     @if(count($property_gallery_images)>0)
@@ -40,10 +40,10 @@
       </div>
       @foreach($property_gallery_images as $key=>$gallery_img)
       <div class="items">
-        <div class="img-container" data-bg-img="{{ URL::asset('upload/gallery/'.$gallery_img->image_name) }}"></div> 
+        <div class="img-container" data-bg-img="{{ URL::asset('upload/gallery/'.$gallery_img->image_name) }}"></div>
       </div>
       @endforeach
-    
+
     </div>
     @endif
   </section>
@@ -54,42 +54,50 @@
         <div class="col-md-4 left-sec">
           <!--Highlight Section-->
           <div class="highlight-container">
-            
+
+            @if($property->range!=null)
+            <div class="highlight-details-box">
+              <div class="value">{{$property->range}}</div>
+              <div class="text">Удаление от МКАД</div>
+              <div class="unit">км</div>
+            </div>
+           @endif
+
             @if($property->land_area!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->land_area}}</div>
-              <div class="text">Land Size</div>
-              <div class="unit">m2</div>
+              <div class="text">Площадь участка</div>
+              <div class="unit">соток</div>
             </div>
            @endif
 
            @if($property->build_area!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->build_area}}</div>
-              <div class="text">Build Size</div>
-              <div class="unit">m2</div>
+              <div class="text">Площадь дома</div>
+              <div class="unit">м2</div>
             </div>
            @endif
 
            @if($property->bedrooms!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->bedrooms}}</div>
-              <div class="text">Bedroom</div>
+              <div class="text">Спальни</div>
             </div>
           @endif
 
           @if($property->bathrooms!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->bathrooms}}</div>
-              <div class="text">Bathroom</div>
+              <div class="text">Бассейн</div>
             </div>
           @endif
 
           @if($property->garage!=null)
           <div class="highlight-details-box">
               <div class="value">{{$property->garage}}</div>
-              <div class="text">Garage</div>
-            </div>          
+              <div class="text">Гараж</div>
+            </div>
           @endif
           </div>
 
@@ -107,22 +115,26 @@
                 <div class="left-sec col-md-7">
                   <ul class="main-info-li">
                     <li>
-                      <div class="title">Property ID :</div>
+                      <div class="title">ID объекта :</div>
                       <div class="value">#{{$property->id}}</div>
                     </li>
                     <li>
-                      <div class="title">Property Status :</div>
-                      <div class="value">For {{$property->property_purpose}}</div>
+                      <div class="title">Назначение объекта :</div>
+                      <div class="value">{{$property->property_purpose}}</div>
                     </li>
                     <li>
-                      <div class="title">Property Type :</div>
+                      <div class="title">Тип объекта :</div>
                       <div class="value">{{ getPropertyTypeName($property->property_type)->types }}</div>
+                    </li>
+                    <li>
+                      <div class="title">Готовность объекта :</div>
+                      <div class="value">{{ $property->readiness_of->name }}</div>
                     </li>
                   </ul>
                 </div>
                 <div class="right-sec col-md-5">
-                  <div href="#" class="price">{{getcong('currency_sign').' '.$property->price}}</div>
-                  <div class="price-type">Price</div>
+                  <div href="#" class="price">{{$property->currency.' '.$property->price}}</div>
+                  <div class="price-type">Цена</div>
                 </div>
               </div>
               <div class="b-sec">
@@ -132,19 +144,19 @@
           </div>
 
           <div class="information-box">
-            <h3>Amenities </h3>
+            <h3>Благоустройство </h3>
             <div class="box-content">
               <ul class="features-box clearfix">
-                
+
                 @foreach(explode(',',$property->property_features) as $features)
                 <li class="col-sm-6 col-lg-4 active">{{$features}}</li>
                 @endforeach
-                 
+
               </ul>
             </div>
           </div>
-          
-          @if($property->floor_plan!=null)
+
+          {{-- @if($property->floor_plan!=null)
           <div class="information-box">
             <h3>Floor Plan</h3>
             <div class="box-content" align="center">
@@ -155,15 +167,15 @@
                     <a href="{{ URL::asset('upload/floorplan/'.$property->floor_plan.'-b.jpg') }}" class="more-details" style="border:none;border-bottom:0px;">Enlarge</a>
                   </figure>
                 </li>
-              
+
               </ul>
             </div>
           </div>
-          @endif
+          @endif --}}
 
           @if($property->video_code!=null)
           <div class="information-box">
-            <h3>Video Presentation</h3>
+            <h3>Видео презентация</h3>
             <div class="box-content">
               <div class="video-box">
                 {!! stripslashes($property->video_code) !!}
@@ -173,13 +185,25 @@
           @endif
 
         </div>
-        
-      </div>      
+
+      </div>
+
+
+      {{-- <div class="information-box related-properties">
+          <h3>Comments</h3>
+          {!! stripslashes(getcong('disqus_comment_code')) !!}
+      </div> --}}
+    </div>
+
+
+    <aside class="col-sm-4">
+
       <div class="b-sec">
         <div class="information-box property-agent-container">
-          <h3>Contact @if($agent->usertype=='Agents') Agent @else Owner @endif</h3>
+          <h3>Напишите нам</h3>
+          {{-- <h3>Contact @if($agent->usertype=='Agents') Agent @else Owner @endif</h3>             --}}
           <div class="box-content clearfix">
-            <div class="col-md-5 agent-container">
+            {{-- <div class="col-md-5 agent-container">
               <div class="agent-box">
                 <div class="inner-container">
                   <a href="{{URL::to('user/details/'.Crypt::encryptString($agent->id))}}" class="img-container">
@@ -198,17 +222,17 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-7 contact-form-container" id="agentscontact_sec">
+            </div> --}}
+            <div class="col-md-12 contact-form-container" id="agentscontact_sec">
               {!! Form::open(array('url'=>'agentscontact','method'=>'POST', 'id'=>'agent_contact_form')) !!}
 
               <input type="hidden" name="property_id" value="{{$property->id}}">
-                         
+
               <input type="hidden" name="agent_id" value="{{$agent->id}}">
 
               <div class="contact-form">
                 <div class="field-box">
-                  <input type="text" placeholder="Name *" name="name">
+                  <input type="text" placeholder="Ваше имя *" name="name">
                   @if ($errors->has('name'))
                     <span style="color:#fb0303">
                         {{ $errors->first('name') }}
@@ -224,37 +248,33 @@
                  @endif
                 </div>
                 <div class="field-box">
-                  <input type="text" placeholder="Phone" name="phone">
+                  <input type="text" placeholder="Телефон" name="phone">
                 </div>
-                <textarea id="message" name="message" placeholder="Your Message *"></textarea>
+                <textarea id="message" name="message" placeholder="Ваше сообщение *"></textarea>
                 @if ($errors->has('message'))
                     <span style="color:#fb0303">
                         {{ $errors->first('message') }}
                     </span>
                     <br><br>
                  @endif
-                <button type="submit" class="btn btn-lg submit" name="submit">Submit</button>
+                <button type="submit" class="btn btn-lg submit" name="submit">Отправить</button>
               </div>
               {!! Form::close() !!}
             </div>
           </div>
-        </div>         
+        </div>
       </div>
 
-      <div class="information-box related-properties">
-          <h3>Comments</h3>
-          {!! stripslashes(getcong('disqus_comment_code')) !!}
-      </div>
-    </div>
-    <aside class="col-sm-4">
+
+
       <!--Sidebar Box-->
-      {!! stripslashes(getcong('addthis_share_code')) !!}
+      {{-- {!! stripslashes(getcong('addthis_share_code')) !!}
       &nbsp;
       <div class="clearfix"></div>
-      
-       @include("_particles.sidebar") 
-       
+
+       @include("_particles.sidebar") --}}
+
     </aside>
   </section>
- 
+
 @endsection
