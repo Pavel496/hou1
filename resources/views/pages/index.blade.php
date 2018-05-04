@@ -4,6 +4,9 @@
 @if(getcong('home_properties_layout')=='slider')
 
 @include("_particles.zastavka")
+
+{{$page='Гостинная'}}
+
 @include("_particles.slidersearch")
 
 @else
@@ -64,7 +67,7 @@
   </section>
   <!-- End of Recent Properties -->
 
-  @if(count($featured_properties)>0)
+  {{-- @if(count($featured_properties)>0)
   <!-- Featured Properties -->
   <section class="property-listing boxed-view clearfix">
     <h2 class="hsq-heading type-1">Избранные объекты</h2>
@@ -116,7 +119,7 @@
 
   </section>
   <!-- End of Featured Properties -->
- @endif
+ @endif --}}
 
   <!--Our Partners-->
       {{-- @include("_particles.partners") --}}

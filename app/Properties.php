@@ -8,7 +8,7 @@ class Properties extends Model
 {
     protected $table = 'properties';
 
-    protected $fillable = ['user_id','property_name','property_type','property_purpose','sale_price','rent_price','address','map_latitude','map_longitude','bathrooms','bedrooms','area','description','featured_image'];
+    // protected $fillable = ['user_id','property_name','property_type','direction','sale_price','rent_price','address','map_latitude','map_longitude','bathrooms','bedrooms','area','description','featured_image'];
 
     public function direction_to()
         {
@@ -20,42 +20,42 @@ class Properties extends Model
             return $this->belongsTo(Readiness::class, 'readiness', 'id');
         }
 
-  public function scopeSearchByKeyword($query, $keyword,$purpose,$type)
-    {
+    public function scopeSearchByKeyword($query, $keyword,$direction,$type)
+        {
 
-            if($keyword!='' and $purpose!='' and $type!='')
+            if($keyword!='' and $direction!='' and $type!='')
             {
-                $query->where(function ($query) use ($keyword,$purpose,$type) {
+                $query->where(function ($query) use ($keyword,$direction,$type) {
                 $query->where("status", "1")
-                    ->where("property_purpose", "$purpose")
+                    ->where("direction", "$direction")
                     ->where("property_type", "$type")
                     ->orWhere("address", 'like', '%' .$keyword. '%')
                     ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
-            elseif ($purpose!='' and $type!='')
+            elseif ($direction!='' and $type!='')
             {
-                        $query->where(function ($query) use ($keyword,$purpose,$type) {
+                        $query->where(function ($query) use ($keyword,$direction,$type) {
                         $query->where("status", "1")
-                            ->where("property_purpose", "$purpose")
+                            ->where("direction", "$direction")
                             ->where("property_type", "$type");
                         });
             }
-            elseif ($purpose!='')
+            elseif ($direction!='')
             {
-                        $query->where(function ($query) use ($keyword,$purpose,$type) {
-                        $query->where("status", "1")->where("property_purpose", "$purpose");
+                        $query->where(function ($query) use ($keyword,$direction,$type) {
+                        $query->where("status", "1")->where("direction", "$direction");
                         });
             }
             elseif ($type!='')
             {
-                        $query->where(function ($query) use ($keyword,$purpose,$type) {
+                        $query->where(function ($query) use ($keyword,$direction,$type) {
                         $query->where("status", "1")->where("property_type", "$type");
                         });
             }
             else
             {
-                $query->where(function ($query) use ($keyword,$purpose,$type) {
+                $query->where(function ($query) use ($keyword,$direction,$type) {
                 $query->where("status", "1")
                     ->where("address", 'like', '%' .$keyword. '%')
                     ->orWhere("property_name", 'like', '%' .$keyword. '%');
@@ -63,6 +63,6 @@ class Properties extends Model
             }
 
         return $query;
-    }
+      }
 
-}
+    }

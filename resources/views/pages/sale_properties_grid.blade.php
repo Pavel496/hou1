@@ -5,7 +5,6 @@
 
 @section("content")
 
-
   <!--Breadcrumb Section-->
 <section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')) {{ URL::asset('upload/'.getcong('title_bg')) }} @else {{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }} @endif">
   <div class="inner-container container">
@@ -19,8 +18,10 @@
   </div>
 </section>
 <!--Breadcrumb Section-->
+{{$page='Продажа'}}
 
 @include("_particles.slidersearch")
+
 <br><br>
   <!-- Recent Properties -->
   <section class="property-listing boxed-view clearfix">

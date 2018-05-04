@@ -66,6 +66,9 @@ class PropertiesController extends Controller
     {
     	$properties = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
 
+        $data['type'] = null;
+        $data['direction'] = null;
+
         if(getcong('sale_properties_layout')=='rows')
         {
             return view('pages.sale_properties_rows_sidebar',compact('properties'));
@@ -76,7 +79,7 @@ class PropertiesController extends Controller
         }
         else
         {
-           return view('pages.sale_properties_grid',compact('properties'));
+           return view('pages.sale_properties_grid',compact('properties', 'data'));
         }
 
 
@@ -85,6 +88,9 @@ class PropertiesController extends Controller
     public function rentproperties()
     {
     	$properties = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
+
+      $data['type'] = null;
+      $data['direction'] = null;
 
         if(getcong('rent_properties_layout')=='rows')
         {
@@ -96,10 +102,10 @@ class PropertiesController extends Controller
         }
         else
         {
-           return view('pages.rent_properties_grid',compact('properties'));
+           return view('pages.rent_properties_grid',compact('properties', 'data'));
         }
 
-        return view('pages.rentproperties',compact('properties'));
+        // return view('pages.rentproperties',compact('properties'));
     }
 
 
@@ -184,23 +190,35 @@ class PropertiesController extends Controller
 
     }
 
+
     public function searchproperties(Request $request)
     {
     	$data =  \Input::except(array('_token')) ;
 
 	    $inputs = $request->all();
-
+// dd($inputs);
 			$price = explode(",", $inputs['price']);
 			// dd($price[0], $price[1]);
 
- 	 		$purpose=$inputs['purpose'];
+      $purpose=$inputs['purpose'];
+ 	 		$direction=$inputs['direction'];
       $type=$inputs['type'];
 	 		$keyword=$inputs['keyword'];
 
+      if ($purpose == 'Продажа') {
+        $properties = Properties::SearchByKeyword($keyword,$direction,$type)->where("property_purpose", "$purpose")
+                                                                            ->paginate(getcong('pagination_limit'));
+        return view('pages.sale_properties_grid',compact('properties', 'data'));
+      } elseif ($purpose == 'Аренда') {
+        $properties = Properties::SearchByKeyword($keyword,$direction,$type)->where("property_purpose", "$purpose")
+                                                                            ->paginate(getcong('pagination_limit'));
+        return view('pages.rent_properties_grid',compact('properties', 'data'));
+      } else {
 
-    	$properties = Properties::SearchByKeyword($keyword,$purpose,$type)->get();
-
-      return view('pages.searchproperties',compact('properties'));
+          $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)->paginate(getcong('pagination_limit'));
+          return view('pages.index',compact('propertieslist', 'data'));
+      }
+      // return view('pages.searchproperties',compact('properties'));
     }
 
 

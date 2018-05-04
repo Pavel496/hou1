@@ -24,3 +24,5 @@
         object-fit: cover;
     }
 }
+/* @media (min-width: @screen-sm-min) */
+@media screen and (max-width:1024px){ #myfloat div { display: none; } }
