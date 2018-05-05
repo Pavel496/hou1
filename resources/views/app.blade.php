@@ -266,7 +266,7 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
   var slider = new Slider('#ex1', {});
 
   // var slider = new Slider("#ex2");
-  slider.on("slide", function(sliderValue) {
+  slider.on("slide", function(sliderValue1) {
     document.getElementById("ex1SliderVal0").textContent = sliderValue1[0];
   	document.getElementById("ex1SliderVal1").textContent = sliderValue1[1];
   });
