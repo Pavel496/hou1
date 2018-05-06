@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{getcong('site_name')}} Admin</title>
-	
+
 	<link href="{{ URL::asset('upload/'.getcong('site_favicon')) }}" rel="shortcut icon" type="image/x-icon" />
 
 	<link rel="stylesheet" href="{{ URL::asset('admin_assets/css/style.css') }}">
-	
+
 	<script src="{{ URL::asset('admin_assets/js/jquery.js') }}"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,19 +19,19 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    
+
 </head>
 <body>
   <div class="container-fluid">
-      
+
 <div id="main">
     <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <div class="login" style="width: 79%">
 
             <div class="logo" href="#" align="" style="height: 90px;">
-              
-            <a href="{{ URL::to('/') }}"><img src="{{ URL::asset('upload/'.getcong('site_logo')) }}" alt="logo" style="width: 95%;"></a>
+
+            <a href="{{ URL::to('/') }}"><img src="{{ URL::asset('upload/key2.png') }}" alt="logo" style="width: 95%;"></a>
             </div>
             <div class="panel panel-default panel-shadow">
                <!-- <div class="avatar">
@@ -39,7 +39,7 @@
                 </div>-->
                 {!! Form::open(array('url' => 'admin/login','class'=>'','id'=>'loginform','role'=>'form')) !!}
                     <div class="panel-body">
-                    	
+
                     	<div class="message">
 												<!--{!! Html::ul($errors->all(), array('class'=>'alert alert-danger errors')) !!}-->
 							                    	@if (count($errors) > 0)
@@ -53,9 +53,9 @@
 											        </ul>
 											    </div>
 											@endif
-							                    	
+
 							                    </div>
-                    	
+
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
@@ -71,27 +71,27 @@
                             </div>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                         </div>
-                        <div class="form-group checkbox">                            
+                        <div class="form-group checkbox">
                             <input type="checkbox" name="remember" id="checkbox1" />
                             <label for="checkbox1">Remember Me</label>
-                             
+
                         </div>
-                        
-                        @if(getcong('recaptcha')==1) 
-                        <div class="form-group">                             
-                            
+
+                        @if(getcong('recaptcha')==1)
+                        <div class="form-group">
+
                             {!! NoCaptcha::display() !!}
-                            
+
                         </div>
                         @endif
-                         
+
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary">Sign in <i class="md md-lock-open"></i></button>
                     </div>
-                {!! Form::close() !!} 
+                {!! Form::close() !!}
             </div>
-           
+
         </div>
     </div>
 </div>
@@ -99,13 +99,13 @@
 
 
   </div>
-	
+
 	 <!-- Plugins -->
   <script src="{{ URL::asset('admin_assets/js/plugins.js') }}"></script>
 
   <!-- App Scripts -->
   <script src="{{ URL::asset('admin_assets/js/scripts.js') }}"></script>
-	
+
 </body>
- 
+
 </html>

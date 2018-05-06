@@ -283,7 +283,11 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
   var slider = new Slider('#ex4', {});
   slider.on("slide", function(sliderValue4) {
     document.getElementById("ex4SliderVal0").textContent = sliderValue4[0];
-    document.getElementById("ex4SliderVal1").textContent = sliderValue4[1];
+    if (sliderValue4[1]<=950) {
+      document.getElementById("ex4SliderVal1").textContent = sliderValue4[1];
+    } else {
+      document.getElementById("ex4SliderVal1").textContent = 3000;
+    }
   });
 
 </script>

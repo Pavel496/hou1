@@ -41,6 +41,14 @@ class IndexController extends Controller
 
     $data['type'] = null;
     $data['direction'] = null;
+    $data['pricemin'] = '0';
+    $data['pricemax'] = '100';
+    $data['rangemin'] = '0';
+    $data['rangemax'] = '50';
+    $data['landmin'] = '0';
+    $data['landmax'] = '75';
+    $data['buildmin'] = '100';
+    $data['buildmax'] = '3000';
 
 		$propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->take(6)->get();
 

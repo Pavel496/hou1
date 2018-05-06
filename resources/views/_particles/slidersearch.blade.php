@@ -71,28 +71,28 @@
             <div id="myfloat">
 
               <div class="col-xs-6 col-sm-3 search-field">
-                <p>Цена (млн)</p>
-                <span id="ex1SliderVal0">10</span><input id="ex1" type="text" class="span2" name="price"
-                      value="" data-slider-min="0" data-slider-max="100" data-slider-step="5"
-                      data-slider-value="[10,90]"/><span id="ex1SliderVal1">90</span>
+                <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
+                <input id="ex1" type="text" class="span2" name="price"
+                      value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                      data-slider-value="[{{$data['pricemin']}},{{$data['pricemax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
-                <p>Удаление от МКАД (км)</p>
-                <span id="ex2SliderVal0">10</span><input id="ex2" type="text" class="span2" name="range"
-                      value="" data-slider-min="0" data-slider-max="150" data-slider-step="1"
-                      data-slider-value="[10,140]"/><span id="ex2SliderVal1">150</span>
+                <p><span id="ex2SliderVal0">{{$data['rangemin']}}</span> - Удаление от МКАД (км) - <span id="ex2SliderVal1">{{$data['rangemax']}}</span></p>
+                <input id="ex2" type="text" class="span2" name="range"
+                      value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
+                      data-slider-value="[{{$data['rangemin']}},{{$data['rangemax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
-                <p>Площадь участка (сотки)</p>
-                <span id="ex3SliderVal0">10</span><input id="ex3" type="text" class="span2" name="land_area"
-                      value="" data-slider-min="0" data-slider-max="100" data-slider-step="5"
-                      data-slider-value="[10,90]"/><span id="ex3SliderVal1">90</span>
+                <p><span id="ex3SliderVal0">{{$data['landmin']}}</span> - Площадь участка (сот) - <span id="ex3SliderVal1">{{$data['landmax']}}</span></p>
+                <input id="ex3" type="text" class="span2" name="land_area"
+                      value="" data-slider-min="0" data-slider-max="75" data-slider-step="1"
+                      data-slider-value="[{{$data['landmin']}},{{$data['landmax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
-                <p>Площадь дома (м2)</p>
-                <span id="ex4SliderVal0">50</span><input id="ex4" type="text" class="span2" name="build_area"
-                      value="" data-slider-min="0" data-slider-max="2000" data-slider-step="50"
-                      data-slider-value="[50,300]"/><span id="ex4SliderVal1">300</span>
+                <p><span id="ex4SliderVal0">{{$data['buildmin']}}</span> - Площадь дома (м2) - <span id="ex4SliderVal1">{{$data['buildmax']}}</span></p>
+                <input id="ex4" type="text" class="span2" name="build_area"
+                      value="" data-slider-min="100" data-slider-max="975" data-slider-step="25"
+                      data-slider-value="[{{$data['buildmin']}},{{$data['buildmax']}}]"/>
               </div>
 
             </div>

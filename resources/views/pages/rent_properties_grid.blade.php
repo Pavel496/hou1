@@ -38,7 +38,7 @@
             <span class="my4-label open-house">{{ getPropertyTypeName($property->property_type)->types }}</span>
 
             <img src="{{ URL::asset('upload/properties/'.$property->featured_image.'-s.jpg') }}" alt="Image of Property">
-            <span class="price">{{getcong('currency_sign').' '.$property->price}}</span>
+            <span class="price">{{$property->currency.' '.$property->price}}</span>
           </a>
           <div class="bottom-sec">
             <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="title">{{ str_limit($property->property_name,35) }}</a>
