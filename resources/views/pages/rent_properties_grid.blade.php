@@ -1,6 +1,6 @@
 @extends("app")
 
-@section('head_title', 'Properties For Rent | '.getcong('site_name') )
+@section('head_title', 'Аренда | '.getcong('site_name') )
 @section('head_url', Request::url())
 
 @section("content")
