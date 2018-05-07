@@ -34,17 +34,17 @@
 
                @if(Auth::user()->usertype=='Admin')
 
-               		<li class="{{classActivePath('dashboard')}}"><a href="{{ URL::to('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+               		{{-- <li class="{{classActivePath('dashboard')}}"><a href="{{ URL::to('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Виджеты</a></li> --}}
 
-	                <li class="{{classActivePath('types')}}"><a href="{{ URL::to('admin/types') }}"><i class="fa fa-tags"></i>Property Types</a></li>
+	                {{-- <li class="{{classActivePath('types')}}"><a href="{{ URL::to('admin/types') }}"><i class="fa fa-tags"></i>Property Types</a></li> --}}
 
-	                <li class="{{classActivePath('properties')}}"><a href="{{ URL::to('admin/properties') }}"><i class="md md-pin-drop"></i>Properties</a></li>
+	                <li class="{{classActivePath('properties')}}"><a href="{{ URL::to('admin/properties') }}"><i class="md md-pin-drop"></i>Объекты</a></li>
 
-					<li class="{{classActivePath('featuredproperties')}}"><a href="{{ URL::to('admin/featuredproperties') }}"><i class="md md-star"></i>Featured</a></li>
+					<li class="{{classActivePath('featuredproperties')}}"><a href="{{ URL::to('admin/featuredproperties') }}"><i class="md md-star"></i>Избранные</a></li>
 
-					<li class="{{classActivePath('inquiries')}}"><a href="{{ URL::to('admin/inquiries') }}"><i class="fa fa-send"></i>Inquiries</a></li>
+					<li class="{{classActivePath('inquiries')}}"><a href="{{ URL::to('admin/inquiries') }}"><i class="fa fa-send"></i>Сообщения</a></li>
 
-	                <li class="{{classActivePath('slider')}}"><a href="{{ URL::to('admin/slider') }}"><i class="fa fa-sliders"></i>Home Slider</a></li>
+	                {{-- <li class="{{classActivePath('slider')}}"><a href="{{ URL::to('admin/slider') }}"><i class="fa fa-sliders"></i>Home Slider</a></li>
 
 					<li class="{{classActivePath('testimonials')}}"><a href="{{ URL::to('admin/testimonials') }}"><i class="fa fa-list"></i>Testimonials</a></li>
 
@@ -52,13 +52,13 @@
 					<li class="{{classActivePath('partners')}}"><a href="{{ URL::to('admin/partners') }}"><i class="fa fa-bookmark-o"></i>Partners</a></li>
 
 
-					<li class="{{classActivePath('subscriber')}}"><a href="{{ URL::to('admin/subscriber') }}"><i class="md md-email"></i>Subscribers</a></li>
+					<li class="{{classActivePath('subscriber')}}"><a href="{{ URL::to('admin/subscriber') }}"><i class="md md-email"></i>Subscribers</a></li> --}}
 
-					<li class="{{classActivePath('users')}}"><a href="{{ URL::to('admin/users') }}"><i class="fa fa-users"></i>Users</a></li>
+					<li class="{{classActivePath('users')}}"><a href="{{ URL::to('admin/users') }}"><i class="fa fa-users"></i>Пользователи</a></li>
 
-	                <li class="{{classActivePath('transaction')}}"><a href="{{ URL::to('admin/transaction') }}"><i class="fa fa-dollar"></i>Transaction</a></li>
+	                {{-- <li class="{{classActivePath('transaction')}}"><a href="{{ URL::to('admin/transaction') }}"><i class="fa fa-dollar"></i>Transaction</a></li> --}}
 
-	                <li class="{{classActivePath('settings')}}"><a href="{{ URL::to('admin/settings') }}"><i class="md md-settings"></i>Settings</a></li>
+	                <li class="{{classActivePath('settings')}}"><a href="{{ URL::to('admin/settings') }}"><i class="md md-settings"></i>Установки</a></li>
 
 
                @else

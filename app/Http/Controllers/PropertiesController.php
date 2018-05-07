@@ -348,10 +348,11 @@ class PropertiesController extends Controller
                 'direction' => 'required',
                 'range' => 'required',
                 'readiness' => 'required',
+                'currency' => 'required',
 
                 'price' => 'required',
-                'address' => 'required',
-                'description' => 'required',
+                // 'address' => 'required',
+                // 'description' => 'required',
                 'featured_image' => 'mimes:jpg,jpeg,gif,png'
                  );
         }
@@ -365,10 +366,11 @@ class PropertiesController extends Controller
                 'direction' => 'required',
                 'range' => 'required',
                 'readiness' => 'required',
+                'currency' => 'required',
 
                 'price' => 'required',
-                'address' => 'required',
-                'description' => 'required',
+                // 'address' => 'required',
+                // 'description' => 'required',
                 'featured_image' => 'required|mimes:jpg,jpeg,gif,png'
                  );
         }
@@ -538,7 +540,7 @@ class PropertiesController extends Controller
 
         if(!empty($inputs['id'])){
 
-            \Session::flash('flash_message', 'Changes Saved');
+            \Session::flash('flash_message', 'Объект обновлен');
 
             return \Redirect::back();
         }else{
@@ -559,7 +561,7 @@ class PropertiesController extends Controller
             //     ->subject(getcong('site_name').' Property Added');
             // });
 
-            \Session::flash('flash_message', 'Property Added');
+            \Session::flash('flash_message', 'Новый объект создан');
 
              return redirect('my_properties');
 
@@ -621,7 +623,7 @@ class PropertiesController extends Controller
 
         $property_gallery_obj->delete();
 
-        \Session::flash('flash_message', 'Deleted');
+        \Session::flash('flash_message', 'Объект удален');
 
         return redirect()->back();
 

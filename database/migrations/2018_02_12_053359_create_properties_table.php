@@ -22,13 +22,13 @@ class CreatePropertiesTable extends Migration
             $table->string('property_type');
             $table->string('property_purpose');
 
-            $table->string('direction')->nullable();
-            $table->string('range')->nullable();
-            $table->string('readiness')->nullable();
-            $table->string('currency')->nullable();
+            $table->string('direction');
+            $table->string('range');
+            $table->string('readiness');
+            $table->string('currency');
 
             $table->string('price');
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->string('map_latitude')->nullable();
             $table->string('map_longitude')->nullable();
             $table->string('bathrooms')->nullable();
@@ -36,7 +36,7 @@ class CreatePropertiesTable extends Migration
             $table->string('garage')->nullable();
             $table->string('land_area')->nullable();
             $table->string('build_area')->nullable();
-            $table->longtext('description');
+            $table->longtext('description')->nullable();
             $table->text('property_features')->nullable();
             $table->string('featured_image');
             $table->string('floor_plan')->nullable();

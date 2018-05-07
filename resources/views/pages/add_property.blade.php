@@ -236,7 +236,7 @@
 
                 <div class="box-content">
                   <div class="field-row">
-                     <input type="text" name="property_features" value="бассейн, сад, беседка {{ old('property_features') }}" data-role="tagsinput">
+                     <input type="text" name="property_features" value="скворечник {{ old('property_features') }}" data-role="tagsinput">
                   </div>
                 </div>
             </div>
