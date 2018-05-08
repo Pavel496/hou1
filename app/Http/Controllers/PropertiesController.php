@@ -228,18 +228,18 @@ class PropertiesController extends Controller
       $buildmax = $build[1];
 
       if ($buildmax > 950) {
-        $buildmax = 3000;
+        $buildmax = '3000';
       }
-// dd($buildmax);
-      $data['pricemin'] = $pricemin/1000000;
-      $data['pricemax'] = $pricemax/1000000;
+// dd($pricemin,$pricemax);
+      $data['pricemin'] = strval($pricemin/1000000);
+      $data['pricemax'] = strval($pricemax/1000000);
       $data['rangemin'] = $rangemin;
       $data['rangemax'] = $rangemax;
       $data['landmin'] = $landmin;
       $data['landmax'] = $landmax;
       $data['buildmin'] = $buildmin;
       $data['buildmax'] = $buildmax;
-
+// dd($data);
       $purpose=$inputs['purpose'];
  	 		$direction=$inputs['direction'];
       $type=$inputs['type'];
@@ -247,14 +247,14 @@ class PropertiesController extends Controller
 
       if ($purpose == 'Продажа') {
         $properties = Properties::SearchByKeyword($keyword,$direction,$type)
-                    ->where("price", ">=", $pricemin)
-                    ->where("price", "<=", $pricemax)
-                    ->where("range", ">=", $rangemin)
-                    ->where("range", "<=", $rangemax)
-                    ->where("land_area", ">=", $landmin)
-                    ->where("land_area", "<=", $landmax)
-                    ->where("build_area", ">=", $buildmin)
-                    ->where("build_area", "<=", $buildmax)
+                    ->where("price", ">=", (int)$pricemin)
+                    ->where("price", "<=", (int)$pricemax)
+                    ->where("range", ">=", (int)$rangemin)
+                    ->where("range", "<=", (int)$rangemax)
+                    ->where("land_area", ">=", (int)$landmin)
+                    ->where("land_area", "<=", (int)$landmax)
+                    ->where("build_area", ">=", (int)$buildmin)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("property_purpose", "$purpose")
                     ->paginate(getcong('pagination_limit'));
