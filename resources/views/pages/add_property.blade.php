@@ -146,7 +146,7 @@
                   <div class="col-xs-6">
                     <div class="input-group l-icon">
                       <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                      <input type="text" name="price" class="form-control number-field" id="p-price"
+                      <input type="text" name="price" class="form-control" id="p-price"
                            placeholder="Цена" value="{{ old('price') }}">
                     </div>
                     @if ($errors->has('price'))
@@ -207,7 +207,7 @@
                 <div class="field-row clearfix">
                   <div class="col-xs-6">
                     <div class="input-group r-icon">
-                      <input type="text" name="land_area" class="form-control number-field" id="p-land"
+                      <input type="text" name="land_area" class="form-control" id="p-land"
                            placeholder="Площадь участка" value="{{ old('land_area') }}">
                       <span class="input-group-addon">сотки</span>
                     </div>

@@ -81,7 +81,7 @@
 
       @else
 
-        var myLatLng = new google.maps.LatLng(51.509865, -0.118092);
+        var myLatLng = new google.maps.LatLng(55.746681212502956, 37.61719852734382);
 
       @endif
 
