@@ -73,7 +73,7 @@
               <div class="col-xs-6 col-sm-3 search-field">
                 <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
                 <input id="ex1" type="text" class="span2" name="price"
-                      value="" data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                      value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
                       data-slider-value="[{{$data['pricemin']}},{{$data['pricemax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
@@ -85,7 +85,7 @@
               <div class="col-xs-6 col-sm-3 search-field">
                 <p><span id="ex3SliderVal0">{{$data['landmin']}}</span> - Площадь участка (сот) - <span id="ex3SliderVal1">{{$data['landmax']}}</span></p>
                 <input id="ex3" type="text" class="span2" name="land_area"
-                      value="" data-slider-min="0" data-slider-max="75" data-slider-step="1"
+                      value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
                       data-slider-value="[{{$data['landmin']}},{{$data['landmax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
