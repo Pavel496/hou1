@@ -31,7 +31,7 @@
       <script src='https://www.google.com/recaptcha/api.js'></script>
 
     @endif
-
+    <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
 
 </head>
 <body class="home-page-2 property-listing-page row-listing submit-property property-details not-found @if(request()->segment('1')=='user') agent-details-page @endif @if(request()->segment('1')=='agents') agents-page @endif">
@@ -61,6 +61,8 @@
 
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
+
+
    <!-- END OF Map Js -->
 
    @if(classActivePathPublic('') AND getcong('home_properties_layout')=='map')
@@ -283,7 +285,11 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
     document.getElementById("ex4SliderVal0").textContent = sliderValue4[0];
     document.getElementById("ex4SliderVal1").textContent = sliderValue4[1];
   });
+</script>
 
+<script>
+    CKEDITOR.replace('editor');
+    CKEDITOR.config.height = 375;
 </script>
 
 </body>

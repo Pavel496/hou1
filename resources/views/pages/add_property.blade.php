@@ -221,7 +221,7 @@
                   </div>
                 </div>
                 <div class="field-row">
-                  <textarea name="description" id="p-desc" placeholder="Описание объекта">{{ old('description') }}</textarea>
+                  <textarea id="editor" name="description" placeholder="Описание объекта">{{ old('description') }}</textarea>
                   @if ($errors->has('description'))
                     <span style="color:#fb0303">
                         {{ $errors->first('description') }}

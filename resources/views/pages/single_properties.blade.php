@@ -127,7 +127,7 @@
                   </ul>
                 </div>
                 <div class="right-sec col-md-5">
-                  <div href="#" class="price">{{$property->currency.' '.$property->price}}</div>
+                  <div href="#" class="price">{{$property->currency.' '.number_format($property->price)}}</div>
                   <div class="price-type">Цена</div>
                 </div>
               </div>
