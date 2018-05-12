@@ -24,7 +24,7 @@
     <section class="main-container container" id="video-tour-section">
     <h2 class="hsq-heading type-1">{{getcong('about_us_title')}}</h2>
     <div class="content clearfix">
-      <div class="desc" style="color: #222222;">
+      <div class="desc">
         {!! getcong('about_us_description') !!}
       </div>
     </div>

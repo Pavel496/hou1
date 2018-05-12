@@ -12902,7 +12902,7 @@ body.three-cols .gallery-container .image-main-box li figure:hover figcaption {
   margin: 50px auto 100px; }
   #video-tour-section .desc {
     line-height: 30px;
-    color: #bfbfbf;
+    color: #222222;
     padding: 0 120px;
     text-align: center; }
     @media (max-width: 767px) {
@@ -14193,7 +14193,7 @@ body.property-details .content-box {
         color: #aeaeae;
         font-size: .9em; }
   body.property-details .content-box .main-info-box .b-sec {
-    color: #aeaeae;
+    color: #222222;
     line-height: 25px; }
 
 .features-box li {
