@@ -9,7 +9,7 @@
         <!-- End of Language Switcher -->
 
         <!-- Login Links -->
-        <ul id="login-boxes" class="list-inline">
+        {{-- <ul id="login-boxes" class="list-inline">
          @if(Auth::check())
          <li><a href="{{ URL::to('dashboard') }}">Админка</a></li>
           <li><a href="{{ URL::to('logout') }}">Выйти</a></li>
@@ -18,7 +18,7 @@
          <li><a href="{{ URL::to('register') }}">Регистрация</a></li>
          @endif
 
-        </ul>
+        </ul> --}}
         <!-- End of Login Links -->
       </div>
     </div>
