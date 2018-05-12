@@ -313,6 +313,7 @@ class PropertiesController extends Controller
       } else {
         if ($currency == '₽$€') {
           $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
+                    ->where("status", "1")
                     ->where("price", ">=", (int)$pricemin)
                     ->where("price", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -326,6 +327,7 @@ class PropertiesController extends Controller
           return view('pages.index',compact('propertieslist', 'data'));
         } else {
           $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
+                    ->where("status", "1")
                     ->where("price", ">=", (int)$pricemin)
                     ->where("price", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)

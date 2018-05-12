@@ -16,8 +16,8 @@
 @endif
 <section id="property-slider-section" @if(count($property_gallery_images)==0) style="margin-bottom: 0px;" @endif>
     <div class="title-box container">
-      <h1>{{stripslashes($property->property_name)}}</h1>
-      <div class="location">{{stripslashes($property->address)}}</div>
+      <h1 style="opacity: 0.5;">{{stripslashes($property->property_name)}}</h1>
+      {{-- <div class="location">{{stripslashes($property->address)}}</div> --}}
     </div>
     <!-- Main Slider -->
     <div id="property-main-slider">
