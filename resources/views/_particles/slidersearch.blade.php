@@ -22,6 +22,14 @@
         <div class="property-search-form horizontal">
             {!! Form::open(array('url' => array('searchproperties'),'class'=>'','name'=>'search_form','id'=>'search_form','role'=>'form')) !!}
             <div class="main-search-sec">
+                <div class="col-xs-2 col-sm-1 search-field">
+                  <select name="currency">
+                    <option value="₽$€ @if(old('currency', $data['currency'])=='₽$€') selected @endif">₽ $ €</option>
+                    <option value="₽" @if(old('currency', $data['currency'])=='₽') selected @endif>₽</option>
+                    <option value="$" @if(old('currency', $data['currency'])=='$') selected @endif>$</option>
+                    <option value="€" @if(old('currency', $data['currency'])=='€') selected @endif>€</option>
+                  </select>
+                </div>
                 <div class="col-xs-6 col-sm-3 search-field">
                     <input type="text" placeholder="Заголовок или адрес (можно часть)" name="keyword" id="keyword" style="margin-bottom: 0px;border:1px solid #d4d4d4;border-bottom-color: #50AEE6;">
                 </div>
@@ -42,7 +50,7 @@
                       @endforeach
                     </select>
                 </div>
-                <div class="col-xs-3 col-sm-2 search-field">
+                <div class="col-xs-2 col-sm-1 search-field">
                     <button class="btn" type="submit" name="submit">Найти</button>
                 </div>
 
@@ -71,7 +79,7 @@
             <div id="myfloat">
 
               <div class="col-xs-6 col-sm-3 search-field">
-                <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
+                <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн {{$data['currency']}}) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
                 <input id="ex1" type="text" class="span2" name="price"
                       value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
                       data-slider-value="[{{$data['pricemin']}},{{$data['pricemax']}}]"/>
