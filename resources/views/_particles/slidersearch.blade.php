@@ -24,7 +24,7 @@
             <div class="main-search-sec">
                 <div class="col-xs-2 col-sm-1 search-field">
                   <select name="currency">
-                    <option value="₽$€ @if(old('currency', $data['currency'])=='₽$€') selected @endif">₽ $ €</option>
+                    <option value="₽$€" @if(old('currency', $data['currency'])=='₽$€') selected @endif>₽ $ €</option>
                     <option value="₽" @if(old('currency', $data['currency'])=='₽') selected @endif>₽</option>
                     <option value="$" @if(old('currency', $data['currency'])=='$') selected @endif>$</option>
                     <option value="€" @if(old('currency', $data['currency'])=='€') selected @endif>€</option>
@@ -45,9 +45,15 @@
                 <div class="col-xs-6 col-sm-3 search-field">
                     <select id="proeprty-type" name="type">
                       <option value="">Тип объекта</option>
-                      @foreach(\App\Types::orderBy('types')->get() as $type)
-                            <option value="{{$type->id}}" {{ old('type', $data['type']) == $type->id ? 'selected' : '' }}>{{$type->types}}</option>
-                      @endforeach
+                      @if ($page=='Аренда')
+                        @foreach(\App\Property_types_rent::orderBy('name')->get() as $type)
+                              <option value="{{$type->id}}" {{ old('type', $data['type']) == $type->id ? 'selected' : '' }}>{{$type->name}}</option>
+                        @endforeach
+                      @else
+                        @foreach(\App\Types::orderBy('types')->get() as $type)
+                              <option value="{{$type->id}}" {{ old('type', $data['type']) == $type->id ? 'selected' : '' }}>{{$type->types}}</option>
+                        @endforeach
+                      @endif
                     </select>
                 </div>
                 <div class="col-xs-2 col-sm-1 search-field">
@@ -81,7 +87,7 @@
               <div class="col-xs-6 col-sm-3 search-field">
                 <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн {{$data['currency']}}) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
                 <input id="ex1" type="text" class="span2" name="price"
-                      value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
+                      value="" data-slider-min="0" data-slider-max="300" data-slider-step="10"
                       data-slider-value="[{{$data['pricemin']}},{{$data['pricemax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
@@ -99,7 +105,7 @@
               <div class="col-xs-6 col-sm-3 search-field">
                 <p><span id="ex4SliderVal0">{{$data['buildmin']}}</span> - Площадь дома (м2) - <span id="ex4SliderVal1">{{$data['buildmax']}}</span></p>
                 <input id="ex4" type="text" class="span2" name="build_area"
-                      value="" data-slider-min="100" data-slider-max="975" data-slider-step="25"
+                      value="" data-slider-min="0" data-slider-max="3000" data-slider-step="100"
                       data-slider-value="[{{$data['buildmin']}},{{$data['buildmax']}}]"/>
               </div>
 

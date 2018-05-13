@@ -70,12 +70,12 @@ class PropertiesController extends Controller
         $data['direction'] = null;
         $data['currency'] = null;
         $data['pricemin'] = '0';
-        $data['pricemax'] = '50';
+        $data['pricemax'] = '300';
         $data['rangemin'] = '0';
         $data['rangemax'] = '50';
         $data['landmin'] = '0';
         $data['landmax'] = '50';
-        $data['buildmin'] = '100';
+        $data['buildmin'] = '0';
         $data['buildmax'] = '3000';
 
         if(getcong('sale_properties_layout')=='rows')
@@ -102,12 +102,12 @@ class PropertiesController extends Controller
       $data['direction'] = null;
       $data['currency'] = null;
       $data['pricemin'] = '0';
-      $data['pricemax'] = '50';
+      $data['pricemax'] = '300';
       $data['rangemin'] = '0';
       $data['rangemax'] = '50';
       $data['landmin'] = '0';
       $data['landmax'] = '50';
-      $data['buildmin'] = '100';
+      $data['buildmin'] = '0';
       $data['buildmax'] = '3000';
 
         if(getcong('rent_properties_layout')=='rows')
@@ -229,12 +229,12 @@ class PropertiesController extends Controller
       $buildmin = $build[0];
       $buildmax = $build[1];
 
-      if ($buildmax == '975') {
-        $buildmaxmy = '3000';
-      } else {
-        $buildmaxmy = $buildmax;
-      }
-// dd($buildmaxmy,$buildmax);
+      // if ($buildmax == '975') {
+      //   $buildmaxmy = '3000';
+      // } else {
+      //   $buildmaxmy = $buildmax;
+      // }
+
       $data['pricemin'] = strval($pricemin/1000000);
       $data['pricemax'] = strval($pricemax/1000000);
       $data['rangemin'] = $rangemin;
@@ -242,7 +242,7 @@ class PropertiesController extends Controller
       $data['landmin'] = $landmin;
       $data['landmax'] = $landmax;
       $data['buildmin'] = $buildmin;
-      $data['buildmax'] = $buildmaxmy;
+      $data['buildmax'] = $buildmax;
 
 // dd($data);
       $purpose=$inputs['purpose'];
@@ -261,7 +261,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("currency", $currency)
                     ->where("property_purpose", $purpose)
@@ -276,7 +276,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("property_purpose", $purpose)
                     ->paginate(getcong('pagination_limit'));
@@ -290,7 +290,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("currency", $currency)
                     ->where("property_purpose", $purpose)
@@ -305,7 +305,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("property_purpose", $purpose)
                     ->paginate(getcong('pagination_limit'));
@@ -321,7 +321,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->paginate(getcong('pagination_limit'));
           return view('pages.index',compact('propertieslist', 'data'));
@@ -335,7 +335,7 @@ class PropertiesController extends Controller
                     ->where("land_area", ">=", (int)$landmin)
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
-                    ->where("build_area", "<=", (int)$buildmaxmy)
+                    ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("currency", $currency)
                     ->paginate(getcong('pagination_limit'));
