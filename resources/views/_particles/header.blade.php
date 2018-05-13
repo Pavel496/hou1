@@ -36,7 +36,7 @@
                 <!-- Main Menu -->
                 <nav id="main-menu" class="hidden-xs hidden-sm">
                     <ul class="main-menu list-inline">
-                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Новое</a>
+                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Все объекты</a>
 
                         </li><!-- Menu items ( You can change the link and its text ) -->
 
