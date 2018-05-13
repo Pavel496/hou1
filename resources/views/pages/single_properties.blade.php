@@ -67,7 +67,7 @@
             <div class="highlight-details-box">
               <div class="value">{{$property->land_area}}</div>
               <div class="text">Площадь участка</div>
-              <div class="unit">соток</div>
+              <div class="unit">сот</div>
             </div>
            @endif
 
