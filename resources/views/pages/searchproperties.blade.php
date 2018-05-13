@@ -11,7 +11,7 @@
       <h1>Поиск объектов</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
           <li>Поиск объектов</li>
         </ul>
       </div>

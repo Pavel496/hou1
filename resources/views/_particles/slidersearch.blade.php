@@ -61,7 +61,7 @@
                 </div>
 
                 <div id="myfloat">
-                    @if ($page=='Гостинная')
+                    @if ($page=='Все объекты')
                       <input id="property_purpose" name="purpose" type="hidden" value="all">
                       <div class="col-xs-2 col-sm-1 search-field">
                           <a href="/" class="btn" role="button">Сброс</a>

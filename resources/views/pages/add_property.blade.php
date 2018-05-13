@@ -23,7 +23,7 @@
       <h1>Создать объект</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
           <li><a href="{{ URL::to('dashboard/') }}">Админка</a></li>
           <li>Создать объект</li>
         </ul>

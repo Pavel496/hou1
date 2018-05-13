@@ -5,7 +5,7 @@
 
 @include("_particles.zastavka")
 
-{{$page='Гостинная'}}
+{{$page='Все объекты'}}
 
 @include("_particles.slidersearch")
 

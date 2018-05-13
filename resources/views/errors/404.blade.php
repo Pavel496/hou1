@@ -12,7 +12,7 @@
       <h1>Страница Не Найдена</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
           <li>Страница Не Найдена</li>
         </ul>
       </div>

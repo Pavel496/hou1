@@ -11,7 +11,7 @@
       <h1>Объекты Для Аренды</h1>
       <div class="breadcrumb">
         <ul class="list-inline">
-          <li class="home"><a href="{{ URL::to('/') }}">Гостинная</a></li>
+          <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
           <li><a href="#">Объекты для аренды</a></li>
         </ul>
       </div>
