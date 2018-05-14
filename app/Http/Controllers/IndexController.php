@@ -51,8 +51,8 @@ class IndexController extends Controller
     $data['buildmin'] = '0';
     $data['buildmax'] = '3000';
 
-		$propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->take(6)->get();
-
+		$propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
+// dd($propertieslist);
         // $featured_properties = Properties::where('featured_property','1')->orderBy('id', 'desc')->take(6)->get();
 
 		// $partners = Partners::orderBy('id', 'desc')->get();

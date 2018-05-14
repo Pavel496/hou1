@@ -63,7 +63,9 @@
       @endforeach
 
     </div>
-
+    <!-- begin:pagination -->
+            @include('_particles.pagination', ['paginator' => $propertieslist])
+    <!-- end:pagination -->
   </section>
   <!-- End of Recent Properties -->
 
