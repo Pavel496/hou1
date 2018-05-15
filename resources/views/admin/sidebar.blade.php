@@ -34,7 +34,7 @@
 
                @if(Auth::user()->usertype=='Admin')
 
-               		{{-- <li class="{{classActivePath('dashboard')}}"><a href="{{ URL::to('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Виджеты</a></li> --}}
+               		<li class="{{classActivePath('dashboard')}}"><a href="{{ URL::to('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Виджеты</a></li>
 
 	                {{-- <li class="{{classActivePath('types')}}"><a href="{{ URL::to('admin/types') }}"><i class="fa fa-tags"></i>Property Types</a></li> --}}
 

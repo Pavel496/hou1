@@ -44,7 +44,7 @@
                         <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li> --}}
                         <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
                         <li><a href="{{ URL::to('rent/') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
-                        <li><a href="{{ URL::to('agents/') }}" class="{{classActivePathPublic('agents')}}">Агенты</a>
+                        {{-- <li><a href="{{ URL::to('agents/') }}" class="{{classActivePathPublic('agents')}}">Агенты</a> --}}
                         {{-- <li><a href="{{ URL::to('testimonials/') }}" class="{{classActivePathPublic('testimonials')}}">Testimonials</a></li> --}}
                         <li><a href="{{ URL::to('advices/') }}" class="{{classActivePathPublic('advices')}}">Советы эксперта</a>
                         <li><a href="{{ URL::to('about-us/') }}" class="{{classActivePathPublic('about-us')}}">О нас</a></li>
