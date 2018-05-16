@@ -74,7 +74,7 @@ class PropertiesController extends Controller
         $data['rangemin'] = '0';
         $data['rangemax'] = '50';
         $data['landmin'] = '0';
-        $data['landmax'] = '50';
+        $data['landmax'] = '300';
         $data['buildmin'] = '0';
         $data['buildmax'] = '3000';
 
@@ -106,7 +106,7 @@ class PropertiesController extends Controller
       $data['rangemin'] = '0';
       $data['rangemax'] = '50';
       $data['landmin'] = '0';
-      $data['landmax'] = '50';
+      $data['landmax'] = '300';
       $data['buildmin'] = '0';
       $data['buildmax'] = '3000';
 

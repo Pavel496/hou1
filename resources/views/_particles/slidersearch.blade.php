@@ -19,7 +19,7 @@
   <br>
   <!-- Property Search Box -->
     <section id="property-search-container" class="container" style="margin-bottom: 0px;">
-        <div class="property-search-form horizontal">
+        <div class="property-search-form horizontal" style="background-color: #f0f0f0;">
             {!! Form::open(array('url' => array('searchproperties'),'class'=>'','name'=>'search_form','id'=>'search_form','role'=>'form')) !!}
             <div class="main-search-sec">
                 <div class="col-xs-2 col-sm-1 search-field">
@@ -99,7 +99,7 @@
               <div class="col-xs-6 col-sm-3 search-field">
                 <p><span id="ex3SliderVal0">{{$data['landmin']}}</span> - Площадь участка (сот) - <span id="ex3SliderVal1">{{$data['landmax']}}</span></p>
                 <input id="ex3" type="text" class="span2" name="land_area"
-                      value="" data-slider-min="0" data-slider-max="50" data-slider-step="1"
+                      value="" data-slider-min="0" data-slider-max="300" data-slider-step="30"
                       data-slider-value="[{{$data['landmin']}},{{$data['landmax']}}]"/>
               </div>
               <div class="col-xs-6 col-sm-3 search-field">
