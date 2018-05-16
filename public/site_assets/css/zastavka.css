@@ -27,7 +27,7 @@
 /* @media (min-width: @screen-sm-min) */
 @media screen and (max-width:1024px){ #myfloat div { display: none; } }
 
-/* nav ul li a {
+nav ul li a {
   font-size:17px;
   color: white;
-} */
+}

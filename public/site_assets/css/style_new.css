@@ -4,7 +4,7 @@
 
 
 
-		
+
 	.sidebar-left {
     padding-left: 0px;
     padding-right: 40px;
@@ -15,7 +15,7 @@
 
 .member-card-header {
     color: white;
-    background: #50AEE6;
+    background: seagreen;
     padding: 0px 20px 20px 20px;
     text-align: center;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
@@ -51,15 +51,15 @@
     z-index: 10;
 }
 
-.member-card-avatar { 
+.member-card-avatar {
 	display:inline-block;
-	border-radius:0px; 
+	border-radius:0px;
 	overflow:hidden;
 	border:5px solid rgba(255, 255, 255, 0.4);
 	width:90px;
 	height:90px;
-	margin-top:-30px; 
-	margin-bottom:10px; 
+	margin-top:-30px;
+	margin-bottom:10px;
 	box-shadow:0px 10px 25px rgba(0, 0, 0, 0.16);
 	transition:all 0.4s;
  }
@@ -70,7 +70,7 @@
 .member-card-content { text-align:center; position:relative; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);}
 .member-card-content .hex { margin-top:-17px; position:absolute; margin-left:-45px; }
 .member-card-content ul { position:relative; z-index:10; }
-.member-card-content ul li.active a { border-right:2px solid #50AEE6; color:#50AEE6; font-weight:700; }
+.member-card-content ul li.active a { border-right:2px solid seagreen; color:seagreen; font-weight:700; }
 .member-card-content ul li a { text-align:left; border-bottom:1px solid rgba(0, 0, 0, 0.1); padding:16px 20px 13px 20px; display:block; color:#3a464e; }
 .member-card-content ul li a:hover { background:#deebf2; }
 .member-card-content ul li .icon { margin-right:7px; }
@@ -78,7 +78,7 @@
 
 /** PROFILE **/
 .profile-avatar { max-width:100%; height:auto; margin-bottom:15px;box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); }
-.edit-avatar .button { margin-bottom:25px; } 
+.edit-avatar .button { margin-bottom:25px; }
 
 
 .min_profile{
@@ -86,7 +86,7 @@
 }
 
 .min_form{
-	padding: 0px;	
+	padding: 0px;
 }
 
 .form_min{
@@ -100,7 +100,7 @@
 }
 
 .soi_t h4{
-	font-family: "Scada", Arial, Helvetica, sans-serif;	
+	font-family: "Scada", Arial, Helvetica, sans-serif;
 	font-size: 25px;
 	padding:10px 0px;
 	margin:0px;
@@ -121,10 +121,10 @@
 .my-properties-list .property-post-status .button.small { font-size:11px; padding:0px 10px; border-radius: 0px;}
 .my-properties-list .property-date { width:15%; }
 .my-properties-list .property-actions { width:15%; padding-right:15px;}
-.my-properties-list .property-actions a { 
-	font-size:13px; 
-	padding-left:10px; 
-	padding-right:10px; 
+.my-properties-list .property-actions a {
+	font-size:13px;
+	padding-left:10px;
+	padding-right:10px;
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
     -webkit-transition: -webkit-box-shadow 0.15s ease-out;
@@ -137,11 +137,11 @@
 	margin:10px 0px;
 	text-align:center;
 	}
-		
-	input.border, 
-select.border, 
-textarea.border, 
-.form-block.border .chosen-container .chosen-single,  
+
+	input.border,
+select.border,
+textarea.border,
+.form-block.border .chosen-container .chosen-single,
 .form-block.border .chosen-container .chosen-drop { border:1px solid rgba(0, 0, 0, 0.15); }
 .form-block.border .chosen-container .chosen-results { padding-top:10px; }
 
@@ -162,9 +162,9 @@ textarea.border,
 	padding: 0 15px 0 50px;
 	line-height: 2.8em;
 	position: relative;
-    background: #50AEE6;
+    background: seagreen;
     color: #FFFFFF;
-    border: 0;	
+    border: 0;
 	border-radius:3px 3px 0px 0px;
 }
 .form-block button:after{
@@ -173,7 +173,7 @@ textarea.border,
     bottom: -2px;
     display: block;
     position: absolute;
-    background: #50AEE6;
+    background: seagreen;
     width: 100%;
     height: 1px;
     -webkit-transition: all 0.3s ease;
@@ -184,7 +184,7 @@ textarea.border,
 
 /* BUTTONS */
 .button, input[type="submit"] {
-	
+
 	font-size:15px;
 	font-weight:600;
 	padding:10px 35px 10px 35px;
@@ -207,7 +207,7 @@ textarea.border,
     bottom: -2px;
     display: block;
     position: absolute;
-    background: #50AEE6;
+    background: seagreen;
     width: 100%;
     height: 1px;
     -webkit-transition: all 0.3s ease;
@@ -230,7 +230,7 @@ textarea.border,
     padding: 0 15px 0 15px;
 	line-height: 2.8em;
 	position: relative;
-    background: #50AEE6;
+    background: seagreen;
     color: #FFFFFF;
     border: 0;
 	box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
@@ -265,7 +265,7 @@ textarea.border,
 /** PAGINATION **/
 .pagination { width:100%; }
 .pagination ul li { list-style:none; padding-left:0px; padding-right:0px; display: table-cell;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33); }
-.pagination ul li.current a { background:#50AEE6; color:white; }
+.pagination ul li.current a { background:seagreen; color:white; }
 .pagination .button { padding:10px 15px; }
 
 /** FORM ELEMENTS **/
@@ -309,10 +309,10 @@ input[type="checkbox"], input[type="radio"] { width:auto; margin-right:5px; }
 
 textarea { height:130px; }
 
-input.border, 
-select.border, 
-textarea.border, 
-.form-block.border .chosen-container .chosen-single,  
+input.border,
+select.border,
+textarea.border,
+.form-block.border .chosen-container .chosen-single,
 .form-block.border .chosen-container .chosen-drop { border:1px solid rgba(0, 0, 0, 0.15); }
 .form-block.border .chosen-container .chosen-results { padding-top:10px; }
 
@@ -332,38 +332,38 @@ textarea.border,
 .edit-avatar{
 	text-align:center;
 }
-		
+
 table.my-properties-list{
 	width:100%;
-}	
+}
 .pagination > .active > a{
 	z-index: 2;
     color: #ffffff;
     background-color: #0aa89e;
     border-color: #0aa89e;
     cursor: default;
-	
-}		
+
+}
 .pagination > li {
 	display: inline;
 }
-		
+
 .pagination {
     display: inline-block;
     padding-left: 0;
     margin: 15px 0;
     border-radius: 2px;
-}	
+}
 .pagination ul li a{
 	border-radius:0px !important;
-}	
+}
 
-	
-ul.pagination 	
-		
-		
+
+ul.pagination
+
+
 .pagination-lg > li:first-child > a, .pagination-lg > li:first-child > span{
-	
+
 }
 
 .pagination > li > a, .pagination > li > span {
@@ -391,7 +391,7 @@ ul.pagination
 .property-address i{
 	font-size:18px;
 }
-.breadcrumb-box {	
+.breadcrumb-box {
 	padding: 80px 0px;
 }
 .member-card-header h3{
@@ -412,7 +412,7 @@ ul.pagination
 
 input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="select2"]), input[type="password"]:not([class*="select2"]), input[type="url"]:not([class*="select2"]), textarea:not([class*="select2"]), select:not([class*="select2"]), .input-group-addon:not([class*="select2"]) {
 	border: 2px solid #d4d4d4;
-	border-bottom-color: #50AEE6;
+	border-bottom-color: seagreen;
 }
 
 @media only screen and (min-width: 240px) and (max-width: 480px) {
@@ -435,11 +435,11 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
 	.my-properties-list th{
 		padding: 0px 45px;
 	}
-	
+
 }
 
 #main-header #main-menu li a.current, #main-header #main-menu li a:hover, #main-header #main-menu li span.current, #main-header #main-menu li span:hover{
-	background:#50AEE6;
+	background:seagreen;
 	color:#fff;
 	border-radius:3px 3px 0px 0px;
 }
@@ -448,7 +448,7 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
 	z-index:99;
 }
 #main-footer .top-section .widgets .tag-list li a{
-	background:#50AEE6;
+	background:seagreen;
 	border-radius:3px;
 }
 
@@ -461,23 +461,23 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
 
 
 #main-header #main-menu li > ul li a.current, #main-header #main-menu li > ul li a:hover{
-	background:#50AEE6;
+	background:seagreen;
 	border-radius:0px;
 	color:#fff;
 }
 
 
 #main-header{
-	border-bottom: 2px solid #50AEE6;
+	border-bottom: 2px solid seagreen;
 }
 #main-header .main-header-cont{
 	height: 96px;
 }
 #main-footer{
-	border-top: 2px solid #50AEE6;
+	border-top: 2px solid seagreen;
 }
 #go-up{
-	border: 2px solid #50AEE6;
+	border: 2px solid seagreen;
 	animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
     -moz-animation: bounce 2s infinite;
@@ -485,17 +485,17 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
 }
 
 @-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
     40% {-webkit-transform: translateY(-20px);}
     60% {-webkit-transform: translateY(-15px);}
 }
- 
+
 @-moz-keyframes bounce {
     0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
     40% {-moz-transform: translateY(-20px);}
     60% {-moz-transform: translateY(-15px);}
 }
- 
+
 @-o-keyframes bounce {
     0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
     40% {-o-transform: translateY(-20px);}
@@ -514,22 +514,22 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
     -moz-animation: bounce_s 2s infinite;
     -o-animation: bounce_s 2s infinite;
 	background:#fff;
-	color:#50AEE6;
+	color:seagreen;
 }
 
 
 @-webkit-keyframes bounce_s {
-    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
     40% {-webkit-transform: translateY(-5px);}
     60% {-webkit-transform: translateY(-15px);}
 }
- 
+
 @-moz-keyframes bounce_s {
     0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
     40% {-moz-transform: translateY(-5px);}
     60% {-moz-transform: translateY(-15px);}
 }
- 
+
 @-o-keyframes bounce_s {
     0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
     40% {-o-transform: translateY(-5px);}
@@ -540,12 +540,3 @@ input[type="text"]:not([class*="select2"]), input[type="email"]:not([class*="sel
     40% {transform: translateY(-5px);}
     60% {transform: translateY(-15px);}
 }
-
-
-
-
-
-
-
-
-
