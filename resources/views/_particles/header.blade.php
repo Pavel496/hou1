@@ -1,4 +1,5 @@
-<header id="main-header" style="background-image:url(/site_assets/img/Canvas.jpg)">
+<header id="main-header" style="background-color:#707070">
+   {{-- style="background-image:url(/site_assets/img/Canvasb.jpg)" --}}
     <div id="header-top">
       <div class="header-top-content container">
         <!-- Language Switcher -->
@@ -54,9 +55,9 @@
                 </nav>
                 <!-- END of Main Menu -->
 
-        <div id="main-menu-handle" class="hidden-md hidden-lg"><i class="fa fa-bars"></i></div><!-- Mobile Menu handle -->
+                <div id="main-menu-handle" class="hidden-md hidden-lg"><i class="fa fa-bars"></i></div><!-- Mobile Menu handle -->
             <a id="submit-property-link" class="btn" href="{{ URL::to('submit-property') }}"><span>Предложите объект</span></a>
-            </div>
+        </div>
       <!-- End of Main Menu -->
     </div>
     <div id="mobile-menu-container" class="hidden-md hidden-lg"></div>
