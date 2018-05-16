@@ -11048,7 +11048,7 @@ img.mfp-img {
 
 #mobile-menu-container {
   border-top: 3px solid seagreen;
-  background: #FFFFFF; }
+  background: seagreen; }
   @media (max-width: 992px) {
     #mobile-menu-container {
       display: none; } }
