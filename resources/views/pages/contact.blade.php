@@ -5,6 +5,14 @@
 
 @section("content")
 
+  @if(Session::has('flash_message_agent'))
+  <script type="text/javascript">
+
+    alert('{{ Session::get('flash_message_agent') }}');
+
+  </script>
+  @endif  
+
 <!--Breadcrumb Section-->
   <section class="breadcrumb-box" style="padding: 180px 0 240px;">
     <div id="contact-map"></div>
@@ -52,8 +60,49 @@
             </div>
         @endif
 
+        {!! Form::open(array('url'=>'agentscontact','method'=>'POST', 'id'=>'agent_contact_form')) !!}
 
-    {!! Form::open(array('url' => 'contact-us','class'=>'','id'=>'contactform','role'=>'form')) !!}
+        <input type="hidden" name="property_id" value="1">
+
+        <input type="hidden" name="agent_id" value="1">
+
+        <div class="contact-form">
+          <div class="field-box">
+            <input type="text" placeholder="Ваше имя *" name="name">
+            @if ($errors->has('name'))
+              <span style="color:#fb0303">
+                  {{ $errors->first('name') }}
+              </span>
+           @endif
+          </div>
+          <div class="field-box">
+            <input type="email" placeholder="Email *" name="email">
+            @if ($errors->has('email'))
+              <span style="color:#fb0303">
+                  {{ $errors->first('email') }}
+              </span>
+           @endif
+          </div>
+          <div class="field-box">
+            <input type="text" placeholder="Телефон" name="phone">
+          </div>
+          <textarea id="message" name="message" placeholder="Ваше сообщение *"></textarea>
+          @if ($errors->has('message'))
+              <span style="color:#fb0303">
+                  {{ $errors->first('message') }}
+              </span>
+              <br><br>
+           @endif
+          <button type="submit" class="btn btn-lg submit" name="submit">Отправить</button>
+        </div>
+        {!! Form::close() !!}
+
+
+
+
+
+
+    {{-- {!! Form::open(array('url' => 'contact-us','class'=>'','id'=>'contactform','role'=>'form')) !!}
     <div class="contact-form">
       <div class="row">
         <div class="col-sm-6 field-box">
@@ -93,7 +142,7 @@
         <button class="btn" type="Submit">Отправить</button>
       </div>
     </div>
-    {!! Form::close() !!}
+    {!! Form::close() !!} --}}
   </section>
     <!-- end:content -->
 

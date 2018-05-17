@@ -152,7 +152,7 @@ class IndexController extends Controller
                 ->subject(getcong('site_name').' Contact');
         });
 
-         \Session::flash('flash_message_contact', 'Thanks for contacting us!');
+         \Session::flash('flash_message_contact', 'Спасибо за сообщение!');
 
  		 return \Redirect::back();
     }
