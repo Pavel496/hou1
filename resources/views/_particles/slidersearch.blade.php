@@ -16,10 +16,11 @@
 
   </section> --}}
   <!-- End of Main Slider -->
+
   <br>
   <!-- Property Search Box -->
     <section id="property-search-container" class="container" style="margin-bottom: 0px;">
-        <div class="property-search-form horizontal" style="background-color: silver;">
+        <div class="property-search-form horizontal" style="background-color: WhiteSmoke;">
             {!! Form::open(array('url' => array('searchproperties'),'class'=>'','name'=>'search_form','id'=>'search_form','role'=>'form')) !!}
             <div class="main-search-sec">
                 <div class="col-xs-2 col-sm-1 search-field">
