@@ -19,7 +19,7 @@
   <br>
   <!-- Property Search Box -->
     <section id="property-search-container" class="container" style="margin-bottom: 0px;">
-        <div class="property-search-form horizontal" style="background-color: #f0f0f0;">
+        <div class="property-search-form horizontal" style="background-color: silver;">
             {!! Form::open(array('url' => array('searchproperties'),'class'=>'','name'=>'search_form','id'=>'search_form','role'=>'form')) !!}
             <div class="main-search-sec">
                 <div class="col-xs-2 col-sm-1 search-field">
