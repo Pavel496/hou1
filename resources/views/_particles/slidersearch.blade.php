@@ -116,3 +116,36 @@
         </div>
     </section>
     <!-- End of Property Search Box -->
+
+    @push('styles')
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css">
+    @endpush
+
+    @push('scripts')
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
+
+      <script type="text/javascript">
+
+        var slider = new Slider('#ex1', {});
+        slider.on("slide", function(sliderValue1) {
+          document.getElementById("ex1SliderVal0").textContent = sliderValue1[0];
+        	document.getElementById("ex1SliderVal1").textContent = sliderValue1[1];
+        });
+        var slider = new Slider('#ex2', {});
+        slider.on("slide", function(sliderValue2) {
+          document.getElementById("ex2SliderVal0").textContent = sliderValue2[0];
+          document.getElementById("ex2SliderVal1").textContent = sliderValue2[1];
+        });
+        var slider = new Slider('#ex3', {});
+        slider.on("slide", function(sliderValue3) {
+          document.getElementById("ex3SliderVal0").textContent = sliderValue3[0];
+          document.getElementById("ex3SliderVal1").textContent = sliderValue3[1];
+        });
+        var slider = new Slider('#ex4', {});
+        slider.on("slide", function(sliderValue4) {
+          document.getElementById("ex4SliderVal0").textContent = sliderValue4[0];
+          document.getElementById("ex4SliderVal1").textContent = sliderValue4[1];
+        });
+
+      </script>
+    @endpush

@@ -366,3 +366,16 @@
     <!-- end:content -->
 
 @endsection
+
+{{-- @push('styles')
+
+@endpush --}}
+
+@push('scripts')
+  <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace('editor');
+      CKEDITOR.config.height = 375;
+  </script>
+
+@endpush
