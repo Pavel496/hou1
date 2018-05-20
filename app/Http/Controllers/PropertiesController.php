@@ -64,8 +64,8 @@ class PropertiesController extends Controller
 
     public function saleproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
-
+    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
+// ->paginate(getcong('pagination_limit'))
         $data['type'] = null;
         $data['direction'] = null;
         $data['currency'] = null;
@@ -96,8 +96,8 @@ class PropertiesController extends Controller
 
     public function rentproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(getcong('pagination_limit'));
-
+    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
+// ->paginate(getcong('pagination_limit'));
       $data['type'] = null;
       $data['direction'] = null;
       $data['currency'] = null;

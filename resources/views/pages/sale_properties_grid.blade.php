@@ -71,7 +71,6 @@
     <!-- begin:pagination -->
             @include('_particles.pagination', ['paginator' => $properties])
     <!-- end:pagination -->
-
   </section>
   <!-- End of Recent Properties -->
 
