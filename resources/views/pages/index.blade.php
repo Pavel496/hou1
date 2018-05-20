@@ -3,7 +3,7 @@
 
 @if(getcong('home_properties_layout')=='slider')
 
-@include("_particles.zastavka")
+{{-- @include("_particles.zastavka") --}}
 
 {{$page='Все объекты'}}
 
