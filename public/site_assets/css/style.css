@@ -12303,7 +12303,7 @@ img.mfp-img {
       #main-slider .owl-controls .owl-prev:before, #property-slider-section #property-main-slider .owl-controls .owl-prev:before, #main-slider .owl-controls .owl-next:before, #property-slider-section #property-main-slider .owl-controls .owl-next:before, #main-slider-fullscreen .owl-controls .owl-prev:before, #main-slider-fullscreen .owl-controls .owl-next:before {
         font-size: 15px;
         color: seagreen;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.7);
         font-family: "Glyphicons Halflings";
         -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
