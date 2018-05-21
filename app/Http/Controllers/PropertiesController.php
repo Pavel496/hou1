@@ -69,7 +69,7 @@ class PropertiesController extends Controller
         $data['type'] = null;
         $data['direction'] = null;
         $data['currency'] = null;
-        $data['pricemin'] = '0';
+        $data['pricemin'] = '0.1';
         $data['pricemax'] = '300';
         $data['rangemin'] = '0';
         $data['rangemax'] = '50';
@@ -101,7 +101,7 @@ class PropertiesController extends Controller
       $data['type'] = null;
       $data['direction'] = null;
       $data['currency'] = null;
-      $data['pricemin'] = '0';
+      $data['pricemin'] = '0.1';
       $data['pricemax'] = '300';
       $data['rangemin'] = '0';
       $data['rangemax'] = '50';
@@ -219,16 +219,16 @@ class PropertiesController extends Controller
       $range = explode(",", $inputs['range']);
       $land = explode(",", $inputs['land_area']);
       $build = explode(",", $inputs['build_area']);
-
-      $pricemin = (int)$price[0]*1000000;
-      $pricemax = (int)$price[1]*1000000;
+// dd($price);
+      $pricemin = $price[0]*1000000;
+      $pricemax = $price[1]*1000000;
       $rangemin = $range[0];
       $rangemax = $range[1];
       $landmin = $land[0];
       $landmax = $land[1];
       $buildmin = $build[0];
       $buildmax = $build[1];
-
+// dd($pricemin, $pricemax);
       // if ($buildmax == '975') {
       //   $buildmaxmy = '3000';
       // } else {

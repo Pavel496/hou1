@@ -89,7 +89,7 @@
             <div class="col-xs-6 col-sm-3 search-field">
               <p><span id="ex1SliderVal0">{{$data['pricemin']}}</span> - Цена (млн {{$data['currency']}}) - <span id="ex1SliderVal1">{{$data['pricemax']}}</span></p>
               <input id="ex1" type="text" class="span2" name="price"
-                    value="" data-slider-min="0" data-slider-max="300" data-slider-step="10"
+                    value=""
                     data-slider-value="[{{$data['pricemin']}},{{$data['pricemax']}}]"/>
             </div>
             <div class="col-xs-6 col-sm-3 search-field">
@@ -127,7 +127,12 @@
 
     <script type="text/javascript">
 
-      var slider = new Slider('#ex1', {});
+      var slider = new Slider('#ex1', {
+        max: 300,
+        min: 0.1,
+        scale: 'logarithmic',
+        step: 0.1
+      });
       slider.on("slide", function(sliderValue1) {
         document.getElementById("ex1SliderVal0").textContent = sliderValue1[0];
       	document.getElementById("ex1SliderVal1").textContent = sliderValue1[1];

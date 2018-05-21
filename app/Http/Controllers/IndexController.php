@@ -42,7 +42,7 @@ class IndexController extends Controller
     $data['type'] = null;
     $data['direction'] = null;
     $data['currency'] = null;
-    $data['pricemin'] = '0';
+    $data['pricemin'] = '0.1';
     $data['pricemax'] = '300';
     $data['rangemin'] = '0';
     $data['rangemax'] = '50';
