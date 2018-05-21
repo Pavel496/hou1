@@ -1,5 +1,12 @@
 <header id="main-header" style="background-color:#707070">
    {{-- style="background-image:url(/site_assets/img/Canvasb.jpg)" --}}
+   @if(Session::has('flash_message_agent'))
+   <script type="text/javascript">
+
+     alert('{{ Session::get('flash_message_agent') }}');
+
+   </script>
+   @endif
     <div id="header-top">
       <div class="header-top-content container">
         <!-- Language Switcher -->
@@ -56,9 +63,59 @@
                 <!-- END of Main Menu -->
 
                 <div id="main-menu-handle" class="hidden-md hidden-lg"><i class="fa fa-bars"></i></div><!-- Mobile Menu handle -->
-            <a id="submit-property-link" class="btn" href="{{ URL::to('submit-property') }}"><span>Предложите объект</span></a>
+            <a id="submit-property-link" class="btn" data-toggle="modal" data-target="#myModal"><span>Предложите объект</span></a>
+            {{-- <a id="submit-property-link" class="btn" href="{{ URL::to('submit-property') }}"><span>Предложите объект</span></a> --}}
         </div>
       <!-- End of Main Menu -->
     </div>
     <div id="mobile-menu-container" class="hidden-md hidden-lg"></div>
   </header>
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Предложите объект</h4>
+      </div>
+      <div class="modal-body">
+        {!! Form::open(array('url'=>'agentscontact','method'=>'POST', 'id'=>'agent_contact_form')) !!}
+        <input type="hidden" name="property_id" value="1">
+        <input type="hidden" name="agent_id" value="1">
+        <input type="hidden" name="mymodal" value=true>
+
+          <div class="contact-form">
+            <div class="field-box">
+              <input type="text" placeholder="Ваше имя *" name="name"  required>
+              @if ($errors->has('name'))
+                <span style="color:#fb0303">
+                    {{ $errors->first('name') }}
+                </span>
+             @endif
+            </div>
+            <div class="field-box">
+              <input type="email" placeholder="Email *" name="email"  required>
+              @if ($errors->has('email'))
+                <span style="color:#fb0303">
+                    {{ $errors->first('email') }}
+                </span>
+             @endif
+            </div>
+            <div class="field-box">
+              <input type="text" placeholder="Телефон" name="phone">
+            </div>
+            <textarea id="message" name="message" placeholder="Ваше сообщение *"  required></textarea>
+            @if ($errors->has('message'))
+                <span style="color:#fb0303">
+                    {{ $errors->first('message') }}
+                </span>
+             @endif
+             <button type="submit" class="btn submit" name="submit">Отправить</button>
+          </div>
+      {!! Form::close() !!}
+      </div>
+    </div>
+  </div>
+</div>

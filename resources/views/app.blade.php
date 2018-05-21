@@ -66,6 +66,7 @@
       @include("_particles.footer_map")
    @endif
 
+  <script type="text/javascript" src="{{ URL::asset('site_assets/js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/template.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/bootstrap-tagsinput.js') }}"></script>
   <!-- End of JS Include Section -->

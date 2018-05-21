@@ -174,10 +174,10 @@ class PropertiesController extends Controller
     	$data =  \Input::except(array('_token')) ;
 
 	    $inputs = $request->all();
-
+// dd($inputs);
 	    $rule=array(
 		        'name' => 'required',
-				'email' => 'required',
+				    'email' => 'required',
 		        'message' => 'required'
 		   		 );
 
@@ -202,9 +202,13 @@ class PropertiesController extends Controller
 
 	    $enquire->save();
 
-	    \Session::flash('flash_message_agent', 'Message send successfully');
+	    \Session::flash('flash_message_agent', 'Ваше сообщение успешно отправлено');
 
-         return \Redirect::back();
+         if ($inputs['mymodal']) {
+           return redirect('/');
+         } else {
+           return \Redirect::back();
+         }
 
     }
 
