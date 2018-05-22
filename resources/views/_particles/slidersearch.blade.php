@@ -1,4 +1,4 @@
-@if ($page=='Все объекты')
+{{-- @if ($page=='Все объекты')
 <!-- Main Slider -->
   <section id="main-slider">
 
@@ -6,17 +6,18 @@
     <div class="items">
       <div class="img-container" data-bg-img="{{ URL::asset('upload/slides/'.$slide->image_name.'.jpg') }}"></div>
       <!-- Change the URL section based on your image\'s name -->
-      {{-- <div class="slide-caption">
-        <div class="inner-container clearfix">
-          <div class="first-sec">{{ $slide->slider_text1 }}</div>
-          <div class="sec-sec">{{ $slide->slider_text2 }}</div>
-        </div>
-      </div> --}}
+
     </div>
     @endforeach
   </section>
 <!-- End of Main Slider -->
-@endif
+@endif --}}
+{{-- <div class="slide-caption">
+  <div class="inner-container clearfix">
+    <div class="first-sec">{{ $slide->slider_text1 }}</div>
+    <div class="sec-sec">{{ $slide->slider_text2 }}</div>
+  </div>
+</div> --}}
 
 <br>
 <!-- Property Search Box -->
