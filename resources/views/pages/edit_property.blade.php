@@ -187,7 +187,7 @@
                     </select>
 
                     <select id="bathroom" name="bathrooms">
-                      <option value="">Ванные</option>
+                      <option value="">Санузлы</option>
                       <option value="1" @if($property->bathrooms=='1') selected @endif>1</option>
                       <option value="2" @if($property->bathrooms=='2') selected @endif>2</option>
                       <option value="3" @if($property->bathrooms=='3') selected @endif>3</option>

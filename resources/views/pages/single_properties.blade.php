@@ -89,14 +89,14 @@
           @if($property->bathrooms!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->bathrooms}}</div>
-              <div class="text">Бассейн</div>
+              <div class="text">Санузлы</div>
             </div>
           @endif
 
           @if($property->garage!=null)
           <div class="highlight-details-box">
               <div class="value">{{$property->garage}}</div>
-              <div class="text">Гараж</div>
+              <div class="text">Гаражи</div>
             </div>
           @endif
           </div>
