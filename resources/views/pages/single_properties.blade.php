@@ -89,7 +89,7 @@
           @if($property->bathrooms!=null)
             <div class="highlight-details-box">
               <div class="value">{{$property->bathrooms}}</div>
-              <div class="text">Санузлы</div>
+              <div class="text">Сан узлы</div>
             </div>
           @endif
 
