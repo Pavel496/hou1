@@ -175,7 +175,7 @@
                 </div>
 
                 <div class="well">
-                    <p>Спальни, ванные, гаражи</p>
+                    <p>Спальни, санузлы, гаражи</p>
                     <select id="p-bedroom" name="bedrooms">
                       <option value="">Спальни</option>
                       <option value="1" @if($property->bedrooms=='1') selected @endif>1</option>

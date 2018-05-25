@@ -171,7 +171,7 @@
                 </div>
 
                 <div class="well">
-                    <p>Спальни, ванные, гаражи</p>
+                    <p>Спальни, санузлы, гаражи</p>
                     <select id="p-bedroom" name="bedrooms">
                       <option value="">Спальни</option>
                       <option value="1" @if(old('bedrooms')=='1') selected @endif>1</option>
@@ -183,7 +183,7 @@
                     </select>
 
                     <select id="bathroom" name="bathrooms">
-                      <option value="">Ванные</option>
+                      <option value="">Санузлы</option>
                       <option value="1" @if(old('bathrooms')=='1') selected @endif>1</option>
                       <option value="2" @if(old('bathrooms')=='2') selected @endif>2</option>
                       <option value="3" @if(old('bathrooms')=='3') selected @endif>3</option>
