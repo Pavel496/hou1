@@ -31,3 +31,11 @@ nav ul li a {
   font-size:17px;
   color: white;
 }
+
+
+/* <style> */
+ .outline {
+  border: 1px solid lightgray;
+  padding: 0;
+ }
+/* </style> */
