@@ -69,10 +69,10 @@ class PropertiesController extends Controller
         $data['type'] = null;
         $data['direction'] = null;
         $data['currency'] = null;
-        $data['pricemin'] = '0.1';
-        $data['pricemax'] = '300';
+        $data['pricemin'] = '0';
+        $data['pricemax'] = '5000000000';
         $data['rangemin'] = '0';
-        $data['rangemax'] = '50';
+        $data['rangemax'] = '100';
         $data['landmin'] = '0';
         $data['landmax'] = '300';
         $data['buildmin'] = '0';
@@ -101,10 +101,10 @@ class PropertiesController extends Controller
       $data['type'] = null;
       $data['direction'] = null;
       $data['currency'] = null;
-      $data['pricemin'] = '0.1';
-      $data['pricemax'] = '300';
+      $data['pricemin'] = '0';
+      $data['pricemax'] = '5000000000';
       $data['rangemin'] = '0';
-      $data['rangemax'] = '50';
+      $data['rangemax'] = '100';
       $data['landmin'] = '0';
       $data['landmax'] = '300';
       $data['buildmin'] = '0';
@@ -219,30 +219,37 @@ class PropertiesController extends Controller
 
 	    $inputs = $request->all();
 // dd($inputs);
-			$price = explode(",", $inputs['price']);
-      $range = explode(",", $inputs['range']);
-      $land = explode(",", $inputs['land_area']);
-      $build = explode(",", $inputs['build_area']);
-// dd($price);
-      $pricemin = $price[0]*1000000;
-      $pricemax = $price[1]*1000000;
-      $rangemin = $range[0];
-      $rangemax = $range[1];
-      $landmin = $land[0];
-      $landmax = $land[1];
-      $buildmin = $build[0];
-      $buildmax = $build[1];
-// dd($pricemin, $pricemax);
-      // if ($buildmax == '975') {
-      //   $buildmaxmy = '3000';
-      // } else {
-      //   $buildmaxmy = $buildmax;
-      // }
+			// $price = explode(",", $inputs['price']);
+      // $range = explode(",", $inputs['range']);
+      // $land = explode(",", $inputs['land_area']);
+      // $build = explode(",", $inputs['build_area']);
+      //
+      // $pricemin = $price[0]*1000000;
+      // $pricemax = $price[1]*1000000;
+      // $rangemin = $range[0];
+      // $rangemax = $range[1];
+      // $landmin = $land[0];
+      // $landmax = $land[1];
+      // $buildmin = $build[0];
+      // $buildmax = $build[1];
 
-      $data['pricemin'] = strval($pricemin/1000000);
-      $data['pricemax'] = strval($pricemax/1000000);
+
+      $rangemin = $inputs['rangemin'];
+      $rangemax = $inputs['rangemax'];
+      $pricemin = $inputs['pricemin'];
+      $pricemax = $inputs['pricemax'];
+      $landmin = $inputs['landmin'];
+      $landmax = $inputs['landmax'];
+      $buildmin = $inputs['buildmin'];
+      $buildmax = $inputs['buildmax'];
+
+      // $data['pricemin'] = strval($pricemin/1000000);
+      // $data['pricemax'] = strval($pricemax/1000000);
+
       $data['rangemin'] = $rangemin;
       $data['rangemax'] = $rangemax;
+      $data['pricemin'] = $pricemin;
+      $data['pricemax'] = $pricemax;
       $data['landmin'] = $landmin;
       $data['landmax'] = $landmax;
       $data['buildmin'] = $buildmin;
@@ -269,7 +276,8 @@ class PropertiesController extends Controller
 
                     ->where("currency", $currency)
                     ->where("property_purpose", $purpose)
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
         return view('pages.sale_properties_grid',compact('properties', 'data'));
       } elseif (($purpose == 'Продажа') && ($currency == '₽$€')) {
         $properties = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -283,7 +291,8 @@ class PropertiesController extends Controller
                     ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("property_purpose", $purpose)
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
         return view('pages.sale_properties_grid',compact('properties', 'data'));
       } elseif (($purpose == 'Аренда') && ($currency <> '₽$€')) {
         $properties = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -298,7 +307,8 @@ class PropertiesController extends Controller
 
                     ->where("currency", $currency)
                     ->where("property_purpose", $purpose)
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
         return view('pages.rent_properties_grid',compact('properties', 'data'));
       } elseif (($purpose == 'Аренда') && ($currency == '₽$€')) {
         $properties = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -312,7 +322,8 @@ class PropertiesController extends Controller
                     ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("property_purpose", $purpose)
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
         return view('pages.rent_properties_grid',compact('properties', 'data'));
       } else {
         if ($currency == '₽$€') {
@@ -326,8 +337,8 @@ class PropertiesController extends Controller
                     ->where("land_area", "<=", (int)$landmax)
                     ->where("build_area", ">=", (int)$buildmin)
                     ->where("build_area", "<=", (int)$buildmax)
-
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
           return view('pages.index',compact('propertieslist', 'data'));
         } else {
           $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -342,7 +353,8 @@ class PropertiesController extends Controller
                     ->where("build_area", "<=", (int)$buildmax)
 
                     ->where("currency", $currency)
-                    ->paginate(getcong('pagination_limit'));
+                    ->paginate();
+                    // ->paginate(getcong('pagination_limit'));
           return view('pages.index',compact('propertieslist', 'data'));
         }
 

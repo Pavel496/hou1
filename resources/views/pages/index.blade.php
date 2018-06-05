@@ -5,7 +5,9 @@
 
 @include("_particles.zastavka")
 
-{{$page='Все объекты'}}
+{{-- @if (\Request::is('/')) --}}
+  {{$page='Все объекты'}}
+{{-- @endif --}}
 
 @include("_particles.slidersearch")
 

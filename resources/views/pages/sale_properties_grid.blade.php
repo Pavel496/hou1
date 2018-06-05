@@ -18,7 +18,10 @@
   </div>
 </section>
 <!--Breadcrumb Section-->
-{{$page='Продажа'}}
+
+{{-- @if (\Request::is('sale')) --}}
+  {{$page='Продажа'}}
+{{-- @endif --}}
 
 @include("_particles.slidersearch")
 
