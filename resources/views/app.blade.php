@@ -261,7 +261,7 @@ if(!$("html").hasClass("touch")){$(".parallax").css("background-attachment","fix
   </script>
 @endif
 
-<script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/e6214a344d3895a09cd003364ccf7162/connect" id="check-code-pozvonim" charset="UTF-8"></script>
+{{-- <script crossorigin="anonymous" async type="text/javascript" src="//api.pozvonim.com/widget/callback/v3/e6214a344d3895a09cd003364ccf7162/connect" id="check-code-pozvonim" charset="UTF-8"></script> --}}
 
 
 </body>
