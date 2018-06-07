@@ -53,7 +53,7 @@ class Kernel extends ConsoleKernel
                  // break;
               }
           }
-      })->everyMinute();
+      })->daily();
     }
 
     /**
