@@ -7,6 +7,8 @@
 
 {{-- @if (\Request::is('/')) --}}
   {{$page='Все объекты'}}
+
+  {{session('currencyname')}}
 {{-- @endif --}}
 
 @include("_particles.slidersearch")

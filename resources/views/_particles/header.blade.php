@@ -119,3 +119,44 @@
     </div>
   </div>
 </div>
+
+<!-- Modal1 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1Label">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModal1Label">Выберите валюту</h4>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+
+          <div class="col-xs-2 col-sm-4">
+          {!! Form::open(array('url'=>'currency','method'=>'POST', 'id'=>'agent_contact_form')) !!}
+            <input type="hidden" name="currencysymbol" value="₽">
+            <input type="hidden" name="currencyname" value="Рубли">
+                 <button type="submit" class="btn btn-xs submit" name="submit">Рубли</button>
+          {!! Form::close() !!}
+          </div>
+
+          <div class="col-xs-2 col-sm-4">
+          {!! Form::open(array('url'=>'currency','method'=>'POST', 'id'=>'agent_contact_form')) !!}
+            <input type="hidden" name="currencysymbol" value="$">
+            <input type="hidden" name="currencyname" value="Доллары">
+                 <button type="submit" class="btn btn-xs submit" name="submit">Доллары</button>
+          {!! Form::close() !!}
+          </div>
+
+          <div class="col-xs-2 col-sm-4">
+          {!! Form::open(array('url'=>'currency','method'=>'POST', 'id'=>'agent_contact_form')) !!}
+            <input type="hidden" name="currencysymbol" value="€">
+            <input type="hidden" name="currencyname" value="Евро">
+                 <button type="submit" class="btn btn-xs submit" name="submit">Евро</button>
+          {!! Form::close() !!}
+          </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

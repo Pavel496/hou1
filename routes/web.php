@@ -123,6 +123,8 @@ Route::get('type/{slug}', 'PropertiesController@propertiesbytype');
 
 Route::post('agentscontact', 'PropertiesController@agentscontact');
 
+Route::post('currency', 'PropertiesController@currency');
+
 Route::post('searchproperties', 'PropertiesController@searchproperties');
 
 Route::get('login', [ 'as' => 'login', 'uses' => 'IndexController@login']);

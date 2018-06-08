@@ -168,7 +168,17 @@ class PropertiesController extends Controller
         return view('pages.single_properties',compact('property','agent','property_gallery_images'));
     }
 
-	public function agentscontact(Request $request)
+  public function currency(Request $request)
+    {
+      // $inputs = $request->all();
+      // dd($inputs['currencyname']);
+      $currencysymbol = $request->currencysymbol;
+      $currencyname = $request->currencyname;
+      // dd($currencyname);
+      return redirect()->back()->with('currencyname', $currencyname)->with('currencysymbol', $currencysymbol);
+    }
+
+  public function agentscontact(Request $request)
     {
 
     	$data =  \Input::except(array('_token')) ;

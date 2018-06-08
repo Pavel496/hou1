@@ -21,6 +21,8 @@
 
 {{-- @if (\Request::is('rent')) --}}
   {{$page='Аренда'}}
+
+  {{session('currencyname')}}
 {{-- @endif --}}
 
 @include("_particles.slidersearch")

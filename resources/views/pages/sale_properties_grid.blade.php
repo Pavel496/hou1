@@ -21,6 +21,8 @@
 
 {{-- @if (\Request::is('sale')) --}}
   {{$page='Продажа'}}
+
+  {{session('currencyname')}}
 {{-- @endif --}}
 
 @include("_particles.slidersearch")
