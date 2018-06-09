@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-xs-4 col-sm-2 search-field">
-                <input type="text" placeholder="Заголовок или адрес" name="keyword" id="keyword" style="margin-bottom: 0px;border:1px solid #d4d4d4;border-bottom-color: darkgreen">
+                <input type="text" placeholder="Строка поиска ..." name="keyword" id="keyword" style="margin-bottom: 0px;border:1px solid #d4d4d4;border-bottom-color: darkgreen">
             </div>
             <div class="col-xs-6 col-sm-3 search-field">
               <select id="proeprty-type" name="direction">
