@@ -43,13 +43,21 @@ class IndexController extends Controller
     $data['direction'] = null;
     $data['currency'] = null;
     $data['pricemin'] = '0';
-    $data['pricemax'] = '5000000000';
+    $data['pricemax'] = '750000000';
     $data['rangemin'] = '0';
     $data['rangemax'] = '100';
     $data['landmin'] = '0';
     $data['landmax'] = '300';
     $data['buildmin'] = '0';
     $data['buildmax'] = '3000';
+
+    if (!(session()->has('currencyname'))) {
+      $currencysymbol = '₽';
+      $currencyname = 'Рубли';
+
+      session(['currencysymbol' => $currencysymbol]);
+      session(['currencyname' => $currencyname]);
+    }
 
 		$propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
 // dd($propertieslist);

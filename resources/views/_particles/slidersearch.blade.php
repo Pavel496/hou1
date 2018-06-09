@@ -11,7 +11,7 @@
             </div>
             <div class="col-xs-2 col-sm-1 search-field">
                 <select name="rangemin">
-                <option value="0" @if(old('rangemin', $data['rangemin'])=='0') selected @endif>0</option>
+                <option value="0" @if(old('rangemin', $data['rangemin'])=='0') selected @endif> min </option>
                 <option value="5" @if(old('rangemin', $data['rangemin'])=='5') selected @endif> 5 </option>
                 <option value="10" @if(old('rangemin', $data['rangemin'])=='10') selected @endif> 10 </option>
                 <option value="15" @if(old('rangemin', $data['rangemin'])=='15') selected @endif> 15 </option>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-xs-2 col-sm-1 search-field">
               <select name="rangemax">
-                <option value="100" @if(old('rangemax', $data['rangemax'])=='100') selected @endif> 100 </option>
+                <option value="100" @if(old('rangemax', $data['rangemax'])=='100') selected @endif> max </option>
                 <option value="5" @if(old('rangemax', $data['rangemax'])=='5') selected @endif> 5 </option>
                 <option value="10" @if(old('rangemax', $data['rangemax'])=='10') selected @endif> 10 </option>
                 <option value="15" @if(old('rangemax', $data['rangemax'])=='15') selected @endif> 15 </option>
@@ -94,9 +94,9 @@
 
 
           <div class="col-xs-2 col-sm-1 search-field">
-          <a class="btn btn-default" data-toggle="modal" data-target="#myModal1"><span>Валюта</span></a>
-            {{-- <p>{{session('currencyname')}}</p> --}}
-            <h5 style="color:darkred;">{{session('currencyname')}}</h5>
+          <a class="btn btn-default" data-toggle="modal" data-target="#myModal1"><span>{{session('currencyname')}}</span></a>
+            {{-- <p>{{session('currencyname')}}</p>
+            <h5 style="color:darkred;">{{session('currencyname')}}</h5> --}}
             {{-- <select name="currency">
               <option value="₽$€" @if(old('currency', $data['currency'])=='₽$€') selected @endif>₽ $ €</option>
               <option value="₽" @if(old('currency', $data['currency'])=='₽') selected @endif>₽</option>
@@ -239,7 +239,7 @@
               <option value="150" @if(old('landmax', $data['landmax'])=='150') selected @endif> 150 </option>
               <option value="200" @if(old('landmax', $data['landmax'])=='200') selected @endif> 200 </option>
               <option value="250" @if(old('landmax', $data['landmax'])=='250') selected @endif> 250 </option>
-              <option value="300" @if(old('landmax', $data['landmax'])=='300') selected @endif> 300 </option>
+              {{-- <option value="300" @if(old('landmax', $data['landmax'])=='300') selected @endif> 300 </option> --}}
             </select>
           </div>
 
@@ -273,7 +273,7 @@
               <option value="1500" @if(old('buildmax', $data['buildmax'])=='1500') selected @endif> 1500 </option>
               <option value="2000" @if(old('buildmax', $data['buildmax'])=='2000') selected @endif> 2000 </option>
               <option value="2500" @if(old('buildmax', $data['buildmax'])=='2500') selected @endif> 2500 </option>
-              <option value="3000" @if(old('buildmax', $data['buildmax'])=='3000') selected @endif> 3000 </option>
+              {{-- <option value="3000" @if(old('buildmax', $data['buildmax'])=='3000') selected @endif> 3000 </option> --}}
             </select>
           </div>
 

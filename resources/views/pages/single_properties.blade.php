@@ -128,7 +128,7 @@
                 </div>
                 <div class="right-sec col-md-5">
                   <div href="#" class="price">{{$property->currency.' '.number_format($property->price)}}</div>
-                  <div class="price-type">Цена</div>
+                  <div class="price-type">Цена от продавца</div>
                 </div>
               </div>
               <div class="b-sec">
