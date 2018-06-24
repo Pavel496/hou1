@@ -27,10 +27,10 @@ class Kernel extends ConsoleKernel
     {
       $schedule->call(function () {
           include('crosscurs.php');
-          $houses = Properties::all();
+          $houses = Properties::where('status', 1)->get();
           foreach ($houses as $house) {
               // $havephone = Phone::where('phone', $post->phone)->first();
-               if (($house->currency) && ($house->price)) {
+               if ( ( $house->currency ) && ( $house->price ) )  {
                  if ($house->currency == '₽') {
                    $house->crossrubl = round($house->price);
                    $house->crossdollar = round($house->crossrubl / $data->Valute->USD->Value);
@@ -53,7 +53,7 @@ class Kernel extends ConsoleKernel
                  // break;
               }
           }
-      })->daily();
+      })->everyTenMinutes();
     }
 
     /**
