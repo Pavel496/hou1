@@ -182,6 +182,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Jenssegers\Agent\AgentServiceProvider::class,
+
     ],
 
     /*
@@ -239,6 +241,8 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
+
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];

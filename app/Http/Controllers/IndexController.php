@@ -65,6 +65,7 @@ class IndexController extends Controller
 
 		// $partners = Partners::orderBy('id', 'desc')->get();
 
+        // return view('pages.mindex',compact('propertieslist', 'data'));
         return view('pages.index',compact('propertieslist', 'data'));
     }
 
