@@ -29,7 +29,7 @@
 		<div class="side-nav-panel-left">
 			<!-- site brand	 -->
 			<div class="site-brand">
-				<a href="index.html"><h1><span><i class="fa fa-key"></i></span>Country House Realty</h1></a>
+				<a href="index.html"><h1><span><i class="fa fa-key"></i></span></h1></a>
 			</div>
 			<!-- end site brand	 -->
 		</div>
@@ -158,7 +158,7 @@
 	<div class="section find-home bg-second">
 		<div class="container">
 			<div class="section-head">
-				<h4>ФИЛЬТР</h4>
+				<h4>Country House Realty</h4>
 				<div class="underline"></div>
 				<div class="underline2"></div>
 			</div>

@@ -17,7 +17,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
-
+use Jenssegers\Agent\Agent;
 
 class IndexController extends Controller
 {
@@ -64,9 +64,17 @@ class IndexController extends Controller
         // $featured_properties = Properties::where('featured_property','1')->orderBy('id', 'desc')->take(6)->get();
 
 		// $partners = Partners::orderBy('id', 'desc')->get();
-
-        // return view('pages.mindex',compact('propertieslist', 'data'));
+    $agent = new Agent();
+    // agent detection influences the view storage path
+    if ($agent->isMobile()) {
+        // you're a mobile device
+        return view('mobile.index',compact('propertieslist', 'data'));
+    } else {
+        // you're a desktop device, or something similar
         return view('pages.index',compact('propertieslist', 'data'));
+    }
+        // return view('pages.mindex',compact('propertieslist', 'data'));
+        // return view('pages.index',compact('propertieslist', 'data'));
     }
 
     public function testimonialslist()
