@@ -395,7 +395,7 @@
 		<div class="container">
 			<div class="about-us-foot">
 				<h6>Country House Realty</h6>
-				<p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+				<p>Мобильная версия сайта в разработке.</p>
 			</div>
 			<div class="social-media">
 				<a href=""><i class="fa fa-facebook"></i></a>
