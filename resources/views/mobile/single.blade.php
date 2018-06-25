@@ -85,8 +85,8 @@
 						<span><i class="fa fa-calendar"></i> Dec 22, 2018</span>
 					</div> --}}
 					<div class="line"></div>
-					<p>Более подробные сведения представлены в компьютерной версии сайта.</p>
-					{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut vitae recus mquam id minus!</p> --}}
+					<p>{!! stripslashes($property->description) !!}</p>
+
 					<h6>Характеристики объекта</h6>
 					<ul>
 						<li>Название: {{ $property->property_name }}</li>
@@ -99,6 +99,8 @@
 						<li>Bathroom: 2</li>
 						<li>Car Park: 2</li> --}}
 					</ul>
+
+					<p>Более подробные сведения представлены в компьютерной версии сайта.</p>
 <br><br>
 					{{-- <h6>Property Features</h6>
 					<ul>
