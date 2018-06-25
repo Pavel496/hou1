@@ -29,7 +29,7 @@
 		<div class="side-nav-panel-left">
 			<!-- site brand	 -->
 			<div class="site-brand">
-				<a href="index.html"><h1><span><i class="fa fa-key"></i></span></h1></a>
+				<a href="/"><h1><span><i class="fa fa-key"></i></span> 8-916-7301-777</h1></a>
 			</div>
 			<!-- end site brand	 -->
 		</div>
@@ -224,7 +224,7 @@
 							<span>{{ $property->property_purpose }}</span>
 						</div>
 						<div class="sub-content">
-							<a href=""><h5>{{ str_limit($property->property_name,35) }}</h5></a>
+							<a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}"><h5>{{ str_limit($property->property_name,35) }}</h5></a>
 							<span><i class="fa fa-map-marker"></i> {{ str_limit($property->address,40) }}</span>
 						</div>
 					</div>

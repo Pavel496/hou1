@@ -62,21 +62,19 @@ class IndexController extends Controller
 
 // dd($propertieslist);
         // $featured_properties = Properties::where('featured_property','1')->orderBy('id', 'desc')->take(6)->get();
-
+    $propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
 		// $partners = Partners::orderBy('id', 'desc')->get();
     $agent = new Agent();
     // agent detection influences the view storage path
     if ($agent->isMobile()) {
         // you're a mobile device
-        $propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
         return view('mobile.index',compact('propertieslist', 'data'));
     } else {
         // you're a desktop device, or something similar
-        $propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
+        // return view('mobile.index',compact('propertieslist', 'data'));
         return view('pages.index',compact('propertieslist', 'data'));
     }
-        // return view('pages.mindex',compact('propertieslist', 'data'));
-        // return view('pages.index',compact('propertieslist', 'data'));
+
     }
 
     public function testimonialslist()

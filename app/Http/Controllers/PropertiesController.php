@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Session;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Crypt;
+use Jenssegers\Agent\Agent;
 
 class PropertiesController extends Controller
 {
@@ -165,7 +166,17 @@ class PropertiesController extends Controller
 
         $property_gallery_images= PropertyGallery::where('property_id',$property->id)->get();
 
-        return view('pages.single_properties',compact('property','agent','property_gallery_images'));
+        $agent = new Agent();
+        // agent detection influences the view storage path
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.single',compact('property','property_gallery_images'));
+        } else {
+            // you're a desktop device, or something similar
+            // return view('mobile.single',compact('property','property_gallery_images'));
+            return view('pages.single_properties',compact('property','agent','property_gallery_images'));
+        }
+
     }
 
   public function currency(Request $request)
