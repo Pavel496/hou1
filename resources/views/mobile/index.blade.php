@@ -232,6 +232,12 @@
 				@endforeach
 			</div>
 			@endforeach
+			<div class="pagination-real-estate">
+				<ul>
+					{{ $propertieslist->links() }}
+				</ul>
+			</div>
+
 
 			{{-- <div class="row">
 				<div class="col s6">

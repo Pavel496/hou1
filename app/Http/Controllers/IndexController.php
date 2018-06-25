@@ -59,7 +59,7 @@ class IndexController extends Controller
       session(['currencyname' => $currencyname]);
     }
 
-		$propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
+
 // dd($propertieslist);
         // $featured_properties = Properties::where('featured_property','1')->orderBy('id', 'desc')->take(6)->get();
 
@@ -68,9 +68,11 @@ class IndexController extends Controller
     // agent detection influences the view storage path
     if ($agent->isMobile()) {
         // you're a mobile device
+        $propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
         return view('mobile.index',compact('propertieslist', 'data'));
     } else {
         // you're a desktop device, or something similar
+        $propertieslist = Properties::where('status','1')->orderBy('id', 'desc')->paginate(6);
         return view('pages.index',compact('propertieslist', 'data'));
     }
         // return view('pages.mindex',compact('propertieslist', 'data'));
