@@ -166,9 +166,9 @@ class PropertiesController extends Controller
 
         $property_gallery_images= PropertyGallery::where('property_id',$property->id)->get();
 
-        $agent = new Agent();
+        $agnt = new Agent();
         // agent detection influences the view storage path
-        if ($agent->isMobile()) {
+        if ($agnt->isMobile()) {
             // you're a mobile device
             return view('mobile.single',compact('property','property_gallery_images'));
         } else {
