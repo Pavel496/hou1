@@ -71,8 +71,8 @@ class IndexController extends Controller
         return view('mobile.index',compact('propertieslist', 'data'));
     } else {
         // you're a desktop device, or something similar
-        // return view('mobile.index',compact('propertieslist', 'data'));
-        return view('pages.index',compact('propertieslist', 'data'));
+        return view('mobile.index',compact('propertieslist', 'data'));
+        // return view('pages.index',compact('propertieslist', 'data'));
     }
 
     }
