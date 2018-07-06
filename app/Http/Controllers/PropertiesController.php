@@ -65,7 +65,7 @@ class PropertiesController extends Controller
 
     public function saleproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
+    	$propertieslist = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
 // ->paginate(getcong('pagination_limit'))
         $data['type'] = null;
         $data['direction'] = null;
@@ -79,25 +79,37 @@ class PropertiesController extends Controller
         $data['buildmin'] = '0';
         $data['buildmax'] = '3000';
 
-        if(getcong('sale_properties_layout')=='rows')
-        {
-            return view('pages.sale_properties_rows_sidebar',compact('properties'));
-        }
-        else if(getcong('sale_properties_layout')=='grid_side')
-        {
-            return view('pages.sale_properties_grid_sidebar',compact('properties'));
-        }
-        else
-        {
-           return view('pages.sale_properties_grid',compact('properties', 'data'));
-        }
+        // if(getcong('sale_properties_layout')=='rows')
+        // {
+        //     return view('pages.sale_properties_rows_sidebar',compact('properties'));
+        // }
+        // else if(getcong('sale_properties_layout')=='grid_side')
+        // {
+        //     return view('pages.sale_properties_grid_sidebar',compact('properties'));
+        // }
+        // else
+        // {
+        //    return view('pages.sale_properties_grid',compact('properties', 'data'));
+        // }
 
+        // return view('mobile.sale',compact('propertieslist', 'data'));
+
+        $agent = new Agent();
+        // agent detection influences the view storage path
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.sale',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            // return view('mobile.all',compact('propertieslist', 'data'));
+            return view('pages.sale_properties_grid',compact('propertieslist', 'data'));
+        }
 
     }
 
     public function rentproperties()
     {
-    	$properties = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
+    	$propertieslist = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
 // ->paginate(getcong('pagination_limit'));
       $data['type'] = null;
       $data['direction'] = null;
@@ -111,20 +123,31 @@ class PropertiesController extends Controller
       $data['buildmin'] = '0';
       $data['buildmax'] = '3000';
 
-        if(getcong('rent_properties_layout')=='rows')
-        {
-            return view('pages.rent_properties_rows_sidebar',compact('properties'));
-        }
-        else if(getcong('rent_properties_layout')=='grid_side')
-        {
-            return view('pages.rent_properties_grid_sidebar',compact('properties'));
-        }
-        else
-        {
-           return view('pages.rent_properties_grid',compact('properties', 'data'));
+        // if(getcong('rent_properties_layout')=='rows')
+        // {
+        //     return view('pages.rent_properties_rows_sidebar',compact('properties'));
+        // }
+        // else if(getcong('rent_properties_layout')=='grid_side')
+        // {
+        //     return view('pages.rent_properties_grid_sidebar',compact('properties'));
+        // }
+        // else
+        // {
+        //    return view('pages.rent_properties_grid',compact('properties', 'data'));
+        // }
+        // return view('mobile.rent',compact('propertieslist', 'data'));
+        // return view('pages.rentproperties',compact('properties'));
+        $agent = new Agent();
+        // agent detection influences the view storage path
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.rent',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            // return view('mobile.all',compact('propertieslist', 'data'));
+            return view('pages.rent_properties_grid',compact('propertieslist', 'data'));
         }
 
-        // return view('pages.rentproperties',compact('properties'));
     }
 
 
@@ -241,6 +264,14 @@ class PropertiesController extends Controller
 // dd($data);
 	    $inputs = $request->all();
 // dd($inputs);
+
+      $purpose=$inputs['purpose'];
+ 	 		$direction=$inputs['direction'];
+      $type=$inputs['type'];
+      $keyword=$inputs['keyword'];
+      $currency=session('currencyname');
+
+
       $rangemin = $inputs['rangemin'];
       $rangemax = $inputs['rangemax'];
       $pricemin = $inputs['pricemin'];
@@ -250,6 +281,7 @@ class PropertiesController extends Controller
       $buildmin = $inputs['buildmin'];
       $buildmax = $inputs['buildmax'];
 
+      // $data['purpose'] = $purpose;
       $data['rangemin'] = $rangemin;
       $data['rangemax'] = $rangemax;
       $data['pricemin'] = $pricemin;
@@ -259,13 +291,7 @@ class PropertiesController extends Controller
       $data['buildmin'] = $buildmin;
       $data['buildmax'] = $buildmax;
 
-// dd($data);
-      $purpose=$inputs['purpose'];
- 	 		$direction=$inputs['direction'];
-      $type=$inputs['type'];
-      $keyword=$inputs['keyword'];
-
-      $currency=session('currencyname');
+      $agent = new Agent();
 
       if (($purpose == 'all') && ($currency == 'Рубли')) {
         $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -280,7 +306,15 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.index',compact('propertieslist', 'data'));
+        // return view('mobile.all',compact('propertieslist', 'data'));
+        // return view('pages.index',compact('propertieslist', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.all',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.index',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'all') && ($currency == 'Доллары')) {
         $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -295,7 +329,15 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.index',compact('propertieslist', 'data'));
+        // return view('mobile.all',compact('propertieslist', 'data'));
+        // return view('pages.index',compact('propertieslist', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.all',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.index',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'all') && ($currency == 'Евро')) {
         $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
@@ -310,12 +352,20 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.index',compact('propertieslist', 'data'));
+        // return view('mobile.all',compact('propertieslist', 'data'));
+        // return view('pages.index',compact('propertieslist', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.all',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.index',compact('propertieslist', 'data'));
+        }
       }
 
 
       if (($purpose == 'Продажа') && ($currency == 'Рубли')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crossrubl", ">=", (int)$pricemin)
                     ->where("crossrubl", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -328,10 +378,18 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.sale_properties_grid',compact('properties', 'data'));
+        // return view('mobile.sale',compact('propertieslist', 'data'));
+        // return view('pages.sale_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.sale',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.sale_properties_grid',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'Продажа') && ($currency == 'Доллары')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crossdollar", ">=", (int)$pricemin)
                     ->where("crossdollar", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -344,10 +402,18 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.sale_properties_grid',compact('properties', 'data'));
+        // return view('mobile.sale',compact('propertieslist', 'data'));
+        // return view('pages.sale_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.sale',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.sale_properties_grid',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'Продажа') && ($currency == 'Евро')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crosseuro", ">=", (int)$pricemin)
                     ->where("crosseuro", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -360,12 +426,20 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.sale_properties_grid',compact('properties', 'data'));
+        // return view('mobile.sale',compact('propertieslist', 'data'));
+        // return view('pages.sale_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.sale',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.sale_properties_grid',compact('propertieslist', 'data'));
+        }
       }
 
 
       if (($purpose == 'Аренда') && ($currency == 'Рубли')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crossrubl", ">=", (int)$pricemin)
                     ->where("crossrubl", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -378,10 +452,18 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.rent_properties_grid',compact('properties', 'data'));
+        // return view('mobile.rent',compact('propertieslist', 'data'));
+        // return view('pages.rent_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.rent',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.rent_properties_grid',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'Аренда') && ($currency == 'Доллары')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crossdollar", ">=", (int)$pricemin)
                     ->where("crossdollar", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -394,10 +476,18 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.rent_properties_grid',compact('properties', 'data'));
+        // return view('mobile.rent',compact('propertieslist', 'data'));
+        // return view('pages.rent_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.rent',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.rent_properties_grid',compact('propertieslist', 'data'));
+        }
       }
       if (($purpose == 'Аренда') && ($currency == 'Евро')) {
-        $properties = Properties::SearchByKeyword($keyword,$direction,$type)
+        $propertieslist = Properties::SearchByKeyword($keyword,$direction,$type)
                     ->where("crosseuro", ">=", (int)$pricemin)
                     ->where("crosseuro", "<=", (int)$pricemax)
                     ->where("range", ">=", (int)$rangemin)
@@ -410,7 +500,15 @@ class PropertiesController extends Controller
                     ->where('status','1')
                     ->paginate();
                     // ->paginate(getcong('pagination_limit'));
-        return view('pages.rent_properties_grid',compact('properties', 'data'));
+        // return view('mobile.rent',compact('propertieslist', 'data'));
+        // return view('pages.rent_properties_grid',compact('properties', 'data'));
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.rent',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            return view('pages.rent_properties_grid',compact('propertieslist', 'data'));
+        }
       }
 
     }

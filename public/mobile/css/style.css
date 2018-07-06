@@ -21,7 +21,7 @@ Table of Contents
 - Team
 - Pricing
 - Error 404
-- Footer   
+- Footer
 -------------------------------- */
 
 /* ------------------------------
@@ -220,13 +220,13 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: none;
 }
 
-::-webkit-input-placeholder { 
+::-webkit-input-placeholder {
   color: #555;
 }
-::-moz-placeholder { 
+::-moz-placeholder {
   color: #555;
 }
-:-ms-input-placeholder { 
+:-ms-input-placeholder {
   color: #555;
 }
 :-moz-placeholder {
@@ -693,6 +693,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	margin-top: -22px;
 }
 
+/* .real-estate .content .direction {
+	background: maroon;
+	padding: 2px 5px;
+	color: #fff;
+	position: relative;
+	top: 22px;
+	float: left;
+	margin-top: -22px;
+} */
+
 .real-estate .content .offer-type {
 	font-size: 10px;
 	padding: 0 3px;
@@ -773,7 +783,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	padding-bottom: 30px;
 	background: linear-gradient(
         rgba(0, 11, 10, 0.8),
-        rgba(0, 11, 10, 0.8) 
+        rgba(0, 11, 10, 0.8)
 	),
 	url(../img/bg.jpg);
 	background-size: cover;
@@ -833,7 +843,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 .single .single-content .date span .fa-calendar {
 	margin-left: 10px;
-} 
+}
 
 .single .single-content .line {
 	border-bottom: 1px solid #aaa;
@@ -932,7 +942,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .services .content {
-	
+
 }
 
 .services i {
@@ -1142,7 +1152,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .pagination-blog {
-	
+
 }
 
 .pagination-blog ul {
@@ -1184,7 +1194,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	padding: 10px 0;
 	margin: 15px 0 25px;
 	border: double 4px #ddd;
-} 
+}
 
 .share-post ul {
 	list-style: none;
@@ -1360,7 +1370,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .team-details ul li a {
-	color: #666;	
+	color: #666;
 }
 
 /* ------------------------------
@@ -1406,11 +1416,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	margin: 0;
 }
 
-.contact-us input, 
+.contact-us input,
 .contact-us textarea,
-.login input, 
+.login input,
 .login textarea,
-.register input, 
+.register input,
 .register textarea {
 	border-color: #ddd;
 	background: #f6f6f6;

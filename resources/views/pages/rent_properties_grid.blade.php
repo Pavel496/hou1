@@ -31,7 +31,7 @@
   <!-- Recent Properties -->
   <section class="property-listing boxed-view clearfix">
      <div class="inner-container container">
-      @foreach($properties as $i => $property)
+      @foreach($propertieslist as $i => $property)
       <div class="property-box col-xs-12 col-sm-6 col-md-4">
         <div class="inner-box">
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
@@ -82,7 +82,7 @@
 
     </div>
     <!-- begin:pagination -->
-            @include('_particles.pagination', ['paginator' => $properties])
+            @include('_particles.pagination', ['paginator' => $propertieslist])
     <!-- end:pagination -->
 
   </section>

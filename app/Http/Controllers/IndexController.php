@@ -68,11 +68,11 @@ class IndexController extends Controller
     // agent detection influences the view storage path
     if ($agent->isMobile()) {
         // you're a mobile device
-        return view('mobile.index',compact('propertieslist', 'data'));
+        return view('mobile.all',compact('propertieslist', 'data'));
     } else {
         // you're a desktop device, or something similar
-        return view('mobile.index',compact('propertieslist', 'data'));
-        // return view('pages.index',compact('propertieslist', 'data'));
+        // return view('mobile.all',compact('propertieslist', 'data'));
+        return view('pages.index',compact('propertieslist', 'data'));
     }
 
     }

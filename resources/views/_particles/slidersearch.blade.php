@@ -47,7 +47,8 @@
               <select id="proeprty-type" name="direction">
                 <option value="">Направление</option>
                   @foreach(\App\Direction::orderBy('name')->get() as $direct)
-                    <option value="{{$direct->id}}" {{ old('direction', $data['direction']) == $direct->id ? 'selected' : '' }}>{{$direct->name}}</option>
+                    <option value="{{$direct->id}}" {{ old('direction', $data['direction'])
+                       == $direct->id ? 'selected' : '' }}>{{$direct->name}}</option>
 
                   @endforeach
               </select>
