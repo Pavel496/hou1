@@ -23,7 +23,9 @@
 			        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Все</a></li>
 			        <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
 			        <li><a href="{{ URL::to('rent/') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
+							{{-- <li><a href="" class="{{classActivePathPublic('')}}">Советы эксперта</a></li> --}}
 							<li><a href="{{ URL::to('') }}" class="{{classActivePathPublic('')}}">О нас</a></li>
+							{{-- <li><a href="" class="{{classActivePathPublic('')}}">Строительство и дизайн</a></li> --}}
 			      </ul>
 			    </div>
 			  </nav>

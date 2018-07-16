@@ -58,7 +58,12 @@
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/richmarker-compiled.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('site_assets/js/markerclusterer_packed.js') }}"></script>
 
+
+
+
   @stack('scripts')
+
+  @stack('scriptssingle')
 
    <!-- END OF Map Js -->
 

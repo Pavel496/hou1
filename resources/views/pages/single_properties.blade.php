@@ -14,10 +14,31 @@
 
 </script>
 @endif
-<section id="property-slider-section" @if(count($property_gallery_images)==0) style="margin-bottom: 0px;" @endif>
+
+<br><br><br>
+{{-- <div class="pages section"> --}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="single">
+        <div class="properties">
+          <div id="owl-properties">
+            @foreach($property_gallery_images as $key=>$gallery_img)
+            <div class="item">
+              <img src="{{ URL::asset('upload/gallery/'.$gallery_img->image_name) }}" alt="sample image">
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- </div> --}}
+{{-- <section id="property-slider-section" @if(count($property_gallery_images)==0) style="margin-bottom: 0px;" @endif>
     <div class="title-box container">
       <h1>{{stripslashes($property->property_name)}}</h1>
-      {{-- <div class="location">{{stripslashes($property->address)}}</div> --}}
+      <div class="location">{{stripslashes($property->address)}}</div>
     </div>
     <!-- Main Slider -->
     <div id="property-main-slider">
@@ -46,7 +67,7 @@
 
     </div>
     @endif
-  </section>
+  </section> --}}
 
   <section class="main-container container">
     <div class="content-box col-sm-8">
@@ -277,5 +298,10 @@
 
     </aside>
   </section>
+
+@push('scriptssingle')
+  <script src="/mobile/js/materialize.min.js"></script>
+  <script src="/mobile/js/main.js"></script>
+@endpush
 
 @endsection

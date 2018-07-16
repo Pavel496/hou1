@@ -174,6 +174,8 @@ class PropertiesController extends Controller
          return redirect('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id));
     }
 
+
+
     public function single_properties($slug,$id)
     {
 
@@ -196,11 +198,13 @@ class PropertiesController extends Controller
             return view('mobile.single',compact('property','property_gallery_images'));
         } else {
             // you're a desktop device, or something similar
-            return view('mobile.single',compact('property','property_gallery_images'));
-            // return view('pages.single_properties',compact('property','agent','property_gallery_images'));
+            // return view('mobile.single',compact('property','property_gallery_images'));
+            return view('pages.single_properties',compact('property','agent','property_gallery_images'));
         }
 
     }
+
+
 
   public function currency(Request $request)
     {
