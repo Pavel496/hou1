@@ -114,6 +114,8 @@ Route::get('map/{id}', 'PropertiesController@map_property_urlset');
 
 Route::get('testimonials', 'IndexController@testimonialslist');
 
+Route::get('design', 'IndexController@design');
+
 
 Route::get('inquiries', 'UserController@inquirieslist');
 Route::get('inquiries/delete/{id}', 'UserController@delete');

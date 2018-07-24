@@ -32,6 +32,8 @@
 
     @stack('styles')
 
+    @stack('w3sch')
+
 </head>
 <body class="home-page-2 property-listing-page row-listing submit-property property-details not-found @if(request()->segment('1')=='user') agent-details-page @endif @if(request()->segment('1')=='agents') agents-page @endif">
 

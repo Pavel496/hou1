@@ -77,6 +77,11 @@ class IndexController extends Controller
 
     }
 
+    public function design()
+    {
+        return view('pages.design');
+    }
+
     public function testimonialslist()
     {
         $alltestimonials = Testimonials::orderBy('id','desc')->paginate(10);
