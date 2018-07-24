@@ -79,7 +79,15 @@ class IndexController extends Controller
 
     public function design()
     {
-        return view('pages.design');
+        $fotos = Partners::all();
+        return view('pages.design', compact('fotos'));
+    }
+
+    public function advice()
+    {
+        $advices = Testimonials::all();
+        // dd($advices);
+        return view('pages.advice', compact('advices'));
     }
 
     public function testimonialslist()

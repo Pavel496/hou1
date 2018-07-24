@@ -1,5 +1,3 @@
-{{-- <!DOCTYPE html>
-<html> --}}
 @extends("app")
 
 {{-- @section('head_title', stripslashes($property->property_name) .' | '.getcong('site_name') )
@@ -8,18 +6,6 @@
 @section('head_url', Request::url()) --}}
 
 @section("content")
-
-{{-- <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="assetsbs4/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assetsbs4/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assetsbs4/css/Responsive-Card-Item-List.css">
-    <link rel="stylesheet" href="assetsbs4/css/styles.css">
-</head>
-
-<body> --}}
 
   @push('w3sch')
     {{-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --}}
@@ -30,9 +16,7 @@
     <div class="container">
     <div class="row">
 
-      <div class="w3-container">
-        {{-- <h3>Творческий Альянс архитектора Евгения Виленкина и
-      дизайнера интерьера Оксаны Эзбиной.</h3> --}}
+      {{-- <div class="w3-container">
           <div class="w3-card-4" style="width:100%">
             <img src="w3sch/img/designers.jpg" alt="Card image cap">
             <header class="w3-container w3-gray">
@@ -47,15 +31,38 @@
               </p>
             </div>
           </div>
-      </div>
+      </div> --}}
 
-      @foreach($fotos as $foto)
-        <div class="w3-card-4 w3-margin">
+      @foreach($advices as $advice)
+        {{-- <div class="w3-card-4 w3-margin">
           <div class="w3-display-container w3-text-white">
-            <img src="{{ URL::asset('upload/partners/'.$foto->partner_image.'.jpg') }}" alt="Lights" style="width:100%">
-            <div class="w3-xlarge w3-display-bottomleft w3-padding">{{ $foto->url }}</div>
+            <img src="{{ URL::asset('upload/testimonial/'.$advice->t_user_image.'.jpg') }}" alt="Lights" style="width:100%">
+            <div class="w3-xlarge w3-display-bottomleft w3-padding">{!! stripslashes($advice->testimonial) !!}</div>
+          </div>
+        </div> --}}
+
+        <div class="w3-container">
+          {{-- <h2>Card Content</h2>
+          <p>Add containers inside the card to create different sections:</p> --}}
+
+          <div class="w3-card-4 w3-margin">
+            <header class="w3-container w3-green">
+              <h1>{{ $advice->name }}</h1>
+            </header>
+
+            <div class="w3-container">
+              <ul class="w3-ul w3-hoverable">
+                <p>{!! stripslashes($advice->testimonial) !!}</p>
+              </ul>
+            </div>
+
+            {{-- <footer class="w3-container w3-green">
+              <h5>Footer</h5>
+            </footer> --}}
           </div>
         </div>
+
+
       @endforeach
 
     </div>

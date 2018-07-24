@@ -5,9 +5,9 @@
 <div id="main">
 	<div class="page-header">
 		<h2> {{ isset($testimonial->name) ? 'Edit: '. $testimonial->name : 'Add Testimonial' }}</h2>
-		
+
 		<a href="{{ URL::to('admin/testimonials') }}" class="btn btn-default-light btn-xs"><i class="md md-backspace"></i> Back</a>
-	  
+
 	</div>
 	@if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -25,67 +25,76 @@
 				        {{ Session::get('flash_message') }}
 				    </div>
 	@endif
-   
+
    	<div class="panel panel-default">
             <div class="panel-body">
-                {!! Form::open(array('url' => array('admin/testimonials/addtestimonial'),'class'=>'form-horizontal padding-15','name'=>'addtestimonial_form','id'=>'addtestimonial_form','role'=>'form','enctype' => 'multipart/form-data')) !!} 
+                {!! Form::open(array('url' => array('admin/testimonials/addtestimonial'),'class'=>'form-horizontal padding-15','name'=>'addtestimonial_form','id'=>'addtestimonial_form','role'=>'form','enctype' => 'multipart/form-data')) !!}
                 <input type="hidden" name="id" value="{{ isset($testimonial->id) ? $testimonial->id : null }}">
-                  
-                
+
+
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Name</label>
+                    <label for="" class="col-sm-3 control-label">Название</label>
                     <div class="col-sm-9">
                         <input type="text" name="name" value="{{ isset($testimonial->name) ? $testimonial->name : null }}" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="" class="col-sm-3 control-label">Designation</label>
                     <div class="col-sm-9">
                         <input type="text" name="designation" value="{{ isset($testimonial->designation) ? $testimonial->designation : null }}" class="form-control">
                     </div>
-                </div>
+                </div> --}}
 				<div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Testimonial</label>
+                    <label for="" class="col-sm-3 control-label">Совет</label>
                     <div class="col-sm-9">
-                        
-						<textarea name="testimonial" class="form-control">{{ isset($testimonial->testimonial) ? stripslashes($testimonial->testimonial) : null }}</textarea>
+
+						<textarea id='editor' name="testimonial" class="form-control">{{ isset($testimonial->testimonial) ? stripslashes($testimonial->testimonial) : null }}</textarea>
                     </div>
                 </div>
-				 
-				<div class="form-group">
+
+				{{-- <div class="form-group">
                     <label for="avatar" class="col-sm-3 control-label">Client Image</label>
                     <div class="col-sm-9">
                         <div class="media">
                             <div class="media-left">
                                 @if(isset($testimonial->t_user_image))
-                                 
+
 									<img src="{{ URL::asset('upload/testimonial/'.$testimonial->t_user_image.'.jpg') }}" width="100" alt="person">
 								@endif
-								                                
+
                             </div>
                             <div class="media-body media-middle">
-                                <input type="file" name="t_user_image" class="filestyle"> 
+                                <input type="file" name="t_user_image" class="filestyle">
                             </div>
                         </div>
-	
+
                     </div>
-                </div>
-				
-				  
-                 
+                </div> --}}
+
+
+
                 <hr>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-sm-9 ">
-                    	<button type="submit" class="btn btn-primary">{{ isset($testimonial->name) ? 'Edit Testimonial' : 'Add Testimonial' }}</button>
-                         
+                    	<button type="submit" class="btn btn-primary">{{ isset($testimonial->name) ? 'Редактировать Совет' : 'Добавить совет' }}</button>
+
                     </div>
                 </div>
-                
-                {!! Form::close() !!} 
+
+                {!! Form::close() !!}
             </div>
         </div>
-   
-    
+
+
 </div>
 
 @endsection
+
+@push('scripts')
+  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace('editor');
+      CKEDITOR.config.height = 375;
+  </script>
+
+@endpush

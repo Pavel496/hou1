@@ -1,3 +1,99 @@
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/1_3.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/001.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div>
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/21.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/567.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/002.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/003.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img//004.RGB_color.0000 (1).jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/005.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/006.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/007.RGB_color.0000.jpg" alt="Lights" style="width:100%">
+    {{-- <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div> --}}
+  </div>
+</div>
+{{-- <div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/004-1.RGB_color.0000 copy.jpg" alt="Lights" style="width:100%">
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/005-1.RGB_color.0000 copy.jpg" alt="Lights" style="width:100%">
+  </div>
+</div> --}}
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/006-1.RGB_color.0000 copy.jpg" alt="Lights" style="width:100%">
+    <div class="w3-xlarge w3-display-bottomleft w3-padding"></div>
+  </div>
+</div>
+
+<div class="w3-card-4 w3-margin">
+  <div class="w3-display-container w3-text-white">
+    <img src="w3sch/img/007-1.RGB_color.0000 copy.jpg" alt="Lights" style="width:100%">
+    <div class="w3-xlarge w3-display-bottomleft w3-padding">Мама мыла раму.</div>
+  </div>
+</div>
+
+
+
+
+
 <div class="card  col-sm-12 bg-dark text-white mb-3">
   <img class="card-img" src="assetsbs4/img/1_3.jpg" alt="Card image">
   <div class="card-img-overlay">

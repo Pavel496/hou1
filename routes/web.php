@@ -116,6 +116,8 @@ Route::get('testimonials', 'IndexController@testimonialslist');
 
 Route::get('design', 'IndexController@design');
 
+Route::get('advices', 'IndexController@advice');
+
 
 Route::get('inquiries', 'UserController@inquirieslist');
 Route::get('inquiries/delete/{id}', 'UserController@delete');
