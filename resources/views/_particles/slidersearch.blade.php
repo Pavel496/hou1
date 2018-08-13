@@ -111,18 +111,18 @@
               @if ($page == 'Аренда')
 
                 @if ( session('currencyname') == 'Рубли' )
-                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> Цена min </option>
-                  <option value="150000" @if(old('pricemin', $data['pricemin'])=='150000') selected @endif> 150 тыс </option>
+                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> 0 </option>
+                  {{-- <option value="150000" @if(old('pricemin', $data['pricemin'])=='150000') selected @endif> 150 тыс </option>
                   <option value="200000" @if(old('pricemin', $data['pricemin'])=='200000') selected @endif> 200 тыс </option>
-                  <option value="300000" @if(old('pricemin', $data['pricemin'])=='300000') selected @endif> 300 тыс </option>
+                  <option value="300000" @if(old('pricemin', $data['pricemin'])=='300000') selected @endif> 300 тыс </option> --}}
                   <option value="500000" @if(old('pricemin', $data['pricemin'])=='500000') selected @endif> 500 тыс </option>
                   <option value="1000000" @if(old('pricemin', $data['pricemin'])=='1000000') selected @endif> 1 млн </option>
                   <option value="20000000" @if(old('pricemin', $data['pricemin'])=='20000000') selected @endif> 20 млн </option>
                 @else
-                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> Цена min </option>
-                  <option value="3000" @if(old('pricemin', $data['pricemin'])=='3000') selected @endif> 3 тыс </option>
+                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> 0 </option>
+                  {{-- <option value="3000" @if(old('pricemin', $data['pricemin'])=='3000') selected @endif> 3 тыс </option>
                   <option value="4000" @if(old('pricemin', $data['pricemin'])=='4000') selected @endif> 4 тыс </option>
-                  <option value="5000" @if(old('pricemin', $data['pricemin'])=='5000') selected @endif> 5 тыс </option>
+                  <option value="5000" @if(old('pricemin', $data['pricemin'])=='5000') selected @endif> 5 тыс </option> --}}
                   <option value="10000" @if(old('pricemin', $data['pricemin'])=='10000') selected @endif> 10 тыс </option>
                   <option value="20000" @if(old('pricemin', $data['pricemin'])=='20000') selected @endif> 20 тыс </option>
                   <option value="40000" @if(old('pricemin', $data['pricemin'])=='40000') selected @endif> 40 тыс </option>
@@ -132,14 +132,14 @@
               @else
 
                 @if ( session('currencyname') == 'Рубли' )
-                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> Цена min </option>
+                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> 0 </option>
                   <option value="30000000" @if(old('pricemin', $data['pricemin'])=='30000000') selected @endif> 30 млн </option>
                   <option value="40000000" @if(old('pricemin', $data['pricemin'])=='40000000') selected @endif> 40 млн </option>
                   <option value="50000000" @if(old('pricemin', $data['pricemin'])=='50000000') selected @endif> 50 млн </option>
                   <option value="100000000" @if(old('pricemin', $data['pricemin'])=='100000000') selected @endif> 100 млн </option>
                   <option value="500000000" @if(old('pricemin', $data['pricemin'])=='500000000') selected @endif> 500 млн </option>
                 @else
-                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> Цена min </option>
+                  <option value="0" @if(old('pricemin', $data['pricemin'])=='0') selected @endif> 0 </option>
                   <option value="500000" @if(old('pricemin', $data['pricemin'])=='500000') selected @endif> 500 тыс </option>
                   <option value="700000" @if(old('pricemin', $data['pricemin'])=='700000') selected @endif> 700 тыс </option>
                   <option value="800000" @if(old('pricemin', $data['pricemin'])=='800000') selected @endif> 800 тыс </option>
@@ -161,17 +161,17 @@
 
                 @if ( session('currencyname') == 'Рубли' )
                   <option value="50000000" @if(old('pricemax', $data['pricemax'])=='50000000') selected @endif> Цена max </option>
-                  <option value="150000" @if(old('pricemax', $data['pricemax'])=='150000') selected @endif> 150 тыс </option>
+                  {{-- <option value="150000" @if(old('pricemax', $data['pricemax'])=='150000') selected @endif> 150 тыс </option>
                   <option value="200000" @if(old('pricemax', $data['pricemax'])=='200000') selected @endif> 200 тыс </option>
-                  <option value="300000" @if(old('pricemax', $data['pricemax'])=='300000') selected @endif> 300 тыс </option>
+                  <option value="300000" @if(old('pricemax', $data['pricemax'])=='300000') selected @endif> 300 тыс </option> --}}
                   <option value="500000" @if(old('pricemax', $data['pricemax'])=='500000') selected @endif> 500 тыс </option>
                   <option value="1000000" @if(old('pricemax', $data['pricemax'])=='1000000') selected @endif> 1 млн </option>
                   <option value="20000000" @if(old('pricemax', $data['pricemax'])=='20000000') selected @endif> 20 млн </option>
                 @else
                   <option value="500000" @if(old('pricemax', $data['pricemax'])=='500000') selected @endif> Цена max </option>
-                  <option value="3000" @if(old('pricemax', $data['pricemax'])=='3000') selected @endif> 3 тыс </option>
+                  {{-- <option value="3000" @if(old('pricemax', $data['pricemax'])=='3000') selected @endif> 3 тыс </option>
                   <option value="4000" @if(old('pricemax', $data['pricemax'])=='4000') selected @endif> 4 тыс </option>
-                  <option value="5000" @if(old('pricemax', $data['pricemax'])=='5000') selected @endif> 5 тыс </option>
+                  <option value="5000" @if(old('pricemax', $data['pricemax'])=='5000') selected @endif> 5 тыс </option> --}}
                   <option value="10000" @if(old('pricemax', $data['pricemax'])=='10000') selected @endif> 10 тыс </option>
                   <option value="20000" @if(old('pricemax', $data['pricemax'])=='20000') selected @endif> 20 тыс </option>
                   <option value="40000" @if(old('pricemax', $data['pricemax'])=='40000') selected @endif> 40 тыс </option>
