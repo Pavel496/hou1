@@ -44,20 +44,34 @@
                 <!-- Main Menu -->
                 <nav id="main-menu" class="hidden-xs hidden-sm">
                     <ul class="main-menu list-inline">
-                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Все объекты</a>
-
-                        </li><!-- Menu items ( You can change the link and its text ) -->
+                        <li><a href="{{ URL::to('/') }}" class="{{classActivePathPublic('')}}">Все объекты</a></li>
+                        <!-- Menu items ( You can change the link and its text ) -->
 
                         {{-- <li><a href="{{ URL::to('properties/') }}" class="{{classActivePathPublic('properties')}}">All Properties</a></li>
                         <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li> --}}
-                        <li><a href="{{ URL::to('sale/') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
-                        <li><a href="{{ URL::to('rent/') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle {{classActivePathPublic('house')}}" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Дом</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('house/sale') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
+                            <li><a href="{{ URL::to('house/rent') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
+
+                          </ul>
+                        </li>
+
                         {{-- <li><a href="{{ URL::to('agents/') }}" class="{{classActivePathPublic('agents')}}">Агенты</a> --}}
                         {{-- <li><a href="{{ URL::to('testimonials/') }}" class="{{classActivePathPublic('testimonials')}}">Testimonials</a></li> --}}
                         <li><a href="{{ URL::to('advices/') }}" class="{{classActivePathPublic('advices')}}">Советы эксперта</a>
                         <li><a href="{{ URL::to('about-us/') }}" class="{{classActivePathPublic('about-us')}}">О нас</a></li>
-                        <li><a href="{{ URL::to('design/') }}" class="{{classActivePathPublic('design')}}">Строительство и дизайн</a>
+                        <li><a href="{{ URL::to('design/') }}" class="{{classActivePathPublic('design')}}">Строительство и дизайн</a></li>
                         <li><a href="{{ URL::to('contact-us/') }}" class="{{classActivePathPublic('contact-us')}}">Контакты</a></li>
+{{-- <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+  </ul>
+</li> --}}
                     </ul>
                 </nav>
                 <!-- END of Main Menu -->
