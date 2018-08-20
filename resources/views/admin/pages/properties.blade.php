@@ -3,7 +3,7 @@
 @section("content")
 <div id="main">
 	<div class="page-header">
-		
+
 		<div class="pull-right">
 			<a href="{{URL::to('submit-property')}}" class="btn btn-primary" target="_blank">Add Property <i class="fa fa-plus"></i></a>
 		</div>
@@ -18,12 +18,12 @@
 	@endif
 
 <div class="panel panel-shadow">
-    	<div class="panel-body">          
-         {!! Form::open(array('url' => 'admin/properties','class'=>'form-inline filter','id'=>'search','role'=>'form','method'=>'get')) !!}	
+    	<div class="panel-body">
+         {!! Form::open(array('url' => 'admin/properties','class'=>'form-inline filter','id'=>'search','role'=>'form','method'=>'get')) !!}
             <span class="bold text-muted">Search</span>
             <div class="form-group">
                 <input type="text" class="form-control" id="" name="keyword" placeholder="Title, Address...">
-            </div>             
+            </div>
             <div class="form-group">
                 <select name="purpose" id="basic" class="selectpicker show-tick form-control" data-live-search="false">
                    <option value="">Property Purpose</option>
@@ -45,10 +45,10 @@
         {!! Form::close() !!}
     	</div>
 	</div>
-     
+
 <div class="panel panel-default panel-shadow">
- 
-    <div class="panel-body table-responsive">         
+
+    <div class="panel-body table-responsive">
         <table class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
             <thead>
 	            <tr>
@@ -57,7 +57,7 @@
 	                <th>Property Name</th>
 					<th>Type</th>
 					<th>Purpose</th>
-	                <th class="text-center">Status</th> 
+	                <th class="text-center">Status</th>
 	                <th class="text-center width-100">Action</th>
 	            </tr>
             </thead>
@@ -65,9 +65,9 @@
             <tbody>
             @foreach($propertieslist as $i => $property)
          	   <tr>
-            	
+
 				<td>{{ $property->id }}</td>
-				<td>{{ getUserInfo($property->user_id)->name }}</td> 
+				<td>{{ getUserInfo($property->user_id)->name }}</td>
                 <td>{{ $property->property_name }}</td>
 				<td>{{ getPropertyTypeName($property->property_type)->types }}</td>
 				<td>{{ $property->property_purpose }}</td>
@@ -81,27 +81,27 @@
 								<i class="md md-close"></i>
 							</span>
 						@endif
-            	</td>  
+            	</td>
                 <td class="text-center">
                 <div class="btn-group">
 								<button type="button" class="btn btn-default-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 									Actions <span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu dropdown-menu-right" role="menu"> 
+								<ul class="dropdown-menu dropdown-menu-right" role="menu">
 									<li><a href="{{ url('update-property/'.Crypt::encryptString($property->id)) }}" target="_blank"><i class="md md-edit"></i> Edit</a></li>
-									
-									 
+
+
 									<li>
-										@if($property->featured_property==0)                	
+										@if($property->featured_property==0)
 					                	<a href="{{ url('admin/properties/featuredproperty/'.Crypt::encryptString($property->id)) }}"><i class="md md-star"></i> Set as Featured</a>
 					                	@else
 					                	<a href="{{ url('admin/properties/featuredproperty/'.Crypt::encryptString($property->id)) }}"><i class="md md-check"></i> Unset from Featured</a>
 					                	@endif
 									</li>
-									 
-									
+
+
 									<li>
-										@if($property->status==1)                	
+										@if($property->status==1)
 					                	<a href="{{ url('admin/properties/status/'.Crypt::encryptString($property->id)) }}"><i class="md md-close"></i> Unpublish</a>
 					                	@else
 					                	<a href="{{ url('admin/properties/status/'.Crypt::encryptString($property->id)) }}"><i class="md md-check"></i> Publish</a>
@@ -109,19 +109,19 @@
 									</li>
 									<li><a href="{{ url('admin/properties/delete/'.Crypt::encryptString($property->id)) }}" onclick="return confirm('Are you sure? You will not be able to recover this.')"><i class="md md-delete"></i> Delete</a></li>
 								</ul>
-							</div> 
-                
+							</div>
+
             </td>
-                
+
             </tr>
            @endforeach
-             
+
             </tbody>
             <tfoot>
 		        <tr>
 		            <td colspan="8" class="text-center">
 		            	@include('admin.pagination', ['paginator' => $propertieslist])
-		                 
+
 		            </td>
 		        </tr>
         	</tfoot>
