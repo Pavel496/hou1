@@ -177,7 +177,7 @@ class PropertiesController extends Controller
 
 
 
-    public function single_properties($slug,$id)
+    public function single_properties($type,$id)
     {
 
         $decrypted_id = Crypt::decryptString($id);
@@ -196,12 +196,14 @@ class PropertiesController extends Controller
         // agent detection influences the view storage path
         if ($agnt->isMobile()) {
             // you're a mobile device
-            return view('mobile.single',compact('property','property_gallery_images'));
-        } else {
-            // you're a desktop device, or something similar
-            // return view('mobile.single',compact('property','property_gallery_images'));
-            return view('pages.single_properties',compact('property','agent','property_gallery_images'));
+          return view('mobile.single',compact('property','property_gallery_images'));
         }
+
+        if ($type ==3) {
+          return view('pages.singleap_properties',compact('property','agent','property_gallery_images'));
+        }
+
+          return view('pages.single_properties',compact('property','agent','property_gallery_images'));
 
     }
 

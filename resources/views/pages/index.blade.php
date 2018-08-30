@@ -55,7 +55,7 @@
             {{-- <span class="price">{{$property->currency.' '.number_format($property->price)}}</span> --}}
           </a>
           <div class="bottom-sec">
-            <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="title">{{ str_limit($property->property_name,35) }}</a>
+            <a href="{{ url('properties/'.$property->property_type.'/'.Crypt::encryptString($property->id)) }}" class="title">{{ str_limit($property->property_name,35) }}</a>
             <div class="location">{{ str_limit($property->address,40) }}</div>
             <div class="desc">
               {!! str_limit($property->description,100) !!}
@@ -94,7 +94,7 @@
           @endif
 
           </div>
-          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">Подробнее</a>
+          <a href="{{ url('properties/'.$property->property_type.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">Подробнее</a>
         </div>
       </div>
           @endforeach
