@@ -22,8 +22,8 @@ class CreatePropertiesTable extends Migration
             $table->string('property_type');
             $table->string('property_purpose');
 
-            $table->string('direction');
-            $table->string('range');
+            $table->string('direction')->nullable();
+            $table->string('range')->nullable();
             $table->string('readiness');
             $table->string('currency');
 
