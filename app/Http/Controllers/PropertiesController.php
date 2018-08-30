@@ -10,6 +10,7 @@ use App\Enquire;
 use App\Types;
 use App\Direction;
 use App\Readiness;
+use App\Metrostation;
 
 use Illuminate\Http\Request;
 
@@ -555,6 +556,10 @@ class PropertiesController extends Controller
         $types = Types::orderBy('types')->get();
         $directions = Direction::orderBy('name')->get();
         $readinesses = Readiness::orderBy('name')->get();
+        // $metrostations = Metrostation::orderBy('name')->get()->groupBy(function ($metrostation) {
+        //     return substr($metrostation->name, 0, 2);});
+        // $stations = '';
+        // session(['stations' => $stations]);
 
         return view('pages.add_property',compact('types', 'directions', 'readinesses'));
     }
@@ -572,8 +577,8 @@ class PropertiesController extends Controller
                 'property_purpose' => 'required',
                 'property_type' => 'required',
 
-                'direction' => 'required',
-                'range' => 'required',
+                // 'direction' => 'required',
+                // 'range' => 'required',
                 'readiness' => 'required',
                 'currency' => 'required',
 
@@ -590,8 +595,8 @@ class PropertiesController extends Controller
                 'property_purpose' => 'required',
                 'property_type' => 'required',
 
-                'direction' => 'required',
-                'range' => 'required',
+                // 'direction' => 'required',
+                // 'range' => 'required',
                 'readiness' => 'required',
                 'currency' => 'required',
 
@@ -697,6 +702,9 @@ class PropertiesController extends Controller
         $property->description = addslashes($inputs['description']);
         $property->video_code = addslashes($inputs['video_code']);
 
+        // session(['stations' => $property->property_features]);
+        // $stations = $property->property_features;
+
         if(Auth::User()->usertype=="Admin" or Auth::User()->usertype=="Agents"){
 
          $property->status =1;
@@ -769,7 +777,17 @@ class PropertiesController extends Controller
 
             \Session::flash('flash_message', 'Объект обновлен');
 
-            return \Redirect::back();
+            $types = Types::orderBy('types')->get();
+            $directions = Direction::orderBy('name')->get();
+            $readinesses = Readiness::orderBy('name')->get();
+
+            $property_gallery_images = PropertyGallery::where('property_id',$property->id)->orderBy('image_name')->get();
+
+            $stations = $property->property_features;
+
+            return view('pages.edit_property',compact('property','types', 'directions', 'readinesses', 'property_gallery_images', 'stations'));
+
+            // return \Redirect::back();
         }else{
 
             //Email Notification
@@ -789,7 +807,7 @@ class PropertiesController extends Controller
             // });
 
             \Session::flash('flash_message', 'Новый объект создан');
-
+// session(['prop' => $property]);
              return redirect('my_properties');
 
         }
@@ -818,10 +836,11 @@ class PropertiesController extends Controller
             $property = Properties::where('id',$decrypted_id)->where('user_id',$user_id)->first();
           }
 
-
           if(!$property){
             abort('404');
          }
+
+          session(['id' => $id]);
 
           $types = Types::orderBy('types')->get();
           $directions = Direction::orderBy('name')->get();
@@ -829,7 +848,9 @@ class PropertiesController extends Controller
 
           $property_gallery_images = PropertyGallery::where('property_id',$property->id)->orderBy('image_name')->get();
 
-          return view('pages.edit_property',compact('property','types', 'directions', 'readinesses', 'property_gallery_images'));
+          $stations = $property->property_features;
+
+          return view('pages.edit_property',compact('property','types', 'directions', 'readinesses', 'property_gallery_images', 'stations'));
 
     }
 

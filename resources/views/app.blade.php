@@ -21,6 +21,7 @@
 
     <link href="{{ URL::asset('site_assets/css/style.css') }}" rel="stylesheet" />
     <link id="main-style-file-css" rel="stylesheet" href="{{ URL::asset('site_assets/css/style_new.css') }}"/>
+    <link href="{{ URL::asset('bulma/css/app.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('site_assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('site_assets/css/zastavka.css') }}" rel="stylesheet" />
 

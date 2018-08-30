@@ -17,6 +17,13 @@
 }
 
 </style>
+
+{{-- <script type="text/javascript">
+    @if (count($errors) > 0)
+        $('#myModal3').modal('show');
+    @endif
+</script> --}}
+
 <!--Breadcrumb Section-->
   <section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')){{ URL::asset('upload/'.getcong('title_bg'))}} @else {{URL::asset('site_assets/img/breadcrumb-bg.jpg')}} @endif">
     <div class="inner-container container">
@@ -46,8 +53,8 @@
     </div>
     <div class="submit-main-box clearfix">
          {!! Form::open(array('url' => 'submit-property','class'=>'','id'=>'submit-property-main-form','role'=>'form','enctype' => 'multipart/form-data')) !!}
-
-
+<input type="hidden" name="property_features" value=''>
+{{-- {{Form::text('property_features', $stations, ['data-role' => 'tagsinput'])}} --}}
         <div class="row t-sec">
           <div class="col-md-6 l-sec">
             <div class="information-box">
@@ -171,7 +178,7 @@
                 </div>
 
                 <div class="well">
-                    <p>Спальни, сан узлы, гаражи</p>
+                    <p>Спальни (комнаты), сан узлы, гаражи</p>
                     <select id="p-bedroom" name="bedrooms">
                       <option value="">Спальни</option>
                       <option value="1" @if(old('bedrooms')=='1') selected @endif>1</option>
@@ -230,26 +237,35 @@
                 </div>
               </div>
             </div>
-
-            <div class="information-box">
-              <h3>Благоустройство</h3>`
+{{-- {{Form::text('property_features', '', ['disabled' => true, 'data-role' => 'tagsinput'])}} --}}
+            {{-- <div class="information-box">
+              <h3>Благоустройство или станции метро</h3>`
 
                 <div class="box-content">
                   <div class="field-row">
-                     <input type="text" name="property_features" value="скворечник {{ old('property_features') }}" data-role="tagsinput">
+
+                     {{Form::text('property_features', $stations, ['data-role' => 'tagsinput'])}}
+                  </div>
+                  <div class="field-row">
+                     <a href="/station/{{ $stations }}" class="btn">Список станций метро</a>
+                     <a href="/clear" class="btn">Очистить список</a>
+
                   </div>
                 </div>
-            </div>
+            </div> --}}
+            {{-- <input type="text" name="property_features" value="{{ old('property_features') }}" data-role="tagsinput"> --}}
+            {{-- <a class="btn btn-default" data-toggle="modal" data-target="#myModal3"><span>Метро</span></a> --}}
+
             <div class="information-box">
               <h3>Главное изображение</h3>
                 <div class="box-content">
 
-                    <input type="file" name="featured_image" id="featured_image" style="color: green;padding: 5px;border: 1px dashed #123456;background-color: #f9ffe5;"/><br/>
-                   @if ($errors->has('featured_image'))
+                  <input type="file" name="featured_image" id="featured_image" style="color: green;padding: 5px;border: 1px dashed #123456;background-color: #f9ffe5;"/><br/>
+                  @if ($errors->has('featured_image'))
                     <span style="color:#fb0303">
                         {{ $errors->first('featured_image') }}
                     </span>
-                 @endif
+                  @endif
                 </div>
             </div>
 

@@ -175,7 +175,7 @@
                 </div>
 
                 <div class="well">
-                    <p>Спальни, сан узлы, гаражи</p>
+                    <p>Спальни (комнаты), сан узлы, гаражи</p>
                     <select id="p-bedroom" name="bedrooms">
                       <option value="">Спальни</option>
                       <option value="1" @if($property->bedrooms=='1') selected @endif>1</option>
@@ -235,15 +235,34 @@
               </div>
             </div>
 
-            <div class="information-box">
-              <h3>Благоустройство</h3>`
+            {{-- <div class="information-box">
+              <h3>Благоустройство или станции метро</h3>`
 
                 <div class="box-content">
                   <div class="field-row">
                      <input type="text" name="property_features" value="{{$property->property_features}}" data-role="tagsinput">
+                     <a href="{{ URL::to('/metro') }}" class="btn">Список станций метро</a>
+                  </div>
+                </div>
+            </div> --}}
+            {{-- {{ $stations }} --}}
+            <div class="information-box">
+              <h3>Благоустройство или станции метро</h3>`
+
+                <div class="box-content">
+                  <div class="field-row">
+
+                     {{Form::text('property_features', $stations, ['data-role' => 'tagsinput'])}}
+                  </div>
+                  <div class="field-row">
+                     <a href="/station/{{ $stations }}" class="btn">Список станций метро</a>
+                     {{-- <a href="/clear" class="btn">Очистить список</a> --}}
+
                   </div>
                 </div>
             </div>
+
+
             <div class="information-box">
               <h3>Главное изображение</h3>
                 <div class="box-content">

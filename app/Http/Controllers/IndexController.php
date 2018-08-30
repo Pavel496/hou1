@@ -59,6 +59,12 @@ class IndexController extends Controller
       session(['currencyname' => $currencyname]);
     }
 
+    // if (!(session()->has('stations'))) {
+    //   $stations = '';
+    //
+    //   session(['stations' => $stations]);
+    // }    
+
 
 // dd($propertieslist);
         // $featured_properties = Properties::where('featured_property','1')->orderBy('id', 'desc')->take(6)->get();

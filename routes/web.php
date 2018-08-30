@@ -91,8 +91,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 });
 
+/*********************************************************************************/
 
 Route::get('/', 'IndexController@index');
+
+Route::get('/station/{station?}/{stations?}', 'MetroController@station');
+Route::get('/back_from_metro/{stations?}', 'MetroController@back_from_metro');
+// Route::get('/clear', 'MetroController@clear');
 
 Route::get('about-us', 'IndexController@aboutus_page');
 
