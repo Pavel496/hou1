@@ -27,6 +27,7 @@
       @foreach($propertieslist->chunk(3) as $chunked_property)
         <div class="row">
           @foreach($chunked_property as $property)
+
       <div class="property-box col-xs-12 col-sm-6 col-md-4">
         <div class="inner-box">
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
@@ -60,6 +61,22 @@
               {!! str_limit($property->description,100) !!}
             </div>
 
+          @if ( $property->property_type == 3 )
+            <div class="extra-info clearfix">
+              <div class="area col-xs-4">
+                <div class="value">{{$property->bedrooms}}</div>
+                комн
+              </div>
+              <div class="bedroom col-xs-4">
+                <div class="value">{{$property->bathrooms}}</div>
+                с/у
+              </div>
+              <div class="bathroom col-xs-4">
+                <div class="value">{{$property->build_area}}</div>
+                м2
+              </div>
+            </div>
+          @else
             <div class="extra-info clearfix">
               <div class="area col-xs-4">
                 <div class="value">{{$property->range}}</div>
@@ -74,6 +91,7 @@
                 м2
               </div>
             </div>
+          @endif
 
           </div>
           <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="btn more-link">Подробнее</a>
