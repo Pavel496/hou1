@@ -30,7 +30,7 @@
 
       <div class="property-box col-xs-12 col-sm-6 col-md-4">
         <div class="inner-box">
-          <a href="{{ url('properties/'.$property->property_slug.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
+          <a href="{{ url('properties/'.$property->property_type.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
 
             @if($property->featured_property==1)<span class="tag-label hot-offer">Избранное</span>@endif
             <span class="my1-label featured">{{ $property->direction_to->name }}</span>
