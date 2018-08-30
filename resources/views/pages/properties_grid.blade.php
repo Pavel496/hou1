@@ -55,15 +55,15 @@
         </div>
       </div>
       @endforeach
-    
+
     </div>
     <!-- begin:pagination -->
-            @include('_particles.pagination', ['paginator' => $properties])             
+            @include('_particles.pagination', ['paginator' => $properties])
     <!-- end:pagination -->
-    
+
   </section>
   <!-- End of Recent Properties -->
 
- 
- 
+
+
 @endsection
