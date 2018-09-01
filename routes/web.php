@@ -113,6 +113,8 @@ Route::get('properties', 'PropertiesController@index');
 Route::get('featured', 'PropertiesController@featuredproperties');
 Route::get('house/sale', 'PropertiesController@saleproperties');
 Route::get('house/rent', 'PropertiesController@rentproperties');
+Route::get('apartment/sale', 'PropertiesController@saleapproperties');
+Route::get('apartment/rent', 'PropertiesController@rentapproperties');
 Route::get('properties/{type}/{id}', 'PropertiesController@single_properties');
 
 Route::get('map/{id}', 'PropertiesController@map_property_urlset');

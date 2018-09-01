@@ -50,10 +50,19 @@
                         {{-- <li><a href="{{ URL::to('properties/') }}" class="{{classActivePathPublic('properties')}}">All Properties</a></li>
                         <li><a href="{{ URL::to('featured/') }}" class="{{classActivePathPublic('featured')}}">Featured</a></li> --}}
                         <li class="dropdown">
-                          <a class="dropdown-toggle {{classActivePathPublic('house')}}" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Дом</a>
+                          <a class="dropdown-toggle {{classActivePathPublic('house')}}" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Дома</a>
                           <ul class="dropdown-menu">
-                            <li><a href="{{ URL::to('house/sale') }}" class="{{classActivePathPublic('sale')}}">Продажа</a></li>
-                            <li><a href="{{ URL::to('house/rent') }}" class="{{classActivePathPublic('rent')}}">Аренда</a></li>
+                            <li><a href="{{ URL::to('house/sale') }}" class="{{classActivePathPublic('house/sale')}}">Продажа домов</a></li>
+                            <li><a href="{{ URL::to('house/rent') }}" class="{{classActivePathPublic('house/rent')}}">Аренда домов</a></li>
+
+                          </ul>
+                        </li>
+
+                        <li class="dropdown">
+                          <a class="dropdown-toggle {{classActivePathPublic('apartment')}}" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Квартиры</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{{ URL::to('apartment/sale') }}" class="{{classActivePathPublic('apartment/sale')}}">Продажа квартир</a></li>
+                            <li><a href="{{ URL::to('apartment/rent') }}" class="{{classActivePathPublic('apartment/rent')}}">Аренда квартир</a></li>
 
                           </ul>
                         </li>

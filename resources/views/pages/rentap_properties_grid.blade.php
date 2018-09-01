@@ -1,26 +1,26 @@
 @extends("app")
 
-@section('head_title', 'Продажа | '.getcong('site_name') )
+@section('head_title', 'Аренда | '.getcong('site_name') )
 @section('head_url', Request::url())
 
 @section("content")
 
-  <!--Breadcrumb Section-->
-<section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')) {{ URL::asset('upload/'.getcong('title_bg')) }} @else {{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }} @endif">
-  <div class="inner-container container">
-    <h1>Продажа домов</h1>
-    <div class="breadcrumb">
-      <ul class="list-inline">
-        <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
-        <li><a href="#">Продажа</a></li>
-      </ul>
+    <!--Breadcrumb Section-->
+  <section class="breadcrumb-box" data-parallax="scroll" data-image-src="@if(getcong('title_bg')) {{ URL::asset('upload/'.getcong('title_bg')) }} @else {{ URL::asset('site_assets/img/breadcrumb-bg.jpg') }} @endif">
+    <div class="inner-container container">
+      <h1>Аренда квартир</h1>
+      <div class="breadcrumb">
+        <ul class="list-inline">
+          <li class="home"><a href="{{ URL::to('/') }}">Все объекты</a></li>
+          <li><a href="#">Аренда</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-<!--Breadcrumb Section-->
+  </section>
+  <!--Breadcrumb Section-->
 
-{{-- @if (\Request::is('sale')) --}}
-  {{$page='Продажа'}}
+{{-- @if (\Request::is('rent')) --}}
+  {{$page='Аренда'}}
 
   {{session('currencyname')}}
 {{-- @endif --}}
@@ -88,6 +88,7 @@
     <!-- begin:pagination -->
             @include('_particles.pagination', ['paginator' => $propertieslist])
     <!-- end:pagination -->
+
   </section>
   <!-- End of Recent Properties -->
 

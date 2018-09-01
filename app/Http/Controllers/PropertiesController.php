@@ -66,7 +66,7 @@ class PropertiesController extends Controller
 
     public function saleproperties()
     {
-    	$propertieslist = Properties::where(['status'=>'1','property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
+    	$propertieslist = Properties::where(['status'=>'1', 'property_type'=>'1', 'property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
 // ->paginate(getcong('pagination_limit'))
         $data['type'] = null;
         $data['direction'] = null;
@@ -110,7 +110,7 @@ class PropertiesController extends Controller
 
     public function rentproperties()
     {
-    	$propertieslist = Properties::where(['status'=>'1','property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
+    	$propertieslist = Properties::where(['status'=>'1', 'property_type'=>'1', 'property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
 // ->paginate(getcong('pagination_limit'));
       $data['type'] = null;
       $data['direction'] = null;
@@ -147,6 +147,64 @@ class PropertiesController extends Controller
             // you're a desktop device, or something similar
             // return view('mobile.all',compact('propertieslist', 'data'));
             return view('pages.rent_properties_grid',compact('propertieslist', 'data'));
+        }
+
+    }
+
+    public function saleapproperties()
+    {
+    	$propertieslist = Properties::where(['status'=>'1', 'property_type'=>'3', 'property_purpose'=>'Продажа'])->orderBy('id', 'desc')->paginate(6);
+// ->paginate(getcong('pagination_limit'))
+        $data['type'] = null;
+        $data['direction'] = null;
+        $data['currency'] = null;
+        $data['pricemin'] = '0';
+        $data['pricemax'] = '750000000';
+        $data['rangemin'] = '0';
+        $data['rangemax'] = '100';
+        $data['landmin'] = '0';
+        $data['landmax'] = '300';
+        $data['buildmin'] = '0';
+        $data['buildmax'] = '3000';
+
+        $agent = new Agent();
+        // agent detection influences the view storage path
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.sale',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            // return view('mobile.all',compact('propertieslist', 'data'));
+            return view('pages.saleap_properties_grid',compact('propertieslist', 'data'));
+        }
+
+    }
+
+    public function rentapproperties()
+    {
+    	$propertieslist = Properties::where(['status'=>'1', 'property_type'=>'3', 'property_purpose'=>'Аренда'])->orderBy('id', 'desc')->paginate(6);
+// ->paginate(getcong('pagination_limit'));
+      $data['type'] = null;
+      $data['direction'] = null;
+      $data['currency'] = null;
+      $data['pricemin'] = '0';
+      $data['pricemax'] = '750000000';
+      $data['rangemin'] = '0';
+      $data['rangemax'] = '100';
+      $data['landmin'] = '0';
+      $data['landmax'] = '300';
+      $data['buildmin'] = '0';
+      $data['buildmax'] = '3000';
+
+        $agent = new Agent();
+        // agent detection influences the view storage path
+        if ($agent->isMobile()) {
+            // you're a mobile device
+            return view('mobile.rent',compact('propertieslist', 'data'));
+        } else {
+            // you're a desktop device, or something similar
+            // return view('mobile.all',compact('propertieslist', 'data'));
+            return view('pages.rentap_properties_grid',compact('propertieslist', 'data'));
         }
 
     }
