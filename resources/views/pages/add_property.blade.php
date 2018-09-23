@@ -73,7 +73,7 @@
 
                  <div class="field-row">
                      <select id="p-direction" name="direction">
-                       <option value="">Направление</option>
+                       <option value="">Направление (Город)</option>
                       @foreach($directions as $direct)
                          <option value="{{$direct->id}}" @if(old('direction')==$direct->id) selected @endif>{{$direct->name}}</option>
                      @endforeach
@@ -178,9 +178,10 @@
                 </div>
 
                 <div class="well">
-                    <p>Спальни (комнаты), сан узлы, гаражи</p>
+
+                    Спальни (комнаты)
                     <select id="p-bedroom" name="bedrooms">
-                      <option value="">Спальни</option>
+                      <option value="">№</option>
                       <option value="1" @if(old('bedrooms')=='1') selected @endif>1</option>
                       <option value="2" @if(old('bedrooms')=='2') selected @endif>2</option>
                       <option value="3" @if(old('bedrooms')=='3') selected @endif>3</option>
@@ -189,8 +190,9 @@
                       <option value="+5" @if(old('bedrooms')=='+5') selected @endif>+5</option>
                     </select>
 
+                    Сан узлы
                     <select id="bathroom" name="bathrooms">
-                      <option value="">Сан узлы</option>
+                      <option value="">№</option>
                       <option value="1" @if(old('bathrooms')=='1') selected @endif>1</option>
                       <option value="2" @if(old('bathrooms')=='2') selected @endif>2</option>
                       <option value="3" @if(old('bathrooms')=='3') selected @endif>3</option>
@@ -199,8 +201,9 @@
                       <option value="+5" @if(old('bathrooms')=='+5') selected @endif>+5</option>
                     </select>
 
+                    Гаражи (этажи)
                     <select id="garage" name="garage">
-                      <option value="">Гаражи</option>
+                      <option value="">№</option>
                       <option value="1" @if(old('garage')=='1') selected @endif>1</option>
                       <option value="2" @if(old('garage')=='2') selected @endif>2</option>
                       <option value="3" @if(old('garage')=='3') selected @endif>3</option>
@@ -222,7 +225,7 @@
                   <div class="col-xs-6">
                     <div class="input-group r-icon">
                       <input type="text" name="build_area" class="form-control number-field" id="p-build"
-                           placeholder="Площадь дома" value="{{ old('build_area') }}">
+                           placeholder="Площадь Объекта" value="{{ old('build_area') }}">
                       <span class="input-group-addon">м2</span>
                     </div>
                   </div>

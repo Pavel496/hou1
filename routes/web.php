@@ -137,6 +137,7 @@ Route::post('agentscontact', 'PropertiesController@agentscontact');
 Route::post('currency', 'PropertiesController@currency');
 
 Route::post('searchproperties', 'PropertiesController@searchproperties');
+Route::post('searchpropertiesap', 'PropertiesController@searchpropertiesap');
 
 Route::get('login', [ 'as' => 'login', 'uses' => 'IndexController@login']);
 Route::post('login', 'IndexController@postLogin');

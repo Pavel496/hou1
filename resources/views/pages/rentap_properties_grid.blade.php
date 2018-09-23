@@ -25,7 +25,7 @@
   {{session('currencyname')}}
 {{-- @endif --}}
 
-@include("_particles.slidersearch")
+@include("_particles.slidersearchap")
 
 <br><br>
   <!-- Recent Properties -->
@@ -35,6 +35,7 @@
          <div class="row">
            @foreach($chunked_property as $property)
       <div class="property-box col-xs-12 col-sm-6 col-md-4">
+        {{$property->property_features}}
         <div class="inner-box">
           <a href="{{ url('properties/'.$property->property_type.'/'.Crypt::encryptString($property->id)) }}" class="img-container">
 
