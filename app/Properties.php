@@ -29,8 +29,8 @@ class Properties extends Model
                 $query->where("status", "1")
                     ->where("direction", "$direction")
                     ->where("property_type", "$type")
-                    ->orWhere("property_features", 'like', '%' .$keyword. '%')
-                    ->orWhere("property_name", 'like', '%' .$keyword. '%');
+                    ->orWhere("property_features", 'like', '%' .$keyword. '%');
+                    // ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
             elseif ($direction!='' and $type!='')
@@ -57,8 +57,8 @@ class Properties extends Model
             {
                 $query->where(function ($query) use ($keyword,$direction,$type) {
                 $query->where("status", "1")
-                    ->where("property_features", 'like', '%' .$keyword. '%')
-                    ->orWhere("property_name", 'like', '%' .$keyword. '%');
+                    ->where("property_features", 'like', '%' .$keyword. '%');
+                    // ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
 
