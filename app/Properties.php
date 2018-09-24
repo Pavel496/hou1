@@ -29,7 +29,7 @@ class Properties extends Model
                 $query->where("status", "1")
                     ->where("direction", "$direction")
                     ->where("property_type", "$type")
-                    ->orWhere("property_features", 'like', '%' .$keyword. '%');
+                    ->Where("property_features", 'like', '%' .$keyword. '%');
                     // ->orWhere("property_name", 'like', '%' .$keyword. '%');
                 });
             }
