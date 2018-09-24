@@ -56,7 +56,8 @@
             </div>
             <div class="col-xs-4 col-sm-2 search-field">
                 <select id="proeprty-type" name="type">
-                  <option value="">Тип объекта</option>
+                  <option value="3">Квартира</option>
+                  {{-- <option value="">Тип объекта</option>
 
                   @if ($page == 'Аренда')
                     @foreach(\App\Property_types_rent::orderBy('name')->get() as $type)
@@ -66,7 +67,7 @@
                     @foreach(\App\Types::orderBy('types')->get() as $type)
                           <option value="{{$type->id}}" {{ old('type', $data['type']) == $type->id ? 'selected' : '' }}>{{$type->types}}</option>
                     @endforeach
-                  @endif
+                  @endif --}}
                 </select>
             </div>
 

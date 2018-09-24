@@ -588,8 +588,8 @@ class PropertiesController extends Controller
 // dd($inputs);
 
       $purpose=$inputs['purpose'];
- 	 		$direction=null; //$inputs['direction'];
-      $type=$inputs['type'];
+ 	 		$direction=''; //$inputs['direction'];
+      $type=''; //$inputs['type'];
       $keyword=$inputs['keyword'];
       $currency=session('currencyname');
 // dd($keyword,$direction,$type);
